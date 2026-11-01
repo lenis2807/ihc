@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Completa tu perfil de roomie en ShareRoom.">
+
+    <title>Completar perfil | ShareRoom</title>
+
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="profile-create-page">
+
+    <!-- CABECERA -->
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <a class="site-logo"
+               href="../../index.html"
+               aria-label="ShareRoom, volver al inicio">
+
+                <span class="site-logo__symbol"
+                      aria-hidden="true">SR</span>
+                <span>ShareRoom</span>
+            </a>
+
+            <nav class="site-nav"
+                 aria-label="Navegación principal">
+                <a href="../../index.html">Inicio</a>
+                <a href="../../index.html#roomies-heading">
+                    Buscar roomies
+                </a>
+                <a href="../../index.html#rooms-heading">
+                    Habitaciones
+                </a>
+                <span class="nav-unavailable"
+                      aria-disabled="true">Mensajes</span>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="btn btn--outline"
+                   href="login.html">
+                    Iniciar sesión
+                </a>
+                <span class="btn btn--primary"
+                      aria-disabled="true">
+                    Crear cuenta
+                </span>
+            </div>
+
+            <span class="site-header__mobile-alert"
+                  aria-label="Notificaciones, próximamente"
+                  aria-disabled="true">
+                <img src="../../img/icons/notificaciones.svg"
+                     alt="">
+            </span>
+        </div>
+    </header>
+
+    <main class="profile-create">
+
+        <!-- ENCABEZADO -->
+        <div class="profile-create__heading">
+            <div>
+                <h1>
+                    <span class="profile-create__desktop-title">
+                        Crea tu perfil de roomie
+                    </span>
+                    <span class="profile-create__mobile-title">
+                        Completa tu perfil
+                    </span>
+                </h1>
+
+                <p class="profile-create__description">
+                    Cuéntanos sobre ti para recomendarte
+                    personas y espacios compatibles.
+                </p>
+
+                <p class="profile-create__mobile-progress">
+                    Paso 2 de 3 · Perfil completado al 60%
+                </p>
+            </div>
+
+            <span class="profile-create__progress">
+                Perfil completado al 60%
+            </span>
+        </div>
+
+        <!-- PASOS DEL REGISTRO -->
+        <nav class="profile-steps"
+             aria-label="Progreso del registro">
+            <span class="profile-steps__done">
+                <span class="profile-steps__desktop-number">
+                    1
+                </span>
+                Crear cuenta ✓
+            </span>
+
+            <span class="profile-steps__active"
+                  aria-current="step">
+                <span class="profile-steps__desktop-number">
+                    2
+                </span>
+                Completar perfil
+            </span>
+
+            <span>
+                <span class="profile-steps__desktop-number">
+                    3
+                </span>
+                Preferencias y verificación
+            </span>
+        </nav>
+
+        <!-- FORMULARIO -->
+        <form class="profile-form">
+
+            <div class="profile-form__grid">
+
+                <!-- INFORMACIÓN PERSONAL -->
+                <section class="profile-card"
+                         aria-labelledby="personal-heading">
+
+                    <h2 id="personal-heading">
+                        Información personal
+                    </h2>
+
+                    <div class="profile-photo">
+                        <div class="profile-photo__avatar"
+                             aria-label="Avatar con iniciales AV">
+                            AV
+                        </div>
+
+                        <div class="profile-photo__details">
+                            <strong class="profile-photo__name">
+                                Ana Valdez
+                            </strong>
+
+                            <label for="foto-perfil"
+                                   class="profile-photo__upload">
+                                Subir foto
+                            </label>
+
+                            <input
+                                id="foto-perfil"
+                                name="foto_perfil"
+                                type="file"
+                                accept=".jpg,.jpeg,.png"
+                                class="profile-photo__file"
+                            >
+
+                            <small>
+                                JPG o PNG · máximo 5 MB
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="profile-form__row">
+
+                        <div class="profile-input">
+                            <label for="nombre">Nombre *</label>
+                            <input id="nombre"
+                                   name="nombre"
+                                   type="text"
+                                   value="Ana"
+                                   required>
+                        </div>
+
+                        <div class="profile-input">
+                            <label for="apellidos">Apellidos *</label>
+                            <input id="apellidos"
+                                   name="apellidos"
+                                   type="text"
+                                   value="Valdez Paredes"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-input profile-input--mobile-only">
+                        <label for="correo-perfil">
+                            Correo electrónico
+                        </label>
+                        <input id="correo-perfil"
+                               type="email"
+                               name="correo"
+                               value="ana.valdez@gmail.com"
+                               readonly>
+                    </div>
+
+                    <div class="profile-form__row">
+
+                        <div class="profile-input">
+                            <label for="nacimiento">
+                                Fecha de nacimiento *
+                            </label>
+
+                            <input id="nacimiento"
+                                   name="nacimiento"
+                                   type="date"
+                                   value="2002-04-12"
+                                   required>
+                        </div>
+
+                        <div class="profile-input">
+                            <label for="pronombres">
+                                Pronombres
+                            </label>
+
+                            <select id="pronombres"
+                                    name="pronombres">
+                                <option value="ella" selected>
+                                    Ella
+                                </option>
+                                <option value="el">Él</option>
+                                <option value="elle">Elle</option>
+                                <option value="prefiero-no-decir">
+                                    Prefiero no indicar
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-form__row">
+
+                        <div class="profile-input">
+                            <label for="institucion">
+                                Universidad o centro de trabajo *
+                            </label>
+
+                            <input id="institucion"
+                                   name="institucion"
+                                   type="text"
+                                   value="PUCP"
+                                   required>
+                        </div>
+
+                        <div class="profile-input">
+                            <label for="ocupacion">
+                                Carrera u ocupación *
+                            </label>
+
+                            <input id="ocupacion"
+                                   name="ocupacion"
+                                   type="text"
+                                   value="Arquitectura"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-input">
+                        <label for="acerca">
+                            Acerca de mí *
+                        </label>
+
+                        <textarea id="acerca"
+                                  name="acerca"
+                                  rows="4"
+                                  required>Soy ordenada, tranquila y estudio por las tardes. Busco compartir un hogar respetuoso y con buena comunicación.</textarea>
+                    </div>
+
+                </section>
+
+                <!-- BÚSQUEDA Y ESTILO DE VIDA -->
+                <section class="profile-card"
+                         aria-labelledby="lifestyle-heading">
+
+                    <h2 id="lifestyle-heading">
+                        Tu búsqueda y estilo de vida
+                    </h2>
+
+                    <div class="profile-form__row">
+
+                        <div class="profile-input">
+                            <label for="distritos">
+                                Distritos preferidos *
+                            </label>
+
+                            <input id="distritos"
+                                   name="distritos"
+                                   type="text"
+                                   value="Pueblo Libre, San Miguel"
+                                   required>
+                        </div>
+
+                        <div class="profile-input">
+                            <label for="presupuesto">
+                                Presupuesto máximo *
+                            </label>
+
+                            <input id="presupuesto"
+                                   name="presupuesto"
+                                   type="number"
+                                   min="1"
+                                   value="950"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <fieldset class="profile-options">
+                        <legend>
+                            ¿Qué estás buscando?
+                        </legend>
+
+                        <div class="profile-options__items">
+                            <label class="profile-chip">
+                                <input type="radio"
+                                       name="busqueda"
+                                       value="habitacion">
+                                <span>Habitación</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="radio"
+                                       name="busqueda"
+                                       value="roomie">
+                                <span>Roomie</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="radio"
+                                       name="busqueda"
+                                       value="ambos"
+                                       checked>
+                                <span>Ambos</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="profile-options">
+                        <legend>Convivencia</legend>
+
+                        <div class="profile-options__items">
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="convivencia"
+                                       value="ordenada"
+                                       checked>
+                                <span>Ordenada</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="convivencia"
+                                       value="flexible">
+                                <span>Flexible</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="convivencia"
+                                       value="social">
+                                <span>Muy social</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="convivencia"
+                                       value="tranquila"
+                                       checked>
+                                <span>Tranquila</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="profile-options">
+                        <legend>Hábitos</legend>
+
+                        <div class="profile-options__items">
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="habitos"
+                                       value="no-fuma"
+                                       checked>
+                                <span>No fuma</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="habitos"
+                                       value="mascotas">
+                                <span>Mascotas</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="habitos"
+                                       value="cocina"
+                                       checked>
+                                <span>Cocina</span>
+                            </label>
+
+                            <label class="profile-chip">
+                                <input type="checkbox"
+                                       name="habitos"
+                                       value="visitas">
+                                <span>Visitas ocasionales</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="profile-notice">
+                        <span aria-hidden="true">✓</span>
+                        <div>
+                            <strong>
+                                Verifica tu identidad después
+                            </strong>
+                            <p>
+                                Los perfiles verificados reciben
+                                más respuestas y generan mayor confianza.
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="profile-terms">
+                        <input type="checkbox"
+                               name="acepta_terminos"
+                               required
+                               checked>
+                        <span>
+                            Acepto los Términos y
+                            la Política de privacidad
+                        </span>
+                    </label>
+
+                </section>
+            </div>
+
+            <!-- ACCIONES -->
+            <div class="profile-actions">
+
+                
+                <a href="verify-profile.html"
+                    class="btn btn--primary">
+                     Continuar a verificación
+                </a>
+
+
+                <button type="button"
+                        class="btn btn--outline"
+                        disabled>
+                    Guardar borrador
+                </button>
+
+                <a class="btn btn--outline"
+                   href="login.html">
+                    Volver
+                </a>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>
