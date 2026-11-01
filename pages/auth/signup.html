@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Crea tu cuenta en ShareRoom.">
+
+    <title>Crear cuenta | ShareRoom</title>
+
+    <!-- Tipografía Montserrat -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS compartido -->
+    <link rel="stylesheet"
+          href="../../css/styles.css">
+</head>
+
+<body class="signup-page">
+
+    <!-- CABECERA DESKTOP -->
+    <header class="site-header signup-desktop-header">
+        <div class="site-header__inner">
+
+            <a class="site-logo"
+               href="../../index.html"
+               aria-label="ShareRoom, ir al inicio">
+                <span class="site-logo__symbol"
+                      aria-hidden="true">SR</span>
+                <span>ShareRoom</span>
+            </a>
+
+            <nav class="site-nav"
+                 aria-label="Navegación principal">
+                <a href="../../index.html">Inicio</a>
+                <a href="../../index.html#roomies-heading">
+                    Buscar roomies
+                </a>
+                <a href="../../index.html#rooms-heading">
+                    Habitaciones
+                </a>
+                <span class="nav-unavailable"
+                      aria-disabled="true">
+                    Mensajes
+                </span>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="btn btn--outline"
+                   href="login.html">
+                    Iniciar sesión
+                </a>
+                <span class="btn btn--primary"
+                      aria-current="page">
+                    Crear cuenta
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CABECERA MÓVIL -->
+    <header class="signup-mobile-header">
+        <a href="../../index.html"
+           class="signup-mobile-header__back"
+           aria-label="Regresar al inicio">
+            <svg viewBox="0 0 24 24"
+                 width="20" height="20"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <span>Crear cuenta</span>
+
+        <span class="signup-mobile-header__alert"
+              aria-label="Notificaciones, próximamente">
+            <img src="../../img/icons/notificaciones.svg"
+                 alt="">
+        </span>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="signup-main">
+
+        <p class="signup-progress">
+            1 Crear cuenta · 2 Completar perfil · 3 Preferencias
+        </p>
+
+        <section class="signup-card"
+                 aria-labelledby="signup-heading">
+
+            <h1 id="signup-heading">Crear cuenta</h1>
+
+            <p class="signup-card__description">
+                Completa tus datos para unirte a ShareRoom.
+            </p>
+
+            <!-- Formulario estático con controles HTML -->
+            <form class="signup-form"
+                  id="signup-form">
+
+                <div class="signup-form__columns">
+
+                    <!-- DATOS PERSONALES -->
+                    <div class="signup-form__group">
+
+                        <div class="signup-field">
+                            <label for="signup-nombres">
+                                Nombres *
+                            </label>
+                            <input
+                                id="signup-nombres"
+                                name="nombres"
+                                type="text"
+                                placeholder="Ingresa tus nombres"
+                                autocomplete="given-name"
+                                required>
+                        </div>
+
+                        <div class="signup-field">
+                            <label for="signup-apellidos">
+                                Apellidos *
+                            </label>
+                            <input
+                                id="signup-apellidos"
+                                name="apellidos"
+                                type="text"
+                                placeholder="Ingresa tus apellidos"
+                                autocomplete="family-name"
+                                required>
+                        </div>
+
+                        <div class="signup-field">
+                            <label for="signup-correo">
+                                Correo *
+                            </label>
+                            <input
+                                id="signup-correo"
+                                name="correo"
+                                type="email"
+                                placeholder="ana.valdez@gmail.com"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- DATOS DE CUENTA -->
+                    <div class="signup-form__group">
+
+                        <div class="signup-field">
+                            <label for="signup-usuario">
+                                Nombre de usuario *
+                            </label>
+                            <input
+                                id="signup-usuario"
+                                name="usuario"
+                                type="text"
+                                placeholder="ana.valdez"
+                                autocomplete="username"
+                                minlength="3"
+                                required>
+                        </div>
+
+                        <div class="signup-field">
+                            <label for="signup-clave">
+                                Contraseña *
+                            </label>
+                            <input
+                                id="signup-clave"
+                                name="contrasena"
+                                type="password"
+                                placeholder="Mínimo 8 caracteres"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required>
+                        </div>
+
+                        <div class="signup-form__row">
+
+                            <div class="signup-field">
+                                <label for="signup-edad">
+                                    Edad
+                                </label>
+                                <input
+                                    id="signup-edad"
+                                    name="edad"
+                                    type="number"
+                                    min="18"
+                                    max="120"
+                                    placeholder="24">
+                            </div>
+
+                            <div class="signup-field">
+                                <label for="signup-telefono">
+                                    Teléfono
+                                </label>
+                                <input
+                                    id="signup-telefono"
+                                    name="telefono"
+                                    type="tel"
+                                    placeholder="+51 987 654 321"
+                                    autocomplete="tel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="signup-terms">
+                    <input type="checkbox"
+                           name="terminos"
+                           required>
+                    <span>Acepto los términos y condiciones</span>
+                </label>
+
+                <!-- El registro real requiere backend.
+                     Este botón no envía contraseñas. -->
+                <button class="btn btn--primary signup-form__submit"
+                        type="button"
+                        disabled>
+                    Crear cuenta
+                </button>
+
+                <p class="signup-form__help">
+                    La contraseña debe tener al menos 8 caracteres.
+                </p>
+            </form>
+
+            <!-- Navegación estática del prototipo -->
+            <div class="signup-demo">
+                <p>
+                    Recorrido de demostración:
+                    continúa a la pantalla de perfil sin
+                    crear una cuenta real.
+                </p>
+
+                <a href="profile-create.html"
+                   class="btn btn--outline">
+                    Ver siguiente paso: Completar perfil
+                </a>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

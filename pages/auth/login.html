@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Inicia sesión en ShareRoom.">
+
+    <title>Iniciar sesión | ShareRoom</title>
+
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- =====================================
+         CABECERA
+    ===================================== -->
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <a class="site-logo"
+               href="../../index.html"
+               aria-label="ShareRoom, volver al inicio">
+
+                <span class="site-logo__symbol"
+                      aria-hidden="true">SR</span>
+
+                <span>ShareRoom</span>
+            </a>
+
+            <!-- Navegación de escritorio -->
+            <nav class="site-nav"
+                 aria-label="Navegación principal">
+
+                <a href="../../index.html">
+                    Inicio
+                </a>
+
+                <a href="../../index.html#roomies-heading">
+                    Buscar roomies
+                </a>
+
+                <a href="../../index.html#rooms-heading">
+                    Habitaciones
+                </a>
+
+                <span class="nav-unavailable"
+                      aria-disabled="true">
+                    Mensajes
+                </span>
+            </nav>
+
+            <div class="site-header__actions">
+
+                <span class="btn btn--outline"
+                      aria-current="page">
+                    Iniciar sesión
+                </span>
+
+                <a class="btn btn--primary"
+                    href="signup.html">
+                     Crear cuenta
+                </a>
+
+            </div>
+
+            <!-- Notificaciones en móvil -->
+            <span class="site-header__mobile-alert"
+                  aria-label="Notificaciones, próximamente"
+                  aria-disabled="true">
+
+                <img src="../../img/icons/notificaciones.svg"
+                     alt="">
+            </span>
+
+        </div>
+    </header>
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ===================================== -->
+    <main class="auth-main">
+
+        <!-- PRESENTACIÓN DESKTOP -->
+        <section class="auth-promise"
+                 aria-labelledby="auth-promise-heading">
+
+            <span class="auth-promise__badge">
+                Un hogar compartido empieza aquí
+            </span>
+
+            <h2 id="auth-promise-heading">
+                Vuelve a tus conversaciones,
+                favoritos y publicaciones
+            </h2>
+
+            <p>
+                Retoma la búsqueda donde la dejaste
+                y conecta con roomies verificados
+                cerca de tu universidad.
+            </p>
+
+            <ul class="auth-benefits">
+
+                <li>
+                    Tus favoritos sincronizados
+                </li>
+
+                <li>
+                    Mensajes seguros en un solo lugar
+                </li>
+
+                <li>
+                    Perfiles y habitaciones verificadas
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- =====================================
+             TARJETA DE INICIO DE SESIÓN
+        ===================================== -->
+        <section class="login-card"
+                 aria-labelledby="login-heading">
+
+            <h1 id="login-heading">
+                Bienvenido de vuelta
+            </h1>
+
+            <p class="login-card__subtitle">
+                Ingresa para continuar buscando
+                tu próximo hogar.
+            </p>
+
+            <!-- Google requiere autenticación externa -->
+            <button class="btn btn--outline login-card__google"
+                    type="button"
+                    disabled>
+                Continuar con Google
+            </button>
+
+            <!-- Separador -->
+            <div class="login-card__separator">
+                <span>o con tu correo</span>
+            </div>
+
+            <!-- Formulario visual, sin autenticación real -->
+            <form class="login-form">
+
+                <!-- CORREO -->
+                <div class="form-field">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <div class="login-field">
+
+                        <span class="login-field__icon"
+                              aria-hidden="true">
+                            ✉
+                        </span>
+
+                        <input
+                            id="correo"
+                            name="correo"
+                            type="email"
+                            placeholder="ana.valdez@gmail.com"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+                </div>
+
+                <!-- CONTRASEÑA -->
+                <div class="form-field">
+
+                    <label for="contrasena">
+                        Contraseña
+                    </label>
+
+                    <div class="login-field">
+
+                        <span class="login-field__icon"
+                              aria-hidden="true">
+                            ▣
+                        </span>
+
+                        <input
+                            id="contrasena"
+                            name="contrasena"
+                            type="password"
+                            placeholder="••••••••••"
+                            autocomplete="current-password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+                </div>
+
+                <!-- Mostrar contraseña: pendiente -->
+                <span class="login-form__show-password"
+                      aria-disabled="true">
+                    Mostrar contraseña
+                </span>
+
+                <!-- Opciones -->
+                <div class="login-form__options">
+
+                    <label class="login-form__remember">
+
+                        <input type="checkbox"
+                               name="recordarme"
+                               checked>
+
+                        Recordarme
+                    </label>
+
+                    <a class="login-form__forgot"
+                        href="recover-password.html">
+                            ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+                <!-- Botón visual sin envío -->
+                
+                <a href="../account/home.html"
+                    class="btn btn--primary login-form__submit">
+                     Iniciar sesión
+                </a>
+
+
+            </form>
+
+            <!-- Registro -->
+            <p class="login-card__register">
+
+                ¿Aún no tienes cuenta?
+                
+                <a href="signup.html">
+                    Crear una cuenta
+                </a>
+
+            </p>
+
+            <!-- Seguridad -->
+            <div class="login-card__trust">
+
+                <span class="login-card__trust-icon"
+                      aria-hidden="true">
+                    ✓
+                </span>
+
+                <div>
+                    <strong>
+                        Tu información está protegida
+                    </strong>
+
+                    <p>
+                        ShareRoom nunca comparte
+                        tus datos sin permiso.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
