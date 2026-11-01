@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encuentra habitaciones y roomies cerca de tu universidad en ShareRoom.">
+  <title>ShareRoom | Inicio y búsqueda</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html" aria-label="ShareRoom, ir al inicio">
+        <span class="site-logo__symbol" aria-hidden="true">SR</span>
+        <span>ShareRoom</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="#roomies-heading">Buscar roomies</a>
+        <a href="#rooms-heading">Habitaciones</a>
+        <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--outline"
+           href="pages/auth/login.html">
+          Iniciar sesión
+        </a>
+        <a class="btn btn--primary"
+           href="pages/auth/signup.html">
+          Crear cuenta
+        </a>
+      </div>
+
+      <span class="site-header__mobile-alert"
+            aria-label="Notificaciones, próximamente"
+            aria-disabled="true">
+
+          <img src="img/icons/notificaciones.svg"
+            alt="">
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO E INICIO DE BÚSQUEDA -->
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-hero__inner">
+
+        <div class="home-hero__content">
+          <p class="home-hero__eyebrow">
+            Vive cerca. Vive acompañado.
+          </p>
+
+          <p class="home-hero__greeting">Hola, Andrea</p>
+
+          <h1 id="home-title">
+            <span class="home-hero__title-desktop">
+              Encuentra tu próximo roomie o habitación
+            </span>
+            <span class="home-hero__title-mobile">
+              ¿Qué estás buscando hoy?
+            </span>
+          </h1>
+
+          <p class="home-hero__description">
+            Conecta con personas compatibles y espacios
+            verificados cerca de tu universidad.
+          </p>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-panel__tabs" aria-label="Buscar por tipo">
+            <a class="btn btn--primary" href="#rooms-heading">
+              <span class="label-desktop">Busco habitación</span>
+              <span class="label-mobile">Habitación</span>
+            </a>
+
+            <a class="btn btn--outline" href="#roomies-heading">
+              <span class="label-desktop">Busco roomie</span>
+              <span class="label-mobile">Roomie</span>
+            </a>
+          </div>
+
+          <form class="search-panel__form"
+                action="index.html"
+                method="get"
+                role="search">
+
+            <div class="form-field">
+              <label for="ubicacion">¿Dónde quieres vivir?</label>
+
+              <div class="search-panel__input-wrap">
+                <svg viewBox="0 0 24 24"
+                     width="20"
+                     height="20"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     aria-hidden="true">
+                  <circle cx="10.8" cy="10.8" r="6.5"/>
+                  <path d="m16 16 5 5"/>
+                </svg>
+
+                <input
+                  id="ubicacion"
+                  name="ubicacion"
+                  type="search"
+                  placeholder="Universidad, distrito o zona"
+                  required
+                >
+              </div>
+            </div>
+
+            <button class="btn btn--primary search-panel__submit"
+                    type="submit">
+              <span class="label-desktop">Buscar</span>
+              <span class="label-mobile">Buscar en ShareRoom</span>
+            </button>
+          </form>
+
+          <p class="search-panel__hint">
+            Búsquedas populares: PUCP · UPC Monterrico ·
+            Miraflores · San Miguel
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROOMIES Y HABITACIONES -->
+    <section class="home-discovery"
+             aria-label="Roomies y habitaciones destacadas">
+
+      <div class="home-discovery__inner">
+
+        <section class="home-discovery__group"
+                 aria-labelledby="roomies-heading">
+
+          <p class="section-eyebrow">COMPATIBILIDAD PRIMERO</p>
+          <h2 id="roomies-heading">Roomies recomendados</h2>
+
+          <div class="home-discovery__cards home-discovery__cards--people">
+
+            <article class="card person-card">
+              <a href="#roomies-heading">
+                <div class="card__media card__media--person">
+                  <img src="img/profiles/lucia.png"
+                       alt="Fotografía de Lucía">
+                </div>
+                <div class="card__info">
+                  <h3>Lucía, 24</h3>
+                  <p>Barranco · Diseño</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="card person-card">
+              <a href="#roomies-heading">
+                <div class="card__media card__media--person">
+                  <img src="img/profiles/diego.png"
+                       alt="Fotografía de Diego">
+                </div>
+                <div class="card__info">
+                  <h3>Diego, 27</h3>
+                  <p>San Miguel · PUCP</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="card person-card">
+              <a href="#roomies-heading">
+                <div class="card__media card__media--person">
+                  <img src="img/profiles/mariana.png"
+                       alt="Fotografía de Mariana">
+                </div>
+                <div class="card__info">
+                  <h3>Mariana, 23</h3>
+                  <p>Surco · UPC</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section class="home-discovery__group"
+                 aria-labelledby="rooms-heading">
+
+          <p class="section-eyebrow">LISTAS PARA MUDARTE</p>
+          <h2 id="rooms-heading">Habitaciones recientes</h2>
+
+          <div class="home-discovery__cards home-discovery__cards--rooms">
+
+            <article class="card room-card">
+              <a href="#rooms-heading">
+                <div class="card__media card__media--room">
+                  <img src="img/rooms/habitacion-01.png"
+                       alt="Habitación en San Miguel">
+                </div>
+                <div class="card__info">
+                  <h3>S/ 980 al mes</h3>
+                  <p>San Miguel · 12 min PUCP</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="card room-card">
+              <a href="#rooms-heading">
+                <div class="card__media card__media--room">
+                  <img src="img/rooms/habitacion-02.png"
+                       alt="Habitación amoblada en Miraflores">
+                </div>
+                <div class="card__info">
+                  <h3>S/ 1,250 al mes</h3>
+                  <p>Miraflores · Amoblada</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="card room-card">
+              <a href="#rooms-heading">
+                <div class="card__media card__media--room">
+                  <img src="img/rooms/habitacion-03.png"
+                       alt="Habitación en Surco">
+                </div>
+                <div class="card__info">
+                  <h3>S/ 850 al mes</h3>
+                  <p>Surco · Servicios incluidos</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ASISTENTE -->
+    <section class="home-assistant"
+             aria-labelledby="assistant-heading">
+
+      <div class="home-assistant__inner">
+        <div class="home-assistant__heading">
+          <h2 id="assistant-heading">
+            Solicita ayuda de un agente
+          </h2>
+
+          <img src="img/branding/agente-shareroom.png"
+               alt="Agente de ShareRoom">
+        </div>
+
+        <div class="assistant-panel">
+          <h3>¿Cómo puedo ayudarte hoy?</h3>
+
+          <p>
+            Cuéntame qué zona, presupuesto o estilo
+            de convivencia estás buscando.
+          </p>
+
+          <div class="assistant-panel__controls">
+            <div class="form-field">
+              <label for="consulta">Tu consulta</label>
+              <input
+                id="consulta"
+                name="consulta"
+                type="text"
+                placeholder="Busco una habitación cerca de mi universidad"
+                disabled
+              >
+            </div>
+
+            <button class="btn btn--primary"
+                    type="button"
+                    disabled>
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <h2>Acerca de nosotros:</h2>
+
+      <div class="site-footer__grid">
+        <section>
+          <h3>ShareRoom</h3>
+          <p>
+            Somos un sitio que te ayuda a encontrar
+            tu próximo roomie.
+          </p>
+          <p>
+            Escríbenos:
+            <a href="mailto:Shareroom@gmail.com">
+              Shareroom@gmail.com
+            </a>
+          </p>
+        </section>
+
+        <section>
+          <h3>Ciudad</h3>
+          <p>Lima - Perú</p>
+        </section>
+
+        <nav aria-label="Enlaces del pie de página">
+          <h3>Explorar</h3>
+          <a href="#roomies-heading">Buscar perfil</a>
+          <a href="#rooms-heading">Alquiler</a>
+        </nav>
+
+        <section>
+          <h3>Redes Sociales:</h3>
+
+          <img
+            src="img/branding/redes-sociales.png"
+            alt="Facebook, Instagram y WhatsApp de ShareRoom"
+            class="footer-social__image"
+          >
+
+          <p>Últimas actualizaciones</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      © 2026 ShareRoom. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  
+<!-- NAVEGACIÓN INFERIOR MÓVIL -->
+<nav class="mobile-bottom-nav"
+     aria-label="Navegación móvil">
+
+    <a href="index.html"
+       aria-current="page"
+       aria-label="Inicio">
+        <img src="img/icons/Inicio.svg"
+             alt="">
+    </a>
+
+    <a href="#rooms-heading"
+       aria-label="Buscar">
+        <img src="img/icons/buscar.svg"
+             alt="">
+    </a>
+
+    <span aria-label="Publicar, próximamente"
+          aria-disabled="true">
+        <img src="img/icons/publicar.svg"
+             alt="">
+    </span>
+
+    <span aria-label="Mensajes, próximamente"
+          aria-disabled="true">
+        <img src="img/icons/mensajes.svg"
+             alt="">
+    </span>
+
+    <span aria-label="Perfil, próximamente"
+          aria-disabled="true">
+        <img src="img/icons/perfil.svg"
+             alt="">
+    </span>
+
+</nav>
+
+</body>
+</html>
