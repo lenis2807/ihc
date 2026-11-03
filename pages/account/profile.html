@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administra tu perfil y tus preferencias en ShareRoom.">
+  <title>Mi perfil y preferencias | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="profile-settings-page">
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio">
+        <span class="site-logo__symbol" aria-hidden="true">SR</span>
+        <span>ShareRoom</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="home.html">Inicio</a>
+        <a href="home.html#roomies-heading">Buscar roomies</a>
+        <a href="home.html#rooms-heading">Habitaciones</a>
+        <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+      </nav>
+      <div class="member-header__actions">
+        <span class="member-header__icon" aria-label="Favoritos, próximamente" aria-disabled="true">♡</span>
+        <span class="member-header__icon" aria-label="Notificaciones, próximamente" aria-disabled="true">
+          <img src="../../img/icons/notificaciones.svg" alt="">
+        </span>
+        <a class="btn btn--outline member-header__publish" href="#publicar">Publicar habitación</a>
+        <a class="member-header__avatar" href="profile.html" aria-label="Mi perfil">AV</a>
+      </div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true">
+        <img src="../../img/icons/notificaciones.svg" alt="">
+      </span>
+    </div>
+  </header>
+
+  <main class="profile-settings">
+    <aside class="profile-settings__sidebar" aria-label="Menú de configuración">
+      <div class="profile-settings__user">
+        <div class="profile-settings__avatar profile-settings__avatar--large" aria-hidden="true">AV<span class="profile-settings__status"></span></div>
+        <div>
+          <strong>Ana Valdez</strong>
+          <span>Perfil 85% completo</span>
+        </div>
+      </div>
+      <nav class="profile-settings__menu" aria-label="Secciones del perfil">
+        <a class="is-active" href="#datos-personales"><span aria-hidden="true">◉</span>Información personal</a>
+        <a href="#mi-busqueda"><span aria-hidden="true">☷</span>Preferencias de búsqueda</a>
+        <a href="#notificaciones"><span aria-hidden="true">♧</span>Notificaciones <b>3</b></a>
+        <a href="#privacidad"><span aria-hidden="true">◇</span>Privacidad y seguridad</a>
+        <a href="#pagos"><span aria-hidden="true">▣</span>Pagos</a>
+        <a href="#ayuda"><span aria-hidden="true">?</span>Ayuda y soporte</a>
+        <span class="profile-settings__divider"></span>
+        <a href="../../index.html"><span aria-hidden="true">↪</span>Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <section class="profile-settings__content" aria-labelledby="profile-settings-title">
+      <div class="profile-settings__heading">
+        <div>
+          <h1 id="profile-settings-title">Mi perfil y preferencias</h1>
+          <p>Mantén tus datos actualizados para mejorar tus recomendaciones.</p>
+        </div>
+        <a class="btn btn--primary" href="home.html#roomies-heading">Ver perfil público</a>
+      </div>
+
+      <nav class="profile-settings__tabs" aria-label="Secciones del formulario">
+        <a class="is-active" href="#datos-personales">Datos personales</a>
+        <a href="#mi-busqueda">Mi búsqueda</a>
+        <a href="#convivencia">Convivencia</a>
+        <a href="#cuenta">Cuenta</a>
+      </nav>
+
+      <form class="profile-settings__form" action="#" method="get">
+        <section class="profile-settings__card profile-settings__card--personal" id="datos-personales" aria-labelledby="personal-title">
+          <h2 id="personal-title" class="visually-hidden">Datos personales</h2>
+          <div class="profile-settings__photo">
+            <div class="profile-settings__avatar profile-settings__avatar--photo" aria-hidden="true">AV<span class="profile-settings__status"></span></div>
+            <div>
+              <strong>Foto de perfil</strong>
+              <div class="profile-settings__photo-actions">
+                <label class="btn btn--outline" for="foto-perfil">Cambiar foto</label>
+                <input id="foto-perfil" name="foto_perfil" type="file" accept="image/png,image/jpeg" class="visually-hidden">
+                <a class="btn btn--outline" href="#datos-personales">Eliminar</a>
+              </div>
+            </div>
+          </div>
+          <div class="profile-settings__field-row">
+            <div class="profile-settings__field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" value="Ana" required></div>
+            <div class="profile-settings__field"><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" type="text" value="Valdez Paredes" required></div>
+          </div>
+          <div class="profile-settings__field-row">
+            <div class="profile-settings__field"><label for="correo">Correo electrónico</label><div class="profile-settings__input-with-icon"><span aria-hidden="true">✉</span><input id="correo" name="correo" type="email" value="ana.valdez@gmail.com" required></div></div>
+            <div class="profile-settings__field"><label for="telefono">Teléfono</label><div class="profile-settings__input-with-icon"><span aria-hidden="true">♧</span><input id="telefono" name="telefono" type="tel" value="+51 987 654 321" required></div></div>
+          </div>
+          <div class="profile-settings__field-row">
+            <div class="profile-settings__field"><label for="universidad">Universidad</label><input id="universidad" name="universidad" type="text" value="PUCP" required></div>
+            <div class="profile-settings__field"><label for="carrera">Carrera</label><input id="carrera" name="carrera" type="text" value="Arquitectura" required></div>
+          </div>
+          <div class="profile-settings__field"><label for="acerca">Acerca de mí</label><textarea id="acerca" name="acerca" rows="3" required>Soy ordenada, tranquila y estudio por las tardes. Busco compartir un hogar respetuoso y con buena comunicación.</textarea></div>
+        </section>
+
+        <section class="profile-settings__card profile-settings__card--preferences" id="mi-busqueda" aria-labelledby="search-title">
+          <h2 id="search-title">Mi búsqueda</h2>
+          <div class="profile-settings__field"><label for="distritos">Distritos preferidos</label><div class="profile-settings__input-with-icon"><span aria-hidden="true">⌖</span><input id="distritos" name="distritos" type="text" value="Pueblo Libre, San Miguel" required></div></div>
+          <div class="profile-settings__field-row profile-settings__field-row--budget">
+            <div class="profile-settings__field"><label for="minimo">Mínimo</label><input id="minimo" name="presupuesto_minimo" type="number" min="0" value="700" required></div>
+            <div class="profile-settings__field"><label for="maximo">Máximo</label><input id="maximo" name="presupuesto_maximo" type="number" min="0" value="950" required></div>
+          </div>
+          <div class="profile-settings__field"><label for="mudanza">Fecha de mudanza</label><div class="profile-settings__input-with-icon"><span aria-hidden="true">▣</span><input id="mudanza" name="fecha_mudanza" type="text" value="15 de octubre" required></div></div>
+          <fieldset class="profile-settings__fieldset" id="convivencia">
+            <legend>Convivencia ideal</legend>
+            <div class="profile-settings__chips">
+              <label><input type="checkbox" name="convivencia" value="orden" checked><span>Orden y limpieza</span></label>
+              <label><input type="checkbox" name="convivencia" value="no-fuma" checked><span>No fuma</span></label>
+              <label><input type="checkbox" name="convivencia" value="sin-fiestas" checked><span>Sin fiestas</span></label>
+              <label><input type="checkbox" name="convivencia" value="lgbtq" checked><span>LGBTQ+ friendly</span></label>
+              <label><input type="checkbox" name="convivencia" value="visitas"><span>Visitas ocasionales</span></label>
+              <label><input type="checkbox" name="convivencia" value="mascotas"><span>Mascotas a conversar</span></label>
+            </div>
+          </fieldset>
+          <label class="profile-settings__switch-row" id="privacidad"><span><strong>Perfil visible en búsquedas</strong><small>Permite que otros roomies te encuentren.</small></span><input type="checkbox" name="perfil_visible" checked><i aria-hidden="true"></i></label>
+          <label class="profile-settings__check-row"><input type="checkbox" name="solo_verificados" checked><span>Solo mostrarme a perfiles verificados</span></label>
+        </section>
+
+        <div class="profile-settings__actions" id="cuenta">
+          <small>Última actualización: hoy a las 09:22</small>
+          <div><a class="btn btn--outline" href="home.html">Cancelar</a><button class="btn btn--primary" type="submit">Guardar cambios</button></div>
+        </div>
+      </form>
+      <span id="notificaciones" class="profile-settings__anchor"></span><span id="pagos" class="profile-settings__anchor"></span><span id="ayuda" class="profile-settings__anchor"></span>
+    </section>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <span aria-label="Publicar, próximamente" aria-disabled="true"><img src="../../img/icons/publicar.svg" alt=""></span>
+    <span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span>
+    <a href="profile.html" aria-current="page" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>
