@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tu habitación ya está publicada en ShareRoom.">
+  <title>Publicación exitosa | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions"><a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
+    </div>
+  </header>
+  <main class="publication-shell publication-shell--success">
+    <section class="publication-card success-card" aria-labelledby="success-title">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <p class="section-eyebrow">¡LISTO!</p>
+      <h1 id="success-title">Tu habitación ya está publicada</h1>
+      <p>Tu publicación ya puede ser vista por personas que buscan una habitación en ShareRoom.</p>
+      <div class="success-summary">
+        <img src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
+        <div><strong>Habitación amoblada cerca de la PUCP</strong><span>San Miguel · S/ 980 al mes</span></div>
+      </div>
+      <div class="success-actions">
+        <a class="btn btn--primary" href="my-listings.html">Ir a mis publicaciones</a>
+        <a class="btn btn--outline" href="home.html">Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
+    <a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>

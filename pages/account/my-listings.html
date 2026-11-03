@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administra tus habitaciones publicadas en ShareRoom.">
+  <title>Mis publicaciones | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html" aria-current="page">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions"><a class="btn btn--primary member-header__publish" href="publish-room.html">Publicar habitación</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
+    </div>
+  </header>
+  <main class="publication-shell">
+    <nav class="publication-breadcrumb" aria-label="Ruta de navegación"><a href="home.html">Inicio</a><span aria-hidden="true">/</span><span>Mis publicaciones</span></nav>
+    <header class="publication-title listing-page-title">
+      <div><p class="section-eyebrow">TU ESPACIO EN SHARE ROOM</p><h1>Mis publicaciones</h1><p>Administra tus habitaciones y revisa las solicitudes recibidas.</p></div>
+      <a class="btn btn--primary" href="publish-room.html">+ Publicar habitación</a>
+    </header>
+    <section class="listing-management" aria-labelledby="active-listings-title">
+      <div class="listing-management__heading"><h2 id="active-listings-title">Publicaciones activas</h2><span class="listing-count">1 publicación</span></div>
+      <article class="manage-listing">
+        <img class="manage-listing__image" src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
+        <div class="manage-listing__content">
+          <div class="listing-preview__topline"><span class="listing-badge">Activa</span><span class="manage-listing__date">Publicada hoy</span></div>
+          <h3>Habitación amoblada cerca de la PUCP</h3>
+          <p class="listing-preview__location">San Miguel · Cerca de PUCP</p>
+          <p class="listing-preview__price">S/ 980 <span>/ mes</span></p>
+          <div class="manage-listing__stats"><span>3 interesados</span><span>12 visualizaciones</span></div>
+          <div class="manage-listing__actions">
+            <a class="btn btn--outline" href="publish-room.html">Editar publicación</a>
+            <a class="btn btn--primary" href="compare-applicants.html">Comparar interesados</a>
+            <a class="manage-listing__history" href="request-history.html">Historial de solicitudes</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
+    <a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>

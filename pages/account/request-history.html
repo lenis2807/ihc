@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulta el historial de solicitudes de tu habitación.">
+  <title>Historial de solicitudes | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html" aria-current="page">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions"><a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
+    </div>
+  </header>
+  <main class="publication-shell">
+    <nav class="publication-breadcrumb" aria-label="Ruta de navegación"><a href="home.html">Inicio</a><span aria-hidden="true">/</span><a href="my-listings.html">Mis publicaciones</a><span aria-hidden="true">/</span><span>Historial de solicitudes</span></nav>
+    <header class="publication-title">
+      <p class="section-eyebrow">ACTIVIDAD DE TU HABITACIÓN</p>
+      <h1>Historial de solicitudes</h1>
+      <p>Consulta las solicitudes que recibiste para esta publicación.</p>
+    </header>
+    <section class="applicants-room" aria-label="Habitación publicada">
+      <img src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
+      <div><span class="listing-badge">Publicación activa</span><h2>Habitación amoblada cerca de la PUCP</h2><p>San Miguel · S/ 980 al mes</p></div>
+      <a href="compare-applicants.html">Comparar interesados</a>
+    </section>
+    <section class="request-history" aria-labelledby="requests-title">
+      <div class="request-history__heading"><h2 id="requests-title">Solicitudes recibidas</h2><span class="listing-count">3 solicitudes</span></div>
+      <div class="request-row"><img src="../../img/profiles/lucia.png" alt="Fotografía de Lucía"><div class="request-row__person"><h3>Lucía Fernández</h3><p>Enviada hoy · PUCP</p></div><span class="request-status request-status--new">Nueva</span><a class="request-row__link" href="compare-applicants.html">Ver detalle</a></div>
+      <div class="request-row"><img src="../../img/profiles/diego.png" alt="Fotografía de Diego"><div class="request-row__person"><h3>Diego Ramos</h3><p>Enviada ayer · PUCP</p></div><span class="request-status">Pendiente</span><a class="request-row__link" href="compare-applicants.html">Ver detalle</a></div>
+      <div class="request-row"><img src="../../img/profiles/mariana.png" alt="Fotografía de Mariana"><div class="request-row__person"><h3>Mariana Torres</h3><p>Enviada hace 3 días · UPC</p></div><span class="request-status">Pendiente</span><a class="request-row__link" href="compare-applicants.html">Ver detalle</a></div>
+    </section>
+    <p class="demo-disclaimer">Solicitudes de ejemplo para mostrar la interfaz. No representan actividad real.</p>
+  </main>
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil"><a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a><a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a><a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a><a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a></nav>
+</body>
+</html>
