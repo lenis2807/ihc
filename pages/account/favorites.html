@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Habitaciones y roomies guardados en ShareRoom.">
+  <title>Favoritos guardados | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="favorites-page">
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="home.html">Inicio</a><a href="home.html#roomies-heading">Buscar roomies</a><a href="home.html#rooms-heading">Habitaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+      </nav>
+      <div class="member-header__actions">
+        <a class="member-header__icon favorites-header__active" href="favorites.html" aria-label="Favoritos">♡</a>
+        <a class="member-header__icon" href="notifications.html" aria-label="Notificaciones"><img src="../../img/icons/notificaciones.svg" alt=""></a>
+        <a class="btn btn--outline member-header__publish" href="home.html#rooms-heading">Publicar habitación</a>
+        <a class="member-header__avatar" href="profile.html" aria-label="Mi perfil">AV</a>
+      </div>
+      <a class="site-header__mobile-alert" href="notifications.html" aria-label="Notificaciones"><img src="../../img/icons/notificaciones.svg" alt=""></a>
+    </div>
+  </header>
+
+  <main class="favorites">
+    <div class="favorites__heading">
+      <div><h1>Favoritos guardados</h1><p>Compara habitaciones y roomies antes de decidir.</p></div>
+      <a class="btn btn--primary" href="#coleccion">Crear colección</a>
+    </div>
+    <nav class="favorites__tabs" aria-label="Filtros de favoritos">
+      <a class="is-active" href="#habitaciones">Habitaciones <span>6</span></a><a href="#roomies">Roomies <span>4</span></a><a href="#colecciones">Colecciones <span>2</span></a>
+    </nav>
+    <div class="favorites__layout">
+      <section class="favorites__saved" id="habitaciones" aria-labelledby="saved-title">
+        <div class="favorites__summary"><h2 id="saved-title">6 habitaciones guardadas</h2><a href="#habitaciones">Más recientes⌄</a></div>
+        <div class="favorites__grid">
+          <a class="saved-room" href="home.html#rooms-heading"><img src="../../img/rooms/habitacion-01.png" alt="Habitación luminosa en Pueblo Libre"><span><strong>Habitación luminosa en Pueblo Libre</strong><small>A 8 min de la PUCP</small><small>WiFi · Amoblada · Cocina</small><b>S/ 900 al mes</b></span></a>
+          <a class="saved-room" href="home.html#rooms-heading"><img src="../../img/rooms/habitacion-02.png" alt="Cuarto amplio cerca de la UPC"><span><strong>Cuarto amplio cerca de la UPC</strong><small>Santiago de Surco</small><small>WiFi · Amoblada · Cocina</small><b>S/ 1,050 al mes</b></span></a>
+          <a class="saved-room" href="home.html#rooms-heading"><img src="../../img/rooms/habitacion-03.png" alt="Habitación privada en Miraflores"><span><strong>Habitación privada en Miraflores</strong><small>Cerca al Metropolitano</small><small>WiFi · Amoblada · Cocina</small><b>S/ 1,200 al mes</b></span></a>
+          <a class="saved-room" href="home.html#rooms-heading"><img src="../../img/rooms/habitacion-01.png" alt="Dormitorio con vista en San Miguel"><span><strong>Dormitorio con vista en San Miguel</strong><small>A 12 min de la PUCP</small><small>WiFi · Amoblada · Cocina</small><b>S/ 850 al mes</b></span></a>
+        </div>
+      </section>
+      <aside class="favorites__sidebar" id="coleccion" aria-label="Colecciones y recomendaciones">
+        <section class="favorites__collection">
+          <div class="favorites__collection-heading"><h2>Mi shortlist PUCP</h2><span aria-label="Más opciones">⋯</span></div>
+          <p>Opciones para visitar esta semana con un presupuesto menor a S/ 1,000.</p>
+          <div class="favorites__thumbnails"><img src="../../img/rooms/habitacion-01.png" alt=""><img src="../../img/rooms/habitacion-02.png" alt=""><img src="../../img/rooms/habitacion-03.png" alt=""></div>
+          <small>4 espacios guardados</small>
+        </section>
+        <section class="favorites__tip"><h2>Compara con calma</h2><p>Revisa ubicación, reglas de convivencia y costos totales antes de coordinar una visita.</p></section>
+      </aside>
+    </div>
+  </main>
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil"><a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a><a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a><span aria-label="Publicar, próximamente" aria-disabled="true"><img src="../../img/icons/publicar.svg" alt=""></span><span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span><a href="profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a></nav>
+</body>
+</html>
