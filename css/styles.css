@@ -3209,7 +3209,7 @@ a.chip:hover {
 
 
 /* =====================================
-   HABITACIONES: DETALLE (US07 y US05)
+   HABITACIONES: DETALLE (US07)
    Pegar al final de css/styles.css
 ===================================== */
 
@@ -3736,10 +3736,6 @@ a.chip:hover {
 
 /* =====================================
    HABITACIONES: CALIFICAR EXPERIENCIA
-   Pegar al final de css/styles.css
-
-   ANTES: agrega estas dos variables dentro de :root,
-   al inicio de styles.css (copia el color exacto del Figma):
      --teal: #14c8aa;
      --teal-dark: #0b8f7a;
 ===================================== */
@@ -4590,5 +4586,569 @@ a.chip:hover {
 
   .contact__form-card {
     max-width: none;
+  }
+}
+
+
+/* =====================================
+   ROOMIES: BUSCAR ROOMIES
+     --teal: #14c8aa;
+     --teal-dark: #0b8f7a;
+===================================== */
+
+/* Barra superior (solo móvil) y cabecera completa (solo escritorio) */
+.roomies__topbar {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.roomies__topbar-back,
+.roomies__topbar-bell {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+
+.roomies__topbar-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.site-header--desktop {
+  display: none;
+}
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.roomies {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "profile"
+    "about"
+    "compat"
+    "others";
+  gap: 16px;
+  padding: 24px 16px 32px;
+}
+
+/* Título y buscador */
+.roomies__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: intro;
+}
+
+.roomies__title {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__subtitle {
+  display: none;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.roomies__search {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roomies__field label {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.roomies__input-wrap {
+  position: relative;
+}
+
+.roomies__input-wrap svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--ink);
+}
+
+.roomies__input-wrap input {
+  padding-left: 42px;
+}
+
+.roomies__submit {
+  width: 100%;
+}
+
+.roomies__meta {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.roomies__meta-desktop {
+  display: none;
+}
+
+/* Tarjetas base */
+.roomies__profile,
+.roomies__about,
+.roomies__compat,
+.roomies__card {
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+/* Roomie recomendado */
+.roomies__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  grid-area: profile;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.roomies__avatar {
+  flex: none;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.roomies__profile-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.roomies__name {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__meta-line {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* Chips */
+.roomies__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roomies__chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.roomies__chip--dark {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.roomies__chip--desktop {
+  display: none;
+}
+
+/* Acerca de mí */
+.roomies__about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: about;
+  padding: 24px 20px;
+}
+
+.roomies__card-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.roomies__message {
+  width: 100%;
+}
+
+/* Compatibilidad */
+.roomies__compat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: compat;
+  padding: 24px 20px;
+}
+
+.roomies__compat-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.roomies__compat-total {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.roomies__compat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roomies__compat-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+}
+
+.roomies__compat-item label {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.roomies__compat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__bar {
+  grid-column: 1 / 3;
+  width: 100%;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--teal);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.roomies__bar::-webkit-progress-bar {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.roomies__bar::-webkit-progress-value {
+  background: var(--teal);
+  border-radius: 999px;
+}
+
+.roomies__bar::-moz-progress-bar {
+  background: var(--teal);
+  border-radius: 999px;
+}
+
+/* Otros roomies */
+.roomies__others {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: others;
+}
+
+.roomies__card {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-areas:
+    "img body"
+    "img view";
+  gap: 8px 16px;
+  align-items: start;
+  padding: 20px;
+}
+
+.roomies__mini-img {
+  grid-area: img;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.roomies__initials {
+  display: none;
+}
+
+.roomies__card-body {
+  grid-area: body;
+  min-width: 0;
+}
+
+.roomies__card-name {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__card-meta {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.roomies__match {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.roomies__view {
+  grid-area: view;
+  justify-self: start;
+}
+
+/* Pie de página (solo escritorio) */
+.roomies__footer {
+  display: none;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .roomies__topbar {
+    display: none;
+  }
+
+  .site-header--desktop {
+    display: block;
+  }
+
+  .roomies {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    grid-template-areas:
+      "intro intro"
+      "profile compat"
+      "about ."
+      "others others";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 32px 24px 48px;
+  }
+
+  .roomies__title {
+    font-size: 32px;
+  }
+
+  .roomies__subtitle {
+    display: block;
+  }
+
+  .roomies__search {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .roomies__field {
+    flex: 1;
+  }
+
+  .roomies__field label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .roomies__submit {
+    width: auto;
+  }
+
+  .roomies__meta {
+    font-size: 12px;
+  }
+
+  .roomies__meta-desktop {
+    display: inline;
+  }
+
+  .roomies__meta-mobile {
+    display: none;
+  }
+
+  .roomies__profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .roomies__avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .roomies__profile-body {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .roomies__name {
+    font-size: 26px;
+  }
+
+  .roomies__meta-line {
+    font-size: 13px;
+  }
+
+  .roomies__chip {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .roomies__chip--first {
+    order: 1;
+  }
+
+  .roomies__chip--desktop {
+    display: block;
+    order: 2;
+  }
+
+  .roomies__about {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .roomies__card-title {
+    font-size: 22px;
+  }
+
+  .roomies__about-text {
+    font-size: 13px;
+  }
+
+  .roomies__message {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .roomies__compat {
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .roomies__compat .roomies__card-title {
+    font-size: 16px;
+  }
+
+  .roomies__compat-total {
+    font-size: 20px;
+  }
+
+  .roomies__compat-list {
+    gap: 10px;
+  }
+
+  .roomies__compat-item label,
+  .roomies__compat-value {
+    font-size: 10px;
+  }
+
+  .roomies__others {
+    flex-direction: row;
+  }
+
+  .roomies__card {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 14px;
+  }
+
+  .roomies__mini-img {
+    display: none;
+  }
+
+  .roomies__initials {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--page);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .roomies__card-body {
+    flex: 1;
+  }
+
+  .roomies__card-name {
+    font-size: 15px;
+  }
+
+  .roomies__card-meta {
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .roomies__match {
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .roomies__footer {
+    display: block;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .roomies {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    padding-inline: 48px;
   }
 }
