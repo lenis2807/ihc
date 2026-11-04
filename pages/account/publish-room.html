@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publica una habitación en ShareRoom.">
+  <title>Publicar habitación | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio">
+        <span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="home.html">Inicio</a>
+        <a href="my-listings.html">Mis publicaciones</a>
+        <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+      </nav>
+      <div class="member-header__actions">
+        <a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a>
+        <span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span>
+      </div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true">
+        <img src="../../img/icons/notificaciones.svg" alt="">
+      </span>
+    </div>
+  </header>
+
+  <main class="publication-shell">
+    <nav class="publication-breadcrumb" aria-label="Ruta de navegación">
+      <a href="home.html">Inicio</a><span aria-hidden="true">/</span><span>Publicar habitación</span>
+    </nav>
+    <header class="publication-title">
+      <p class="section-eyebrow">COMPARTE TU ESPACIO</p>
+      <h1>Publicar habitación</h1>
+      <p>Completa los datos de tu espacio para que más personas puedan encontrarlo.</p>
+    </header>
+
+    <ol class="publication-steps" aria-label="Pasos para publicar">
+      <li class="is-current"><span>1</span><strong>Información</strong></li>
+      <li><span>2</span><strong>Vista previa</strong></li>
+      <li><span>3</span><strong>Publicación</strong></li>
+    </ol>
+
+    <form class="publication-card publish-form">
+      <section class="publish-section" aria-labelledby="room-details-title">
+        <div class="publish-section__heading">
+          <span class="publish-section__icon" aria-hidden="true">01</span>
+          <div>
+            <h2 id="room-details-title">Cuéntanos sobre la habitación</h2>
+            <p>Agrega la información principal de tu espacio.</p>
+          </div>
+        </div>
+        <div class="publish-fields">
+          <div class="form-field publish-field--wide">
+            <label for="room-title">Título de la publicación</label>
+            <input id="room-title" name="titulo" type="text" placeholder="Ej. Habitación amoblada cerca de la PUCP" minlength="8" required>
+          </div>
+          <div class="form-field">
+            <label for="room-district">Distrito</label>
+            <input id="room-district" name="distrito" type="text" placeholder="Ej. San Miguel" required>
+          </div>
+          <div class="form-field">
+            <label for="room-university">Universidad cercana</label>
+            <input id="room-university" name="universidad" type="text" placeholder="Ej. PUCP" required>
+          </div>
+          <div class="form-field">
+            <label for="room-price">Precio mensual (S/)</label>
+            <input id="room-price" name="precio" type="number" min="1" placeholder="980" required>
+          </div>
+          <div class="form-field">
+            <label for="room-type">Tipo de habitación</label>
+            <input id="room-type" name="tipo" type="text" placeholder="Individual" required>
+          </div>
+          <div class="form-field publish-field--wide">
+            <label for="room-description">Descripción</label>
+            <textarea id="room-description" name="descripcion" rows="4" placeholder="Describe la habitación, sus ambientes y las condiciones de convivencia." minlength="20" required></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="publish-section" aria-labelledby="room-photo-title">
+        <div class="publish-section__heading">
+          <span class="publish-section__icon" aria-hidden="true">02</span>
+          <div>
+            <h2 id="room-photo-title">Fotos de tu espacio</h2>
+            <p>Una buena foto ayuda a que las personas conozcan mejor tu habitación.</p>
+          </div>
+        </div>
+        <div class="publish-photo-note">
+          <img src="../../img/rooms/habitacion-01.png" alt="Ejemplo de habitación publicada en ShareRoom">
+          <div class="publish-photo-note__content">
+            <p>La publicación incluirá fotos de la habitación. Puedes revisarla antes de confirmar.</p>
+            <span class="publish-photo-add" aria-disabled="true">
+              <span aria-hidden="true">+</span>
+              Agregar fotos
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div class="publish-form__actions">
+        <a class="btn btn--outline" href="home.html">Cancelar</a>
+        <a class="btn btn--primary" href="publish-preview.html">Vista previa</a>
+      </div>
+    </form>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="publish-room.html" aria-current="page" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
+    <a href="my-listings.html" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>

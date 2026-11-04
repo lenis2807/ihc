@@ -1,11 +1,11 @@
 # EventSales
 
-Sitio web responsivo para vender entradas a eventos.
+Sitio web responsivo para buscar habitaciones, encontrar roomies compatibles y publicar alojamientos.
 
-> Solo **Datos** y **Estructura** son de este proyecto. El resto sirve de punto de partida para cualquier proyecto HTML y CSS con Figma.
+> Solo **Datos** y **Estructura** son específicos de ShareRoom. El resto sirve de punto de partida para cualquier proyecto HTML y CSS basado en Figma.
 
 ## Datos
-- Figma: hhttps://www.figma.com/design/zbufOF9JglQiiXSpTJnLyq/ShareRoom?node-id=12-2&m=dev
+- Figma: https://www.figma.com/design/zbufOF9JglQiiXSpTJnLyq/ShareRoom?node-id=12-2&m=dev
 - UI: HTML y CSS puros
 
 
