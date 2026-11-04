@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro de notificaciones de ShareRoom.">
+  <title>Notificaciones | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="notifications-page">
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio">
+        <span class="site-logo__symbol" aria-hidden="true">SR</span>
+        <span>ShareRoom</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="home.html">Inicio</a>
+        <a href="home.html#roomies-heading">Buscar roomies</a>
+        <a href="home.html#rooms-heading">Habitaciones</a>
+        <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+      </nav>
+      <div class="member-header__actions">
+        <a class="member-header__icon" href="favorites.html" aria-label="Favoritos">♡</a>
+        <a class="member-header__icon notifications-header__active" href="notifications.html" aria-label="Notificaciones">
+          <img src="../../img/icons/notificaciones.svg" alt="">
+        </a>
+        <a class="btn btn--outline member-header__publish" href="home.html#rooms-heading">Publicar habitación</a>
+        <a class="member-header__avatar" href="profile.html" aria-label="Mi perfil">AV</a>
+      </div>
+      <a class="site-header__mobile-alert" href="notifications.html" aria-label="Notificaciones">
+        <img src="../../img/icons/notificaciones.svg" alt="">
+      </a>
+    </div>
+  </header>
+
+  <main class="notifications">
+    <div class="notifications__heading">
+      <div>
+        <h1>Notificaciones</h1>
+        <p>Novedades sobre mensajes, favoritos y tus publicaciones.</p>
+      </div>
+      <a class="btn btn--outline" href="#actividad">Marcar todo como leído</a>
+    </div>
+
+    <div class="notifications__layout">
+      <section class="notifications__activity" id="actividad" aria-labelledby="activity-title">
+        <h2 id="activity-title" class="visually-hidden">Actividad reciente</h2>
+        <nav class="notifications__filters" aria-label="Filtrar notificaciones">
+          <a class="is-active" href="#actividad">Todas <span>8</span></a>
+          <a href="#mensajes">Mensajes <span>3</span></a>
+          <a href="#publicaciones">Publicaciones <span>2</span></a>
+          <a href="#sistema">Sistema <span>3</span></a>
+        </nav>
+
+        <p class="notifications__date">Hoy</p>
+        <article class="notification-card notification-card--unread" id="mensajes">
+          <div class="notification-card__avatar" aria-hidden="true">LM</div>
+          <div class="notification-card__body">
+            <div class="notification-card__heading"><strong>Lucía Mendoza te envió un mensaje</strong><time datetime="10:42">10:42</time></div>
+            <p>¡Sí! Podemos coordinar una visita después de las 5:00 p. m.</p>
+            <a class="btn btn--outline" href="home.html#roomies-heading">Responder</a>
+          </div>
+          <span class="notification-card__unread" aria-label="No leída"></span>
+        </article>
+        <article class="notification-card notification-card--unread" id="publicaciones">
+          <div class="notification-card__type notification-card__type--heart" aria-hidden="true">♡</div>
+          <div class="notification-card__body">
+            <div class="notification-card__heading"><strong>Tu habitación guardada bajó de precio</strong><time datetime="09:18">09:18</time></div>
+            <p>Habitación luminosa en Pueblo Libre ahora cuesta S/ 850 al mes.</p>
+            <a class="btn btn--outline" href="home.html#rooms-heading">Ver habitación</a>
+          </div>
+          <span class="notification-card__unread" aria-label="No leída"></span>
+        </article>
+        <article class="notification-card notification-card--unread">
+          <div class="notification-card__type" aria-hidden="true">◉</div>
+          <div class="notification-card__body">
+            <div class="notification-card__heading"><strong>Tu publicación recibió 18 visitas</strong><time datetime="08:05">08:05</time></div>
+            <p>Dormitorio amoblado en San Miguel tuvo más actividad esta semana.</p>
+          </div>
+          <span class="notification-card__unread" aria-label="No leída"></span>
+        </article>
+
+        <p class="notifications__date">Ayer</p>
+        <article class="notification-card">
+          <div class="notification-card__avatar" aria-hidden="true">JG</div>
+          <div class="notification-card__body">
+            <div class="notification-card__heading"><strong>Joaquín guardó tu publicación</strong><time datetime="ayer-1830">Ayer, 18:30</time></div>
+            <p>Joaquín tiene 87% de compatibilidad con tus preferencias.</p>
+          </div>
+        </article>
+        <article class="notification-card">
+          <div class="notification-card__type notification-card__type--verified" aria-hidden="true">✓</div>
+          <div class="notification-card__body">
+            <div class="notification-card__heading"><strong>Tu identidad fue verificada</strong><time datetime="ayer-1216">Ayer, 12:16</time></div>
+            <p>Tu perfil ya muestra la insignia de verificación.</p>
+          </div>
+        </article>
+      </section>
+
+      <aside class="notifications__preferences" aria-labelledby="preference-title">
+        <section class="notifications__preference-card">
+          <h2 id="preference-title">Qué quieres recibir</h2>
+          <label class="notification-preference"><span><strong>Mensajes nuevos</strong><small>Avisos cuando alguien te escribe.</small></span><input type="checkbox" checked><i aria-hidden="true"></i></label>
+          <label class="notification-preference"><span><strong>Actividad en publicaciones</strong><small>Guardados, visitas y cambios de estado.</small></span><input type="checkbox" checked><i aria-hidden="true"></i></label>
+          <label class="notification-preference"><span><strong>Nuevos matches</strong><small>Roomies y habitaciones recomendadas.</small></span><input type="checkbox" checked><i aria-hidden="true"></i></label>
+          <label class="notification-preference"><span><strong>Consejos de ShareRoom</strong><small>Recomendaciones y novedades.</small></span><input type="checkbox"><i aria-hidden="true"></i></label>
+        </section>
+        <section class="notifications__channels">
+          <h2>Canales activos</h2>
+          <p>Aplicación <b>✓</b> · Correo <b>✓</b> · SMS <span>—</span></p>
+          <a href="profile.html#cuenta">Editar canales</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <span aria-label="Publicar, próximamente" aria-disabled="true"><img src="../../img/icons/publicar.svg" alt=""></span>
+    <span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span>
+    <a href="profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>
