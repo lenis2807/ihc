@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Habitaciones en San Miguel | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="../account/home.html">
+        <span class="site-logo__symbol">SR</span>
+        ShareRoom
+      </a>
+
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../account/home.html">Inicio</a>
+        <a href="#">Buscar roomies</a>
+        <a class="site-nav__link--active" href="search.html" aria-current="page">Habitaciones</a>
+        <a href="#">Mensajes</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__icon" href="#" aria-label="Favoritos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
+        </a>
+        <a class="site-header__icon" href="#" aria-label="Notificaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+        </a>
+        <a class="btn btn--outline" href="#">Publicar habitación</a>
+        <a class="site-header__avatar" href="#" aria-label="Mi perfil">AV</a>
+      </div>
+
+      <a class="site-header__mobile-alert" href="#" aria-label="Notificaciones">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Buscador de ubicación -->
+    <section class="room-search" aria-label="Buscar por ubicación">
+      <div class="room-search__inner">
+        <form class="room-search__form" action="search.html">
+          <div class="form-field room-search__field">
+            <label for="ubicacion">
+              <span class="label-desktop">Ubicación</span>
+              <span class="label-mobile">Universidad, distrito o zona</span>
+            </label>
+            <div class="search-panel__input-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+              <input id="ubicacion" name="ubicacion" type="text" value="PUCP, San Miguel" required>
+            </div>
+          </div>
+
+          <ul class="chips room-search__tabs">
+            <li><a class="chip" href="#">Roomies</a></li>
+            <li><a class="chip chip--active" href="search.html" aria-current="page">Habitaciones</a></li>
+          </ul>
+
+          <a class="btn btn--primary room-search__submit" href="search.html">Actualizar búsqueda</a>
+        </form>
+
+        <!-- Filtros rápidos (solo móvil) -->
+        <ul class="chips room-search__quick">
+          <li><a class="chip chip--active" href="#filtros">Filtros 3</a></li>
+          <li><a class="chip" href="#filtros">Precio</a></li>
+          <li><a class="chip" href="#filtros">Privada</a></li>
+          <li><a class="chip" href="#filtros">Más</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="aviso" id="aviso-verificadas">
+  <p class="aviso__text">Todas las habitaciones están verificadas.</p>
+  <a class="aviso__enlace" href="#">Ver más</a>
+</section> 
+
+    <!-- Cuadrícula de resultados -->
+    <div class="results">
+
+      <!-- Panel de filtros (escritorio) -->
+      <aside class="filters" id="filtros" aria-labelledby="filtros-title">
+        <form class="filters__form" action="search.html">
+          <div class="filters__head">
+            <h2 class="filters__title" id="filtros-title">Filtros</h2>
+            <a class="filters__clear" href="search.html">Limpiar</a>
+          </div>
+
+          <!-- Estado de error: agregar la clase form-field--error a este bloque -->
+          <div class="form-field filters__budget">
+            <label for="presupuesto">Presupuesto mensual</label>
+            <input id="presupuesto" name="presupuesto" type="text" value="S/ 500 — S/ 1,500" pattern="S/ ?[0-9][0-9,]*( ?— ?S/ ?[0-9][0-9,]*)?" aria-describedby="presupuesto-error">
+            <p class="form-field__error" id="presupuesto-error">Ingrese un monto válido</p>
+          </div>
+
+          <fieldset class="filters__group">
+            <legend>Tipo de espacio</legend>
+            <label class="filters__option"><input type="checkbox" name="tipo" value="privada" checked> Habitación privada</label>
+            <label class="filters__option"><input type="checkbox" name="tipo" value="compartida"> Habitación compartida</label>
+            <label class="filters__option"><input type="checkbox" name="tipo" value="minidepartamento"> Minidepartamento</label>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend>Servicios</legend>
+            <label class="filters__option"><input type="checkbox" name="servicios" value="wifi" checked> WiFi</label>
+            <label class="filters__option"><input type="checkbox" name="servicios" value="amoblado" checked> Amoblado</label>
+            <label class="filters__option"><input type="checkbox" name="servicios" value="bano-propio"> Baño propio</label>
+            <label class="filters__option"><input type="checkbox" name="servicios" value="lavanderia"> Lavandería</label>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend>Convivencia</legend>
+            <label class="filters__option"><input type="checkbox" name="convivencia" value="mascotas"> Acepta mascotas</label>
+            <label class="filters__option"><input type="checkbox" name="convivencia" value="no-fumar" checked> No fumar</label>
+            <label class="filters__option"><input type="checkbox" name="convivencia" value="sin-fiestas"> Sin fiestas</label>
+          </fieldset>
+
+          <a class="btn btn--primary filters__submit" href="search.html">Aplicar filtros</a>
+        </form>
+      </aside>
+
+      <!-- Título y cantidad de resultados -->
+      <section class="results__head" aria-labelledby="results-title">
+        <h1 class="results__title" id="results-title">
+          <span class="label-desktop">Habitaciones en San Miguel</span>
+          <span class="label-mobile">48 habitaciones</span>
+        </h1>
+        <p class="results__meta">
+          <span class="label-desktop">48 resultados · </span>Más recientes ↓
+        </p>
+      </section>
+
+      <!-- Lista de habitaciones (estado vacío: agregar results--empty a .results) -->
+      <section class="results__list" aria-label="Habitaciones encontradas">
+        <article class="room-card">
+          <a class="room-card__link" href="detail.html">
+            <img class="room-card__img" src="../../img/rooms/room-01.png" alt="Habitación amplia con cama y escritorio cerca de la PUCP">
+            <div class="room-card__body">
+              <h2 class="room-card__title">Habitación amplia cerca a PUCP</h2>
+              <p class="room-card__place">San Miguel · A 8 min caminando</p>
+              <p class="room-card__services">WiFi · Amoblada · Baño propio</p>
+              <p class="room-card__price">S/ 980 <span>/ mes</span></p>
+            </div>
+          </a>
+        </article>
+
+        <article class="room-card">
+          <a class="room-card__link" href="detail.html">
+            <img class="room-card__img" src="../../img/rooms/room-02.png" alt="Cuarto amoblado con baño propio en Pueblo Libre">
+            <div class="room-card__body">
+              <h2 class="room-card__title">Cuarto amoblado con baño propio</h2>
+              <p class="room-card__place">Pueblo Libre · Servicios incluidos</p>
+              <p class="room-card__services">WiFi · Amoblada · Baño propio</p>
+              <p class="room-card__price">S/ 1,250 <span>/ mes</span></p>
+            </div>
+          </a>
+        </article>
+
+        <article class="room-card">
+          <a class="room-card__link" href="detail.html">
+            <img class="room-card__img" src="../../img/rooms/room-03.png" alt="Habitación tranquila y luminosa en Magdalena">
+            <div class="room-card__body">
+              <h2 class="room-card__title">Ambiente tranquilo y luminoso</h2>
+              <p class="room-card__place">Magdalena · A 3.2 km</p>
+              <p class="room-card__services">WiFi · Amoblada · Cocina</p>
+              <p class="room-card__price">S/ 890 <span>/ mes</span></p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Estado alternativo: sin resultados -->
+        <div class="results__empty">
+          <h2 class="results__empty-title">No se encontraron resultados</h2>
+          <p>Prueba cambiando la zona, el presupuesto o los servicios.</p>
+          <a class="btn btn--outline" href="#filtros">Modificar filtros</a>
+        </div>
+      </section>
+
+      <!-- Roomies sugeridos -->
+      <section class="roomie-suggest" aria-labelledby="roomie-title">
+        <img class="roomie-suggest__img" src="../../img/profiles/andrea.png" alt="Foto de Andrea">
+        <div class="roomie-suggest__body">
+          <h2 class="roomie-suggest__title" id="roomie-title">También podrías interesarte: roomies</h2>
+          <p class="roomie-suggest__meta">Andrea, 24 · Busca en San Miguel · S/ 900</p>
+          <ul class="chips">
+            <li><span class="chip">Ordenado/a</span></li>
+            <li><span class="chip">No fuma</span></li>
+            <li><span class="chip">Estudia</span></li>
+          </ul>
+          <a class="btn btn--outline" href="#">Ver detalle</a>
+        </div>
+      </section>
+
+      <!-- Paginación -->
+      <nav class="pagination" aria-label="Paginación de resultados">
+        <a class="pagination__item pagination__item--active" href="search.html" aria-current="page">1</a>
+        <a class="pagination__item" href="#">2</a>
+        <a class="pagination__item" href="#">3</a>
+        <a class="pagination__item pagination__item--next" href="#">Siguiente →</a>
+      </nav>
+
+      <!-- Botón de mapa (solo móvil) -->
+      <a class="btn btn--outline results__map-link" href="#mapa">Ver mapa</a>
+
+      <!-- Mapa -->
+      <aside class="map" id="mapa" aria-labelledby="mapa-title">
+        <h2 class="map__title" id="mapa-title">Vista de mapa · 48 ubicaciones</h2>
+        <img class="map__img" src="../../img/rooms/map.png" alt="Mapa con las ubicaciones de las habitaciones en San Miguel y distritos cercanos">
+        <p class="map__zones">Pueblo Libre · San Miguel · Jesús María</p>
+        <ul class="chips map__prices">
+          <li><a class="chip chip--active" href="#">S/ 980</a></li>
+          <li><a class="chip" href="#">S/ 1,250</a></li>
+          <li><a class="chip" href="#">S/ 890</a></li>
+        </ul>
+        <a class="btn btn--outline map__zone-btn" href="#">En esta zona</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación inferior">
+    <!-- Copia aquí los mismos <a><img></a> de la navegación inferior de pages/account/home.html (Buscar activo) -->
+  </nav>
+
+</body>
+</html>

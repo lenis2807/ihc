@@ -2678,7 +2678,6 @@ h1, h2, h3, p {
 }
 
 /* =====================================
-<<<<<<< HEAD
    PUBLICAR Y ADMINISTRAR HABITACIONES
 ===================================== */
 
@@ -3521,7 +3520,7 @@ h1, h2, h3, p {
     .applicant-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-=======
+/* ====================================
    PERFIL Y PREFERENCIAS
 ===================================== */
 .profile-settings-page {
@@ -3888,5 +3887,4 @@ h1, h2, h3, p {
   .room-detail__content { grid-template-columns: minmax(0, 1fr) 350px; gap: 28px; margin-top: 18px; }
   .room-detail__description { min-height: 356px; }
   .room-detail__saved-card { min-height: 486px; }
->>>>>>> develop
 }

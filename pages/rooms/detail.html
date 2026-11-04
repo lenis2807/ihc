@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Habitación luminosa en Pueblo Libre | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="../account/home.html">
+        <span class="site-logo__symbol">SR</span>
+        ShareRoom
+      </a>
+
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../account/home.html">Inicio</a>
+        <a href="#">Buscar roomies</a>
+        <a class="site-nav__link--active" href="search.html" aria-current="page">Habitaciones</a>
+        <a href="#">Mensajes</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__icon" href="#" aria-label="Favoritos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
+        </a>
+        <a class="site-header__icon" href="#" aria-label="Notificaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+        </a>
+        <a class="btn btn--outline" href="#">Publicar habitación</a>
+        <a class="site-header__avatar" href="#" aria-label="Mi perfil">AV</a>
+      </div>
+
+      <a class="site-header__mobile-alert" href="#" aria-label="Notificaciones">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Estados de la pantalla (agregar a este <main>):
+       detail--saved        → muestra "Habitación guardada en favoritos" y el corazón lleno (US05)
+       detail--unavailable  → muestra "Esta habitación ya no está disponible" (US07) -->
+  <main class="detail">
+
+    <!-- Estado: habitación no disponible -->
+    <p class="detail__unavailable" role="alert">Esta habitación ya no está disponible.</p>
+
+    <!-- Ruta de navegación (escritorio) -->
+    <nav class="detail__crumbs" aria-label="Ruta de navegación">
+      <a href="search.html">Habitaciones</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Pueblo Libre</span>
+    </nav>
+
+    <!-- Compartir y guardar -->
+    <div class="detail__actions">
+      <a class="btn btn--outline detail__action" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        Compartir
+      </a>
+      <!-- Visitante: este enlace va a ../auth/login.html -->
+      <a class="btn btn--outline detail__action detail__save" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
+        <span class="detail__save-text detail__save-text--idle">Guardar</span>
+        <span class="detail__save-text detail__save-text--done">Guardado</span>
+      </a>
+      <p class="detail__saved-msg" role="status">Habitación guardada en favoritos.</p>
+    </div>
+
+    <!-- Galería -->
+    <section class="detail__gallery" aria-label="Fotos de la habitación">
+      <img class="detail__photo detail__photo--main" src="../../img/rooms/detail-main.png" alt="Habitación luminosa con cama, escritorio y silla rosada">
+      <p class="detail__counter">1 / 6</p>
+      <img class="detail__photo detail__photo--thumb" src="../../img/rooms/detail-desk.png" alt="Escritorio de madera junto a la ventana">
+      <img class="detail__photo detail__photo--thumb" src="../../img/rooms/detail-closet.png" alt="Clóset con repisa de madera">
+    </section>
+
+    <!-- Información principal -->
+    <section class="detail__info" aria-labelledby="detail-title">
+      <div class="detail__headline">
+        <h1 class="detail__title" id="detail-title">Habitación luminosa en Pueblo Libre</h1>
+        <p class="detail__place">Jr. Andalucía 245 · A 8 min de la PUCP</p>
+        <p class="detail__price">S/ 890 <span>/ mes</span></p>
+      </div>
+
+      <h2 class="detail__subtitle">Lo que ofrece este lugar</h2>
+      <ul class="detail__amenities">
+        <li class="detail__amenity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg>
+          WiFi
+        </li>
+        <li class="detail__amenity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8M3 16h18M6 10V6h12v4"/></svg>
+          Amoblada
+        </li>
+        <li class="detail__amenity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="2"/></svg>
+          Cocina
+        </li>
+        <li class="detail__amenity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="14" r="4"/></svg>
+          Lavandería
+        </li>
+      </ul>
+
+      <p class="detail__description">Habitación privada con buena iluminación, escritorio y clóset. El departamento se comparte con dos estudiantes. Los servicios de agua e internet están incluidos; luz según consumo.</p>
+
+      <ul class="detail__tags">
+        <li class="detail__tag">No fumar</li>
+        <li class="detail__tag">Sin fiestas</li>
+        <li class="detail__tag">Mascotas a conversar</li>
+        <li class="detail__tag">Limpieza semanal</li>
+      </ul>
+    </section>
+
+    <!-- Calificaciones y opiniones -->
+    <section class="detail__ratings" aria-labelledby="ratings-title">
+      <h2 class="detail__subtitle" id="ratings-title">Calificaciones &gt;</h2>
+      <div class="detail__score">
+        <p class="detail__score-number">4.5</p>
+        <div class="detail__score-stars">
+          <p class="detail__stars" aria-label="4.5 de 5 estrellas">★★★★★</p>
+          <p class="detail__score-count">6 Ratings</p>
+        </div>
+      </div>
+
+      <h3 class="detail__opinions-title">Opiniones</h3>
+      <div class="detail__opinions" aria-label="Opiniones de inquilinos anteriores"></div>
+
+      <a class="btn btn--primary detail__review detail__review--mobile" href="review.html">Escribir una reseña</a>
+    </section>
+
+    <!-- Propietario y contacto -->
+    <aside class="detail__side" aria-label="Propietario y contacto">
+      <div class="detail__owner-card">
+        <div class="detail__owner">
+          <img class="detail__owner-img" src="../../img/profiles/carlos.png" alt="Foto de Carlos, propietario">
+          <div>
+            <p class="detail__owner-name">Publicado por Carlos</p>
+            <p class="detail__owner-verified">Identidad verificada</p>
+          </div>
+        </div>
+
+        <div class="form-field detail__date">
+          <label for="fecha-ingreso">Fecha de ingreso</label>
+          <input id="fecha-ingreso" name="fecha-ingreso" type="text" value="15 de octubre" readonly>
+        </div>
+
+        <dl class="detail__costs">
+          <div class="detail__cost"><dt>Renta mensual</dt><dd>S/ 890</dd></div>
+          <div class="detail__cost"><dt>Garantía</dt><dd>S/ 890</dd></div>
+        </dl>
+
+        <a class="btn btn--primary detail__contact" href="contact.html">Contactar al propietario</a>
+        <p class="detail__note">No se realizará ningún cobro todavía</p>
+      </div>
+
+      <a class="btn btn--primary detail__review detail__review--desktop" href="review.html">Escribir una reseña</a>
+    </aside>
+
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación inferior">
+    <!-- Copia aquí los mismos <a><img></a> de la navegación inferior de pages/account/home.html (Buscar activo) -->
+  </nav>
+
+</body>
+</html>
