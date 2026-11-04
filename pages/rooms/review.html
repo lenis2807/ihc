@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Califica tu experiencia | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="../account/home.html">
+        <span class="site-logo__symbol">SR</span>
+        ShareRoom
+      </a>
+
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../account/home.html">Inicio</a>
+        <a href="#">Buscar roomies</a>
+        <a class="site-nav__link--active" href="search.html" aria-current="page">Habitaciones</a>
+        <a href="#">Mensajes</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__icon" href="#" aria-label="Favoritos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
+        </a>
+        <a class="site-header__icon" href="#" aria-label="Notificaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+        </a>
+        <a class="btn btn--outline" href="#">Publicar habitación</a>
+        <a class="site-header__avatar" href="#" aria-label="Mi perfil">AV</a>
+      </div>
+
+      <a class="site-header__mobile-alert" href="#" aria-label="Notificaciones">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="review">
+
+    <!-- Título -->
+    <section class="review__intro">
+      <h1 class="review__title">Califica tu experiencia</h1>
+      <p class="review__subtitle">Tu opinión ayuda a construir una comunidad más confiable.</p>
+    </section>
+
+    <!-- Formulario de evaluación -->
+    <section class="review__main" aria-labelledby="review-card-title">
+      <h2 class="review__card-title" id="review-card-title">Alojamiento para evaluar</h2>
+
+      <article class="review__stay">
+        <img class="review__stay-img" src="../../img/rooms/room-01.png" alt="Habitación luminosa en Pueblo Libre">
+        <div class="review__stay-info">
+          <h3 class="review__stay-title">Habitación luminosa en Pueblo Libre</h3>
+          <p class="review__stay-meta">Anfitriona: Mariana Torres</p>
+          <p class="review__stay-meta">01 mar – 31 ago 2026 · 6 meses</p>
+        </div>
+        <p class="review__badge">Elegible</p>
+      </article>
+
+      <form class="review__form" action="detail.html">
+
+        <!-- Estrellas: 5 botones de opción; la marcada (4) se ve activa -->
+        <fieldset class="review__rating">
+          <legend class="review__label">¿Cómo fue tu experiencia?</legend>
+          <div class="review__rating-row">
+            <div class="review__stars">
+              <input class="review__star-input" type="radio" id="estrella-5" name="calificacion" value="5">
+              <label class="review__star" for="estrella-5"><span class="review__sr">5 estrellas</span>★</label>
+              <input class="review__star-input" type="radio" id="estrella-4" name="calificacion" value="4" checked>
+              <label class="review__star" for="estrella-4"><span class="review__sr">4 estrellas</span>★</label>
+              <input class="review__star-input" type="radio" id="estrella-3" name="calificacion" value="3">
+              <label class="review__star" for="estrella-3"><span class="review__sr">3 estrellas</span>★</label>
+              <input class="review__star-input" type="radio" id="estrella-2" name="calificacion" value="2">
+              <label class="review__star" for="estrella-2"><span class="review__sr">2 estrellas</span>★</label>
+              <input class="review__star-input" type="radio" id="estrella-1" name="calificacion" value="1">
+              <label class="review__star" for="estrella-1"><span class="review__sr">1 estrella</span>★</label>
+            </div>
+            <p class="review__rating-text">4/5 · Muy buena</p>
+          </div>
+        </fieldset>
+
+        <div class="review__field">
+          <label class="review__label" for="comentario">Cuéntanos más</label>
+          <textarea class="review__textarea" id="comentario" name="comentario" rows="4" maxlength="500" required>La habitación fue cómoda y Mariana siempre respondió rápido. La convivencia fue tranquila y los acuerdos se respetaron.</textarea>
+        </div>
+
+        <div class="review__send">
+          <p class="review__note">Tu comentario será visible en el perfil del alojamiento.</p>
+          <a class="btn btn--primary review__submit" href="detail.html">Enviar evaluación</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Tus evaluaciones -->
+    <aside class="review__side" aria-labelledby="review-side-title">
+      <h2 class="review__side-title" id="review-side-title">Tus evaluaciones</h2>
+
+      <article class="review__done">
+        <div class="review__done-head">
+          <h3 class="review__done-title">Evaluación ya registrada</h3>
+          <p class="review__done-score"><span aria-hidden="true">★★★★★</span> 5/5</p>
+        </div>
+        <p class="review__done-meta">Dormitorio amoblado en San Miguel · Diego Salazar</p>
+        <p class="review__done-quote">“Buena comunicación y espacios tal como se mostraban.”</p>
+        <p class="review__done-meta">Enviada el 06 sep 2026</p>
+      </article>
+
+      <article class="review__notice">
+        <svg class="review__icon review__icon--check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+        <svg class="review__icon review__icon--clock" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>
+          <h3 class="review__notice-title">Todavía no puedes calificar</h3>
+          <p class="review__notice-text">Podrás evaluar tu estancia en Miraflores cuando termine el 15 de octubre.</p>
+        </div>
+      </article>
+
+      <article class="review__notice">
+        <svg class="review__icon review__icon--check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+        <div>
+          <h3 class="review__notice-title">Opiniones auténticas</h3>
+          <p class="review__notice-text">Solo puedes calificar una experiencia terminada y cada estancia admite una evaluación.</p>
+        </div>
+      </article>
+    </aside>
+
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación inferior">
+    <!-- Copia aquí los mismos <a><img></a> de la navegación inferior de pages/account/home.html (Perfil activo) -->
+  </nav>
+
+</body>
+</html>
