@@ -4224,3 +4224,371 @@ a.chip:hover {
     padding-inline: 48px;
   }
 }
+
+
+/* =====================================
+   HABITACIONES: CONTACTAR AL PROPIETARIO
+===================================== */
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "crumbs"
+    "gallery"
+    "info"
+    "form";
+  gap: 16px;
+  padding: 16px 16px 32px;
+}
+
+.contact__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  grid-area: crumbs;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact__crumb-last {
+  display: none;
+}
+
+/* Fotos */
+.contact__gallery {
+  grid-area: gallery;
+}
+
+.contact__photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.contact__photo--main {
+  height: 210px;
+  border-radius: 18px;
+}
+
+.contact__photo--thumb {
+  display: none;
+}
+
+/* Resumen de la habitación */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: info;
+  min-width: 0;
+}
+
+.contact__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact__title {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__place {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact__price {
+  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact__chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Propietario (solo móvil) */
+.contact__owner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--mint);
+  border-radius: 14px;
+  color: var(--primary);
+}
+
+.contact__owner-icon {
+  flex: none;
+}
+
+.contact__owner-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__owner-meta {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Formulario */
+.contact__form-card {
+  grid-area: form;
+  min-width: 0;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.contact__form-title {
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.contact__field label {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.contact__textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.contact__textarea:focus {
+  outline: 2px solid var(--hover);
+  outline-offset: 1px;
+}
+
+.contact__submit {
+  width: 100%;
+}
+
+.contact__note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Estado: error bajo el campo */
+.contact__error {
+  display: none;
+  font-size: 12px;
+  color: var(--error);
+}
+
+.contact__field--error input {
+  border-color: var(--error);
+}
+
+.contact__field--error .contact__error {
+  display: block;
+}
+
+/* Estado: mensaje enviado */
+.contact__sent {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--mint);
+  border-radius: 12px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact--sent .contact__sent {
+  display: block;
+}
+
+/* Pie de página (solo escritorio) */
+.contact__footer {
+  display: none;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .contact {
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-areas:
+      "crumbs crumbs"
+      "gallery info"
+      "form form";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 24px 24px 40px;
+  }
+
+  .contact__crumbs {
+    font-size: 12px;
+  }
+
+  .contact__crumb-last {
+    display: inline;
+  }
+
+  .contact__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .contact__photo--main {
+    grid-column: 1 / 3;
+    height: 190px;
+    border-radius: 18px;
+  }
+
+  .contact__photo--thumb {
+    display: block;
+    height: 100px;
+    border-radius: 18px;
+  }
+
+  .contact__title {
+    font-size: 26px;
+  }
+
+  .contact__place {
+    font-size: 11px;
+  }
+
+  .contact__price {
+    margin-top: 4px;
+    font-size: 22px;
+  }
+
+  .contact__subtitle {
+    font-size: 16px;
+  }
+
+  .contact__chip {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .contact__description {
+    font-size: 12px;
+  }
+
+  .contact__owner {
+    display: none;
+  }
+
+  .contact__form-card {
+    max-width: 520px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .contact__form-title {
+    font-size: 18px;
+  }
+
+  .contact__form {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .contact__field label {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .contact__textarea {
+    min-height: 84px;
+    font-size: 12px;
+  }
+
+  .contact__note {
+    font-size: 10px;
+  }
+
+  .contact__footer {
+    display: block;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .contact {
+    grid-template-columns: 280px minmax(0, 1fr) 320px;
+    grid-template-areas:
+      "crumbs crumbs crumbs"
+      "gallery info form";
+    padding-inline: 48px;
+  }
+
+  .contact__photo--main {
+    height: 230px;
+  }
+
+  .contact__photo--thumb {
+    height: 120px;
+  }
+
+  .contact__form-card {
+    max-width: none;
+  }
+}
