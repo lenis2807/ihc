@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Revisa la vista previa de tu habitación en ShareRoom.">
+  <title>Vista previa | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions"><a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
+    </div>
+  </header>
+  <main class="publication-shell">
+    <nav class="publication-breadcrumb" aria-label="Ruta de navegación"><a href="home.html">Inicio</a><span aria-hidden="true">/</span><a href="publish-room.html">Publicar habitación</a><span aria-hidden="true">/</span><span>Vista previa</span></nav>
+    <header class="publication-title">
+      <p class="section-eyebrow">PASO 2 DE 3</p>
+      <h1>Vista previa de publicación</h1>
+      <p>Así verán tu habitación las personas interesadas. Revisa los detalles antes de publicarla.</p>
+    </header>
+    <ol class="publication-steps" aria-label="Pasos para publicar">
+      <li class="is-complete"><span>✓</span><strong>Información</strong></li>
+      <li class="is-current"><span>2</span><strong>Vista previa</strong></li>
+      <li><span>3</span><strong>Publicación</strong></li>
+    </ol>
+    <section class="listing-preview" aria-label="Vista previa de la habitación">
+      <article class="listing-preview__card">
+        <img class="listing-preview__image" src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
+        <div class="listing-preview__body">
+          <div class="listing-preview__topline"><span class="listing-badge">Habitación</span><span class="listing-preview__status">Vista previa</span></div>
+          <h2>Habitación amoblada cerca de la PUCP</h2>
+          <p class="listing-preview__location">San Miguel · Cerca de PUCP</p>
+          <p class="listing-preview__price">S/ 980 <span>/ mes</span></p>
+          <p class="listing-preview__description">Habitación iluminada y amoblada, en un espacio tranquilo con áreas compartidas. Ideal para estudiantes que buscan vivir cerca de la universidad.</p>
+          <ul class="listing-tags" aria-label="Características"><li>Amoblada</li><li>Servicios incluidos</li><li>Áreas compartidas</li></ul>
+          <p class="listing-preview__owner">Publicado por <strong>Andrea Valdez</strong></p>
+        </div>
+      </article>
+    </section>
+    <div class="publish-form__actions preview-actions">
+      <a class="btn btn--outline" href="publish-room.html">Volver a editar</a>
+      <a class="btn btn--primary" href="publish-success.html">Publicar habitación</a>
+    </div>
+  </main>
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="publish-room.html" aria-current="page" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
+    <a href="my-listings.html" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>

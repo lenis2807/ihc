@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Verificación del perfil de ShareRoom.">
+
+    <title>Verificación de perfil | ShareRoom</title>
+
+    <!-- Tipografía Montserrat -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS compartido -->
+    <link rel="stylesheet"
+          href="../../css/styles.css">
+</head>
+
+<body class="auth-page recovery-page verification-page">
+
+    <!-- CABECERA DE ESCRITORIO -->
+    <header class="site-header recovery-desktop-header">
+        <div class="site-header__inner">
+
+            <a class="site-logo"
+               href="../../index.html"
+               aria-label="ShareRoom, volver al inicio">
+                <span class="site-logo__symbol"
+                      aria-hidden="true">SR</span>
+                <span>ShareRoom</span>
+            </a>
+
+            <nav class="site-nav"
+                 aria-label="Navegación principal">
+
+                <a href="../../index.html">Inicio</a>
+
+                <a href="../../index.html#roomies-heading">
+                    Buscar roomies
+                </a>
+
+                <a href="../../index.html#rooms-heading">
+                    Habitaciones
+                </a>
+
+                <span class="nav-unavailable"
+                      aria-disabled="true">
+                    Mensajes
+                </span>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="btn btn--outline"
+                   href="login.html">
+                    Iniciar sesión
+                </a>
+
+                <a class="btn btn--primary"
+                   href="signup.html">
+                    Crear cuenta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CABECERA MÓVIL -->
+    <header class="recovery-mobile-header">
+        <a href="profile-create.html"
+           class="recovery-mobile-header__back"
+           aria-label="Volver a completar perfil">
+
+            <svg width="20" height="20"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <span>Verificación de perfil</span>
+
+        <span class="recovery-mobile-header__alert"
+              aria-label="Notificaciones, próximamente"
+              aria-disabled="true">
+            <img src="../../img/icons/notificaciones.svg"
+                 alt="">
+        </span>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="recovery-main">
+
+        <!-- INFORMACIÓN DE VERIFICACIÓN -->
+        <section class="recovery-promise"
+                 aria-labelledby="verification-heading">
+
+            <span class="recovery-promise__badge">
+                Verificación segura de tu cuenta
+            </span>
+
+            <h1 id="verification-heading">
+                Verifica tu perfil de usuario
+            </h1>
+
+            <p class="verification-promise__description">
+                Te enviaremos un formulario a tu
+                correo registrado.
+            </p>
+
+            <!-- Beneficios visibles en desktop -->
+            <ul class="recovery-benefits">
+                <li>
+                    El formulario caduca en 30 minutos
+                </li>
+
+                <li>
+                    Tus datos permanecen protegidos
+                </li>
+
+                <li>
+                    Puedes solicitar otro correo
+                    si lo necesitas
+                </li>
+            </ul>
+        </section>
+
+        <!-- CONFIRMACIÓN VISUAL DE CORREO -->
+        <section class="recovery-card verification-card"
+                 aria-labelledby="verification-status-heading">
+
+            <div class="recovery-card__status">
+
+                <div class="recovery-card__icon"
+                     aria-hidden="true">
+                    <svg width="40" height="40"
+                         viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.5"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <rect x="5" y="9"
+                              width="38" height="28"
+                              rx="4"/>
+                        <path d="m6 12 18 14 18-14"/>
+                        <path d="m29 34 5 5 9-10"
+                              stroke="#10c9b3"/>
+                    </svg>
+                </div>
+
+                <h2 id="verification-status-heading">
+                    Revisa tu correo
+                </h2>
+
+                <p>
+                    Enviamos un enlace a tu correo
+                    para verificar tu perfil
+                </p>
+
+                <strong class="recovery-card__email">
+                    ana.valdez@gmail.com
+                </strong>
+            </div>
+
+            <!-- INSTRUCCIONES -->
+            <div class="recovery-steps">
+                <h3>Siguientes pasos</h3>
+
+                <ol>
+                    <li>Revisa tu correo personal.</li>
+                    <li>Pulsa “Verificar perfil”.</li>
+                    <li>Completa el formulario enviado.</li>
+                </ol>
+            </div>
+
+            <!-- AVISO DE REENVÍO -->
+            <div class="recovery-resend">
+                <strong>¿No llegó?</strong>
+                <span>Reenviar en 00:42</span>
+            </div>
+
+            <!-- CORREGIR CORREO -->
+            <div class="recovery-change-email">
+                <span class="verification-change__icon"
+                      aria-hidden="true">✎</span>
+
+                <span>¿El correo no es correcto?</span>
+
+                <span class="recovery-change-email__action"
+                      aria-disabled="true">
+                    Cambiar
+                </span>
+            </div>
+
+            <!-- AVISO DE SEGURIDAD MÓVIL -->
+            <div class="recovery-mobile-notice">
+                <span aria-hidden="true">✓</span>
+
+                <div>
+                    <strong>
+                        El formulario caduca en 30 minutos
+                    </strong>
+
+                    <p>
+                        Tus datos permanecen protegidos.
+                        Puedes solicitar otro correo
+                        si lo necesitas.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
