@@ -1,4 +1,3 @@
-
 /* ShareRoom TB3
    HTML y CSS únicamente.
    Referencia Figma: 91:27082 y 91:26196
@@ -3568,6 +3567,8 @@ h1, h2, h3, p {
     .applicant-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+
 /* ====================================
    PERFIL Y PREFERENCIAS
 ===================================== */
@@ -3935,4 +3936,2467 @@ h1, h2, h3, p {
   .room-detail__content { grid-template-columns: minmax(0, 1fr) 350px; gap: 28px; margin-top: 18px; }
   .room-detail__description { min-height: 356px; }
   .room-detail__saved-card { min-height: 486px; }
+}
+
+/* =====================================================
+   PANTALLAS DE IYARI: habitaciones y roomies
+   Pegar UNA sola vez al final de css/styles.css.
+   Antes, borra de styles.css cualquier copia anterior de estas
+   secciones (busca cada título con Ctrl + F) para no duplicarlas.
+===================================================== */
+
+:root {
+  --teal: #14c8aa;
+  --teal-dark: #0b8f7a;
+}
+
+/* =====================================
+   HABITACIONES: RESULTADOS Y FILTROS (US04)
+   Pegar al final de css/styles.css
+===================================== */
+
+/* Chips reutilizables */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+a.chip:hover {
+  border-color: var(--hover);
+}
+
+.chip--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* Cabecera: elementos de usuario autenticado */
+.site-header__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--primary);
+}
+
+.site-header__avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--page);
+  border: 1px solid var(--line);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.site-nav__link--active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Buscador de ubicación */
+.room-search {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.room-search__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+}
+
+.room-search__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.room-search__tabs,
+.room-search__submit {
+  display: none;
+}
+
+/* Cuadrícula de resultados (móvil: una columna) */
+.results {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px 16px;
+}
+
+.results__title {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.results__meta {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.results__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Tarjeta de habitación */
+.room-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.room-card:hover {
+  border-color: var(--hover);
+}
+
+.room-card__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+}
+
+.room-card__img {
+  flex: none;
+  width: 96px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.room-card__body {
+  min-width: 0;
+}
+
+.room-card__title {
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.room-card__place,
+.room-card__services {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.room-card__price {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.room-card__price span {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Estado: sin resultados */
+.results__empty {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.results__empty-title {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.results--empty .room-card {
+  display: none;
+}
+
+.results--empty .results__empty {
+  display: flex;
+}
+
+/* Estado: error de presupuesto */
+.form-field__error {
+  display: none;
+  font-size: 12px;
+  color: var(--error);
+}
+
+.form-field--error input {
+  border-color: var(--error);
+}
+
+.form-field--error .form-field__error {
+  display: block;
+}
+
+/* Roomies sugeridos (en móvil va después del mapa) */
+.roomie-suggest {
+  order: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.roomie-suggest__img {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.roomie-suggest__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.roomie-suggest__title {
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+.roomie-suggest__meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pagination__item {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pagination__item:hover {
+  border-color: var(--hover);
+}
+
+.pagination__item--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* Mapa */
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.map__title {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.map__img {
+  width: 100%;
+  height: 300px;
+  border-radius: 18px;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.map__zones {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.map__prices {
+  justify-content: center;
+}
+
+.map__zone-btn {
+  display: none;
+}
+
+/* Panel de filtros (oculto en móvil) */
+.filters {
+  display: none;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.filters__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filters__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.filters__title {
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.filters__clear {
+  font-size: 12px;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.filters__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.filters__group legend {
+  margin-bottom: 12px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.filters__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.filters__option input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+
+.filters__submit {
+  width: 100%;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .site-header__mobile-alert {
+    display: none;
+  }
+
+  .room-search__inner {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 20px 24px;
+  }
+
+  .room-search__form {
+    flex: 1;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .room-search__field {
+    flex: 1;
+  }
+
+  .room-search__tabs {
+    display: flex;
+    padding-bottom: 12px;
+  }
+
+  .room-search__submit {
+    display: inline-flex;
+  }
+
+  .room-search__quick {
+    display: none;
+  }
+
+  .results {
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-areas:
+      "filters head"
+      "filters list"
+      "filters roomies"
+      "filters pager"
+      "filters map";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 24px;
+  }
+
+  .filters { display: block; grid-area: filters; }
+  .results__head { grid-area: head; }
+  .results__list { grid-area: list; }
+  .roomie-suggest { grid-area: roomies; }
+  .pagination { grid-area: pager; }
+  .map { grid-area: map; }
+
+  .results__map-link {
+    display: none;
+  }
+
+  .results__title {
+    font-size: 28px;
+  }
+
+  .room-card__img {
+    width: 110px;
+    height: 104px;
+  }
+
+  .room-card__price {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .room-search__inner {
+    padding-inline: 48px;
+  }
+
+  .results {
+    grid-template-columns: 260px minmax(0, 1fr) 250px;
+    grid-template-areas:
+      "filters head map"
+      "filters list map"
+      "filters roomies map"
+      "filters pager map";
+    padding: 24px 48px;
+  }
+
+  .map__zone-btn {
+    display: inline-flex;
+  }
+
+  .map__img {
+    height: 360px;
+  }
+}
+
+/* =====================================
+   HABITACIONES: DETALLE (US07 y US05)
+   Pegar al final de css/styles.css
+===================================== */
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "notice"
+    "gallery"
+    "actions"
+    "info"
+    "ratings"
+    "side";
+  gap: 20px;
+  padding: 0 16px 24px;
+}
+
+.detail__crumbs {
+  display: none;
+  grid-area: crumbs;
+}
+
+/* Estado: habitación no disponible */
+.detail__unavailable {
+  display: none;
+  grid-area: notice;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--error);
+  border-radius: 12px;
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail--unavailable .detail__unavailable {
+  display: block;
+}
+
+.detail--unavailable .detail__contact {
+  background: var(--disabled);
+  border-color: var(--disabled);
+}
+
+/* Galería */
+.detail__gallery {
+  position: relative;
+  grid-area: gallery;
+  margin-inline: -16px;
+}
+
+.detail__photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.detail__photo--main {
+  height: 260px;
+  border-radius: 0 0 18px 18px;
+}
+
+.detail__photo--thumb {
+  display: none;
+}
+
+.detail__counter {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Compartir y guardar */
+.detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  grid-area: actions;
+}
+
+.detail__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail__save:hover {
+  border-color: var(--hover);
+}
+
+/* Estado: guardada en favoritos (US05) */
+.detail--saved .detail__save {
+  background: var(--mint);
+  border-color: var(--primary);
+}
+
+.detail--saved .detail__save svg {
+  fill: currentColor;
+}
+
+.detail__save-text--done,
+.detail--saved .detail__save-text--idle {
+  display: none;
+}
+
+.detail--saved .detail__save-text--done {
+  display: inline;
+}
+
+.detail__saved-msg {
+  display: none;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.detail--saved .detail__saved-msg {
+  display: block;
+}
+
+/* Información principal */
+.detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: info;
+  min-width: 0;
+}
+
+.detail__headline {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "place"
+    "price";
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail__title {
+  grid-area: title;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.detail__place {
+  grid-area: place;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.detail__price {
+  grid-area: price;
+  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.detail__price span {
+  font-size: 30px;
+}
+
+.detail__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Servicios */
+.detail__amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail__amenity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail__amenity svg {
+  display: none;
+}
+
+.detail__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Reglas de convivencia */
+.detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail__tag {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Calificaciones y opiniones */
+.detail__ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: ratings;
+  min-width: 0;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.detail__score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail__score-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.detail__score-stars {
+  text-align: right;
+}
+
+.detail__stars {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--ink);
+}
+
+.detail__score-count {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.detail__opinions-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.detail__opinions {
+  min-height: 80px;
+  background: var(--mint);
+  border-radius: 14px;
+}
+
+.detail__review--desktop {
+  display: none;
+}
+
+/* Propietario y contacto */
+.detail__side {
+  grid-area: side;
+}
+
+.detail__owner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.detail__owner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail__owner-img {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.detail__owner-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.detail__owner-verified {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.detail__costs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.detail__cost {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.detail__cost dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.detail__contact {
+  width: 100%;
+}
+
+.detail__note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .detail {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    grid-template-areas:
+      "notice notice"
+      "crumbs actions"
+      "gallery gallery"
+      "info side"
+      "ratings side";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 24px 24px 40px;
+  }
+
+  .detail__crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .detail__crumbs [aria-current="page"] {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .detail__actions {
+    justify-content: flex-end;
+  }
+
+  .detail__gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 262px;
+    gap: 8px;
+    height: 255px;
+    margin-inline: 0;
+  }
+
+  .detail__photo--main {
+    grid-row: 1 / 3;
+    height: 100%;
+    border-radius: 18px;
+  }
+
+  .detail__photo--thumb {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .detail__counter {
+    display: none;
+  }
+
+  .detail__headline {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title price"
+      "place place";
+    align-items: start;
+    gap: 4px 16px;
+  }
+
+  .detail__title {
+    font-size: 24px;
+  }
+
+  .detail__price {
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  .detail__price span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .detail__subtitle {
+    font-size: 16px;
+  }
+
+  .detail__amenities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .detail__amenity {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .detail__amenity svg {
+    display: block;
+  }
+
+  .detail__description {
+    font-size: 12px;
+  }
+
+  .detail__tag {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .detail__ratings {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .detail__score {
+    justify-content: flex-start;
+    gap: 200px;
+  }
+
+  .detail__score-number {
+    font-size: 24px;
+  }
+
+  .detail__stars {
+    font-size: 22px;
+  }
+
+  .detail__score-count {
+    font-size: 12px;
+  }
+
+  .detail__opinions-title {
+    font-size: 14px;
+  }
+
+  .detail__review--mobile {
+    display: none;
+  }
+
+  .detail__review--desktop {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .detail {
+    padding-inline: 48px;
+  }
+
+  .detail__gallery {
+    height: 255px;
+  }
+}
+
+/* =====================================
+   HABITACIONES: CALIFICAR EXPERIENCIA
+   Pegar al final de css/styles.css
+
+   ANTES: agrega estas dos variables dentro de :root,
+   al inicio de styles.css (copia el color exacto del Figma):
+     --teal: #14c8aa;
+     --teal-dark: #0b8f7a;
+===================================== */
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.review {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "main"
+    "side";
+  gap: 20px;
+  padding: 24px 16px 32px;
+}
+
+.review__intro {
+  grid-area: intro;
+}
+
+.review__title {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.review__subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* Bloque del formulario */
+.review__main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-area: main;
+  min-width: 0;
+}
+
+.review__card-title {
+  display: none;
+}
+
+/* Alojamiento a evaluar */
+.review__stay {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.review__stay-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: var(--white);
+}
+
+.review__stay-title {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.review__stay-meta {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.review__badge {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Formulario */
+.review__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review__rating {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.review__label {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.review__rating-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Estrellas: el orden en el HTML es 5 a 1 y se muestra de 1 a 5 */
+.review__stars {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.review__star-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.review__star {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--disabled);
+  cursor: pointer;
+}
+
+.review__star-input:checked ~ .review__star,
+.review__star:hover,
+.review__star:hover ~ .review__star {
+  color: var(--teal);
+}
+
+.review__star-input:focus-visible + .review__star {
+  outline: 2px solid var(--hover);
+  outline-offset: 2px;
+}
+
+.review__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.review__rating-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.review__field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review__textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.review__textarea:focus {
+  outline: 2px solid var(--hover);
+  outline-offset: 1px;
+}
+
+.review__textarea:invalid {
+  border-color: var(--error);
+}
+
+.review__send {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review__note {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.review__submit {
+  width: 100%;
+}
+
+/* Tus evaluaciones */
+.review__side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: side;
+  min-width: 0;
+}
+
+.review__side-title {
+  display: none;
+}
+
+.review__done {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.review__done-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review__done-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.review__done-score {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.review__done-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.review__done-quote {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* Avisos */
+.review__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--mint);
+  border-radius: 14px;
+  color: var(--primary);
+}
+
+.review__icon {
+  flex: none;
+}
+
+.review__icon--clock {
+  display: none;
+}
+
+.review__notice-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.review__notice-text {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .review {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    grid-template-areas:
+      "intro intro"
+      "main side";
+    align-items: start;
+    gap: 20px 24px;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 40px 24px 48px;
+  }
+
+  .review__title {
+    font-size: 26px;
+  }
+
+  .review__subtitle {
+    font-size: 13px;
+  }
+
+  .review__main {
+    gap: 16px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+  }
+
+  .review__card-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .review__stay {
+    flex-direction: row;
+    align-items: center;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+  }
+
+  .review__stay-img {
+    flex: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+  }
+
+  .review__stay-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review__stay-title {
+    font-size: 14px;
+  }
+
+  .review__stay-meta {
+    margin-top: 2px;
+    font-size: 10px;
+  }
+
+  .review__badge {
+    padding: 5px 12px;
+    background: var(--primary);
+    border-radius: 999px;
+    color: var(--white);
+    font-size: 10px;
+  }
+
+  .review__form {
+    gap: 14px;
+  }
+
+  .review__rating {
+    gap: 8px;
+  }
+
+  .review__label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .review__rating-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .review__star {
+    font-size: 30px;
+  }
+
+  .review__rating-text {
+    font-size: 11px;
+  }
+
+  .review__field {
+    gap: 8px;
+  }
+
+  .review__textarea {
+    min-height: 76px;
+    font-size: 13px;
+  }
+
+  .review__send {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .review__note {
+    font-size: 10px;
+  }
+
+  .review__submit {
+    width: auto;
+  }
+
+  .review__side {
+    gap: 12px;
+  }
+
+  .review__side-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .review__done {
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .review__done-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .review__done-title {
+    font-size: 13px;
+  }
+
+  .review__done-score {
+    font-size: 11px;
+  }
+
+  .review__done-meta {
+    font-size: 10px;
+  }
+
+  .review__done-quote {
+    font-size: 12px;
+  }
+
+  .review__notice {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .review__icon--check {
+    display: none;
+  }
+
+  .review__icon--clock {
+    display: block;
+  }
+
+  .review__notice-title {
+    font-size: 12px;
+  }
+
+  .review__notice-text {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .review {
+    padding-inline: 48px;
+  }
+}
+
+/* =====================================
+   HABITACIONES: CONTACTAR AL PROPIETARIO
+   Pegar al final de css/styles.css
+===================================== */
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "crumbs"
+    "gallery"
+    "info"
+    "form";
+  gap: 16px;
+  padding: 16px 16px 32px;
+}
+
+.contact__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  grid-area: crumbs;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact__crumb-last {
+  display: none;
+}
+
+/* Fotos */
+.contact__gallery {
+  grid-area: gallery;
+}
+
+.contact__photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.contact__photo--main {
+  height: 210px;
+  border-radius: 18px;
+}
+
+.contact__photo--thumb {
+  display: none;
+}
+
+/* Resumen de la habitación */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: info;
+  min-width: 0;
+}
+
+.contact__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact__title {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__place {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact__price {
+  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact__chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Propietario (solo móvil) */
+.contact__owner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--mint);
+  border-radius: 14px;
+  color: var(--primary);
+}
+
+.contact__owner-icon {
+  flex: none;
+}
+
+.contact__owner-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__owner-meta {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Formulario */
+.contact__form-card {
+  grid-area: form;
+  min-width: 0;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.contact__form-title {
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.contact__field label {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.contact__textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.contact__textarea:focus {
+  outline: 2px solid var(--hover);
+  outline-offset: 1px;
+}
+
+.contact__submit {
+  width: 100%;
+}
+
+.contact__note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Estado: error bajo el campo */
+.contact__error {
+  display: none;
+  font-size: 12px;
+  color: var(--error);
+}
+
+.contact__field--error input {
+  border-color: var(--error);
+}
+
+.contact__field--error .contact__error {
+  display: block;
+}
+
+/* Estado: mensaje enviado */
+.contact__sent {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--mint);
+  border-radius: 12px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact--sent .contact__sent {
+  display: block;
+}
+
+/* Pie de página (solo escritorio) */
+.contact__footer {
+  display: none;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .contact {
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-areas:
+      "crumbs crumbs"
+      "gallery info"
+      "form form";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 24px 24px 40px;
+  }
+
+  .contact__crumbs {
+    font-size: 12px;
+  }
+
+  .contact__crumb-last {
+    display: inline;
+  }
+
+  .contact__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .contact__photo--main {
+    grid-column: 1 / 3;
+    height: 190px;
+    border-radius: 18px;
+  }
+
+  .contact__photo--thumb {
+    display: block;
+    height: 100px;
+    border-radius: 18px;
+  }
+
+  .contact__title {
+    font-size: 26px;
+  }
+
+  .contact__place {
+    font-size: 11px;
+  }
+
+  .contact__price {
+    margin-top: 4px;
+    font-size: 22px;
+  }
+
+  .contact__subtitle {
+    font-size: 16px;
+  }
+
+  .contact__chip {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .contact__description {
+    font-size: 12px;
+  }
+
+  .contact__owner {
+    display: none;
+  }
+
+  .contact__form-card {
+    max-width: 520px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .contact__form-title {
+    font-size: 18px;
+  }
+
+  .contact__form {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .contact__field label {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .contact__textarea {
+    min-height: 84px;
+    font-size: 12px;
+  }
+
+  .contact__note {
+    font-size: 10px;
+  }
+
+  .contact__footer {
+    display: block;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .contact {
+    grid-template-columns: 280px minmax(0, 1fr) 320px;
+    grid-template-areas:
+      "crumbs crumbs crumbs"
+      "gallery info form";
+    padding-inline: 48px;
+  }
+
+  .contact__photo--main {
+    height: 230px;
+  }
+
+  .contact__photo--thumb {
+    height: 120px;
+  }
+
+  .contact__form-card {
+    max-width: none;
+  }
+}
+
+/* =====================================
+   ROOMIES: BUSCAR ROOMIES
+   Pegar al final de css/styles.css
+
+   Usa las variables --teal y --teal-dark. Si todavía no las
+   tienes en :root (al inicio de styles.css), agrégalas una sola vez:
+     --teal: #14c8aa;
+     --teal-dark: #0b8f7a;
+===================================== */
+
+/* Barra superior (solo móvil) y cabecera completa (solo escritorio) */
+.roomies__topbar {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.roomies__topbar-back,
+.roomies__topbar-bell {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+
+.roomies__topbar-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.site-header--desktop {
+  display: none;
+}
+
+/* Cuadrícula de la pantalla (móvil: una columna) */
+.roomies {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "profile"
+    "about"
+    "compat"
+    "others";
+  gap: 16px;
+  padding: 24px 16px 32px;
+}
+
+/* Título y buscador */
+.roomies__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: intro;
+}
+
+.roomies__title {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__subtitle {
+  display: none;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.roomies__search {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roomies__field label {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.roomies__input-wrap {
+  position: relative;
+}
+
+.roomies__input-wrap svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--ink);
+}
+
+.roomies__input-wrap input {
+  padding-left: 42px;
+}
+
+.roomies__submit {
+  width: 100%;
+}
+
+.roomies__meta {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.roomies__meta-desktop {
+  display: none;
+}
+
+/* Tarjetas base */
+.roomies__profile,
+.roomies__about,
+.roomies__compat,
+.roomies__card {
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+/* Roomie recomendado */
+.roomies__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  grid-area: profile;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.roomies__avatar {
+  flex: none;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.roomies__profile-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.roomies__name {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__meta-line {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* Chips */
+.roomies__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roomies__chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.roomies__chip--dark {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.roomies__chip--desktop {
+  display: none;
+}
+
+/* Acerca de mí */
+.roomies__about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: about;
+  padding: 24px 20px;
+}
+
+.roomies__card-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.roomies__message {
+  width: 100%;
+}
+
+/* Compatibilidad */
+.roomies__compat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: compat;
+  padding: 24px 20px;
+}
+
+.roomies__compat-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.roomies__compat-total {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.roomies__compat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roomies__compat-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+}
+
+.roomies__compat-item label {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.roomies__compat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__bar {
+  grid-column: 1 / 3;
+  width: 100%;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--teal);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.roomies__bar::-webkit-progress-bar {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.roomies__bar::-webkit-progress-value {
+  background: var(--teal);
+  border-radius: 999px;
+}
+
+.roomies__bar::-moz-progress-bar {
+  background: var(--teal);
+  border-radius: 999px;
+}
+
+/* Otros roomies */
+.roomies__others {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: others;
+}
+
+.roomies__card {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-areas:
+    "img body"
+    "img view";
+  gap: 8px 16px;
+  align-items: start;
+  padding: 20px;
+}
+
+.roomies__mini-img {
+  grid-area: img;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--mint);
+}
+
+.roomies__initials {
+  display: none;
+}
+
+.roomies__card-body {
+  grid-area: body;
+  min-width: 0;
+}
+
+.roomies__card-name {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.roomies__card-meta {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.roomies__match {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.roomies__view {
+  grid-area: view;
+  justify-self: start;
+}
+
+/* Pie de página (solo escritorio) */
+.roomies__footer {
+  display: none;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+
+  .roomies__topbar {
+    display: none;
+  }
+
+  .site-header--desktop {
+    display: block;
+  }
+
+  .roomies {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    grid-template-areas:
+      "intro intro"
+      "profile compat"
+      "about ."
+      "others others";
+    align-items: start;
+    gap: 20px 24px;
+    padding: 32px 24px 48px;
+  }
+
+  .roomies__title {
+    font-size: 32px;
+  }
+
+  .roomies__subtitle {
+    display: block;
+  }
+
+  .roomies__search {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .roomies__field {
+    flex: 1;
+  }
+
+  .roomies__field label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .roomies__submit {
+    width: auto;
+  }
+
+  .roomies__meta {
+    font-size: 12px;
+  }
+
+  .roomies__meta-desktop {
+    display: inline;
+  }
+
+  .roomies__meta-mobile {
+    display: none;
+  }
+
+  .roomies__profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .roomies__avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .roomies__profile-body {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .roomies__name {
+    font-size: 26px;
+  }
+
+  .roomies__meta-line {
+    font-size: 13px;
+  }
+
+  .roomies__chip {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .roomies__chip--first {
+    order: 1;
+  }
+
+  .roomies__chip--desktop {
+    display: block;
+    order: 2;
+  }
+
+  .roomies__about {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .roomies__card-title {
+    font-size: 22px;
+  }
+
+  .roomies__about-text {
+    font-size: 13px;
+  }
+
+  .roomies__message {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .roomies__compat {
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .roomies__compat .roomies__card-title {
+    font-size: 16px;
+  }
+
+  .roomies__compat-total {
+    font-size: 20px;
+  }
+
+  .roomies__compat-list {
+    gap: 10px;
+  }
+
+  .roomies__compat-item label,
+  .roomies__compat-value {
+    font-size: 10px;
+  }
+
+  .roomies__others {
+    flex-direction: row;
+  }
+
+  .roomies__card {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 14px;
+  }
+
+  .roomies__mini-img {
+    display: none;
+  }
+
+  .roomies__initials {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--page);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .roomies__card-body {
+    flex: 1;
+  }
+
+  .roomies__card-name {
+    font-size: 15px;
+  }
+
+  .roomies__card-meta {
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .roomies__match {
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .roomies__footer {
+    display: block;
+  }
+}
+
+@media (min-width: 1100px) {
+
+  .roomies {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    padding-inline: 48px;
+  }
+}
+
+/* Detalle: ajuste de la galería en escritorio */
+@media (min-width: 768px) {
+  .detail__gallery {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+  }
+
+  .detail__photo--main {
+    min-height: 0;
+  }
 }
