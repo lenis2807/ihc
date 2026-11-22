@@ -6400,3 +6400,556 @@ a.chip:hover {
     min-height: 0;
   }
 }
+
+
+/* =====================================
+   SHARE ROOM - SUSCRIPCIONES
+===================================== */
+
+/* PÁGINA */
+.subscription-page {
+    min-height: 100vh;
+    padding-bottom: 0;
+    background: var(--page);
+}
+
+/* CABECERA */
+.subscription-header .site-header__mobile-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-header .site-header__mobile-alert img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* =====================================
+   HERO PREMIUM - MÓVIL
+===================================== */
+
+.subscription-hero {
+    background: var(--mint);
+}
+
+.subscription-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+}
+
+.subscription-hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 0;
+}
+
+.subscription-hero__eyebrow {
+    color: #12386d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subscription-hero h1 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.subscription-hero__description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* BOTONES DEL HERO */
+.subscription-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.subscription-hero__actions .btn {
+    width: 100%;
+    min-height: 44px;
+    font-size: 14px;
+}
+
+/* TARJETA DE HABITACIÓN */
+.subscription-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+    padding: 0;
+}
+
+.subscription-feature__image {
+    display: block;
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.subscription-feature h2 {
+    color: var(--ink);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.subscription-feature p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* =====================================
+   BENEFICIOS DEL PLAN - MÓVIL
+===================================== */
+
+.subscription-benefits {
+    padding: 16px;
+    background: var(--page);
+}
+
+.subscription-benefits__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subscription-benefits__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.subscription-benefits__eyebrow {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subscription-benefits h2 {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.subscription-benefits__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+
+.subscription-benefit {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.subscription-benefit h3 {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.subscription-benefit p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+/* =====================================
+   SOLICITUD DE INFORMACIÓN - MÓVIL
+===================================== */
+
+.subscription-contact {
+    padding: 16px;
+    background: var(--page);
+}
+
+.subscription-contact__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+}
+
+.subscription-contact__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subscription-contact__intro h2 {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.subscription-contact__intro p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.subscription-contact__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* FORMULARIO */
+.subscription-form {
+    width: 100%;
+}
+
+.subscription-form__row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.subscription-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.subscription-form__field label {
+    color: var(--ink);
+    font-size: 14px;
+}
+
+.subscription-form__field input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px;
+
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    color: var(--ink);
+    font: 400 14px/1.45 var(--font);
+}
+
+.subscription-form__field input::placeholder {
+    color: var(--muted);
+}
+
+.subscription-form__field input:focus-visible {
+    outline: 2px solid var(--hover);
+    outline-offset: 2px;
+}
+
+.subscription-form__submit {
+    width: 100%;
+    min-height: 44px;
+    font-size: 14px;
+}
+
+/* Botón visual sin envío real */
+.subscription-form__submit:disabled {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   FOOTER DE SUSCRIPCIONES - MÓVIL
+===================================== */
+
+.subscription-footer {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.subscription-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+}
+
+.subscription-footer__about,
+.subscription-footer__links,
+.subscription-footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.subscription-footer h2 {
+    font-size: 20px;
+    color: var(--white);
+}
+
+.subscription-footer h3 {
+    font-size: 16px;
+    color: var(--white);
+}
+
+.subscription-footer p,
+.subscription-footer nav {
+    color: var(--mint);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.subscription-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.subscription-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   SUSCRIPCIONES - DESKTOP
+===================================== */
+
+@media (min-width: 768px) {
+
+    /* CABECERA */
+    .subscription-header .site-header__mobile-alert {
+        display: none;
+    }
+
+    .subscription-header .subscription-header__active {
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    /* HERO */
+    .subscription-hero__inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        min-height: 360px;
+        padding: 48px 40px;
+    }
+
+    .subscription-hero__content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .subscription-hero h1 {
+        font-size: 36px;
+        line-height: 1.08;
+    }
+
+    .subscription-hero__description {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .subscription-hero__actions {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .subscription-hero__actions .btn {
+        width: auto;
+        min-height: 42px;
+        font-size: 13px;
+    }
+
+    /* TARJETA DE HABITACIÓN */
+    .subscription-feature {
+        flex: 0 1 40%;
+        padding: 24px;
+        gap: 14px;
+
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+    }
+
+    .subscription-feature__image {
+        border-radius: 12px;
+    }
+
+    .subscription-feature h2 {
+        color: var(--primary);
+    }
+
+    .subscription-feature p {
+        font-size: 12px;
+    }
+
+    /* BENEFICIOS */
+    .subscription-benefits {
+        padding: 16px 40px;
+    }
+
+    .subscription-benefits__inner {
+        padding: 20px 24px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+    }
+
+    .subscription-benefits__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .subscription-benefit p {
+        font-size: 12px;
+    }
+
+    /* SOLICITUD */
+    .subscription-contact {
+        padding: 28px 40px;
+        background: var(--white);
+    }
+
+    .subscription-contact__inner {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 1.3fr) minmax(0, 1.5fr);
+        align-items: center;
+        gap: 28px;
+
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .subscription-contact__intro h2 {
+        font-size: 24px;
+    }
+
+    .subscription-contact__intro p {
+        font-size: 12px;
+    }
+
+    .subscription-form__row {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .subscription-form__field label {
+        font-size: 12px;
+    }
+
+    .subscription-form__field input {
+        min-height: 42px;
+        font-size: 13px;
+    }
+
+    .subscription-form__submit {
+        width: auto;
+        min-height: 42px;
+        font-size: 13px;
+    }
+
+    /* FOOTER */
+    .subscription-footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 24px 40px;
+    }
+
+    .subscription-footer__about {
+        max-width: 280px;
+    }
+
+    .subscription-footer h2,
+    .subscription-footer h3 {
+        font-size: 16px;
+    }
+
+    .subscription-footer p,
+    .subscription-footer nav {
+        font-size: 10px;
+    }
+}
+
+/* =====================================
+   SUSCRIPCIONES - ESCRITORIO GRANDE
+===================================== */
+
+@media (min-width: 1100px) {
+
+    .subscription-hero__inner {
+        gap: 70px;
+        padding: 48px 80px;
+    }
+
+    .subscription-hero h1 {
+        font-size: 44px;
+    }
+
+    .subscription-feature {
+        flex: 0 0 480px;
+    }
+
+    .subscription-benefits {
+        padding: 16px 80px;
+    }
+
+    .subscription-contact {
+        padding: 28px 80px;
+    }
+
+    .subscription-contact__inner {
+        grid-template-columns:
+            390px minmax(0, 1fr);
+        gap: 54px;
+    }
+
+    .subscription-footer__inner {
+        padding: 24px 64px;
+    }
+}
+
+/* =====================================
+   ENLACE PREMIUM - INDEX Y HOME
+===================================== */
+
+/* Resalta el acceso a Premium en ambos footers */
+.site-footer__premium {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Subrayado al pasar el cursor */
+.site-footer__premium:hover {
+    text-decoration: underline;
+}
