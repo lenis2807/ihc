@@ -3568,6 +3568,8 @@ h1, h2, h3, p {
     .applicant-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+
 /* ====================================
    PERFIL Y PREFERENCIAS
 ===================================== */
@@ -3766,13 +3768,18 @@ h1, h2, h3, p {
 
 @media (min-width: 768px) {
   .profile-settings { min-height: calc(100vh - 72px); flex-direction: row; }
-  .profile-settings__sidebar { width: 270px; min-height: calc(100vh - 72px); padding: 30px 20px 24px 32px; border-right: 1px solid var(--line); border-bottom: 0; }
-  .profile-settings__content { padding: 30px 70px 36px 54px; }
+  .profile-settings__sidebar { width: 240px; min-height: calc(100vh - 72px); padding: 24px 16px; border-right: 1px solid var(--line); border-bottom: 0; }
+  .profile-settings__content { padding: 30px 24px 36px; }
+}
+
+@media (min-width: 1200px) {
+  .profile-settings__sidebar { width: 270px; padding: 30px 20px 24px 32px; }
+  .profile-settings__content { padding: 30px 48px 36px; }
   .profile-settings__heading { flex-direction: row; align-items: flex-end; justify-content: space-between; }
   .profile-settings__heading h1 { font-size: 30px; }
   .profile-settings__heading .btn { width: auto; }
   .profile-settings__field-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .profile-settings__form { grid-template-columns: minmax(0, 1fr) 410px; align-items: start; }
+  .profile-settings__form { grid-template-columns: minmax(0, 1fr) minmax(340px, 410px); align-items: start; }
   .profile-settings__card--personal { grid-row: 1; }
   .profile-settings__card--preferences { grid-row: 1; }
   .profile-settings__actions { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; }
