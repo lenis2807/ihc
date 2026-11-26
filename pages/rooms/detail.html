@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/events.js" defer></script>
 </head>
-<body>
+<body data-page="detail">
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -26,29 +28,26 @@
       </nav>
 
       <div class="site-header__actions">
-        <a class="site-header__icon" href="#" aria-label="Favoritos">
+        <a class="site-header__icon" href="../account/favorites.html" aria-label="Favoritos">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
         </a>
-        <a class="site-header__icon" href="#" aria-label="Notificaciones">
+        <a class="site-header__icon" href="../account/notifications.html" aria-label="Notificaciones">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
         </a>
         <a class="btn btn--outline" href="#">Publicar habitación</a>
-        <a class="site-header__avatar" href="#" aria-label="Mi perfil">AV</a>
+        <a class="site-header__avatar" href="../account/profile.html" aria-label="Mi perfil">AV</a>
       </div>
 
-      <a class="site-header__mobile-alert" href="#" aria-label="Notificaciones">
+      <a class="site-header__mobile-alert" href="../account/notifications.html" aria-label="Notificaciones">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>
       </a>
     </div>
   </header>
 
-  <!-- Estados de la pantalla (agregar a este <main>):
-       detail--saved        → muestra "Habitación guardada en favoritos" y el corazón lleno (US05)
-       detail--unavailable  → muestra "Esta habitación ya no está disponible" (US07) -->
   <main class="detail">
 
     <!-- Estado: habitación no disponible -->
-    <p class="detail__unavailable" role="alert">Esta habitación ya no está disponible.</p>
+    <p class="detail__unavailable" role="alert" hidden>Esta habitación ya no está disponible.</p>
 
     <!-- Ruta de navegación (escritorio) -->
     <nav class="detail__crumbs" aria-label="Ruta de navegación">
@@ -63,13 +62,13 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
         Compartir
       </a>
-      <!-- Visitante: este enlace va a ../auth/login.html -->
-      <a class="btn btn--outline detail__action detail__save" href="#">
+      <button class="btn btn--outline detail__action detail__save" type="button" aria-pressed="false">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z"/></svg>
         <span class="detail__save-text detail__save-text--idle">Guardar</span>
-        <span class="detail__save-text detail__save-text--done">Guardado</span>
-      </a>
-      <p class="detail__saved-msg" role="status">Habitación guardada en favoritos.</p>
+        <span class="detail__save-text detail__save-text--done" hidden>Guardado</span>
+      </button>
+      <a class="btn btn--outline detail__action" href="../account/favorites.html">Ver favoritos</a>
+      <a class="btn btn--outline detail__action" href="visits.html">Mis visitas</a>
     </div>
 
     <!-- Galería -->
@@ -156,8 +155,19 @@
           <div class="detail__cost"><dt>Garantía</dt><dd>S/ 890</dd></div>
         </dl>
 
+        <form class="detail__visit-form" data-visit-form>
+          <label for="visit-slot">Fecha y horario disponible</label>
+          <select id="visit-slot" name="slot" required>
+            <option value="">Cargando horarios...</option>
+          </select>
+          <button class="btn btn--primary" type="submit" data-visit-submit>Coordinar visita</button>
+          <p class="detail__note" data-no-slots role="status" hidden></p>
+          <p class="detail__note" data-visit-message role="status" aria-live="polite"></p>
+        </form>
+
         <a class="btn btn--primary detail__contact" href="contact.html">Contactar al propietario</a>
-        <p class="detail__note">No se realizará ningún cobro todavía</p>
+        <p class="detail__note">La visita se guarda localmente. No se envía una notificación fuera de este navegador.</p>
+        <a class="detail__visits-link" href="visits.html">Administrar mis visitas</a>
       </div>
 
       <a class="btn btn--primary detail__review detail__review--desktop" href="review.html">Escribir una reseña</a>
@@ -166,7 +176,11 @@
   </main>
 
   <nav class="mobile-bottom-nav" aria-label="Navegación inferior">
-    <!-- Copia aquí los mismos <a><img></a> de la navegación inferior de pages/account/home.html (Buscar activo) -->
+    <a href="../account/home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="search.html" aria-label="Buscar habitaciones"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="../account/favorites.html" aria-label="Favoritos">♡</a>
+    <a href="visits.html" aria-label="Mis visitas">◷</a>
+    <a href="../account/profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
 
 </body>
