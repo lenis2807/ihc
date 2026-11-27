@@ -166,30 +166,52 @@
                 </h2>
 
                 <p>
-                    Enviamos un enlace a tu correo
-                    para verificar tu perfil
+                    Tu perfil está listo para iniciar
+                    la verificación de demostración.
                 </p>
 
-                <strong class="recovery-card__email">
-                    ana.valdez@gmail.com
+                <strong class="recovery-card__email"
+                        id="verification-email">
                 </strong>
             </div>
 
-            <!-- INSTRUCCIONES -->
+            <!-- INSTRUCCIONES -->      
             <div class="recovery-steps">
                 <h3>Siguientes pasos</h3>
 
                 <ol>
-                    <li>Revisa tu correo personal.</li>
-                    <li>Pulsa “Verificar perfil”.</li>
-                    <li>Completa el formulario enviado.</li>
+                    <li>Revisa los datos de tu perfil.</li>
+                    <li>Completa la verificación de prueba.</li>
+                    <li>Continúa al inicio de ShareRoom.</li>
                 </ol>
             </div>
 
-            <!-- AVISO DE REENVÍO -->
-            <div class="recovery-resend">
-                <strong>¿No llegó?</strong>
-                <span>Reenviar en 00:42</span>
+
+            <!-- ESTADO DE VERIFICACIÓN TB4 -->
+            <div class="verification-demo">
+
+                <p id="verification-status"
+                class="verification-demo__status"
+                role="status">
+                    Verificación pendiente
+                </p>
+
+                <p class="verification-demo__description">
+                    Esta verificación es una simulación académica.
+                    No comprueba documentos ni identidad real.
+                </p>
+
+                <button type="button"
+                        id="verification-button"
+                        class="btn btn--primary">
+                    Completar verificación de prueba
+                </button>
+
+                <a href="../account/home.html"
+                class="btn btn--outline">
+                    Ir al inicio
+                </a>
+
             </div>
 
             <!-- CORREGIR CORREO -->
@@ -224,5 +246,8 @@
 
         </section>
     </main>
+    
+    <script src="../../js/localstorage.js" defer></script>
+    <script src="../../js/verification.js" defer></script>
 </body>
 </html>

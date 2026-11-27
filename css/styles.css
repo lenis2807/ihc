@@ -6953,3 +6953,394 @@ a.chip:hover {
 .site-footer__premium:hover {
     text-decoration: underline;
 }
+
+
+
+/* =====================================
+   LOGIN - VALIDACIÓN TB4
+===================================== */
+
+.login-form__error {
+    padding: 12px;
+    background: #fdebe9;
+    border: 1px solid var(--error);
+    border-radius: 10px;
+    color: var(--error);
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-form__error[hidden] {
+    display: none;
+}
+
+
+/* =====================================
+   SIGNUP - VALIDACIONES TB4
+===================================== */
+
+/* Mensaje debajo del campo */
+.signup-field .field-error {
+    display: block;
+    margin-top: 5px;
+    color: var(--error);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Campo con error */
+.signup-field input[aria-invalid="true"] {
+    border-color: var(--error);
+}
+
+/* Resaltar campo al corregirlo */
+.signup-field input[aria-invalid="true"]:focus {
+    outline: 2px solid var(--error);
+    outline-offset: 1px;
+}
+
+/* =====================================
+   TB4 - PERFIL Y GUARDADO DE DATOS
+===================================== */
+
+/* Confirmación de guardado */
+.profile-save-message {
+    margin-top: 12px;
+    padding: 12px 16px;
+
+    background: var(--mint);
+    border: 1px solid #0fbfad;
+    border-radius: 10px;
+
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Mensaje de error */
+.profile-save-message--error {
+    background: #fdebe9;
+    border-color: var(--error);
+    color: var(--error);
+}
+
+/* Evita mostrar mensajes ocultos */
+.profile-save-message[hidden] {
+    display: none;
+}
+
+
+/* =====================================
+   TB4 - RECUPERACIÓN DE CONTRASEÑA
+===================================== */
+
+/* Ocultar las secciones cuando corresponda */
+.recovery-request[hidden],
+.recovery-card[hidden] {
+    display: none;
+}
+
+/* Formulario de solicitud */
+.recovery-request {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+}
+
+.recovery-request h2 {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 24px;
+}
+
+.recovery-request p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.recovery-request form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.recovery-request__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recovery-request__field label {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recovery-request__field input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font: inherit;
+}
+
+.recovery-request__field input[aria-invalid="true"] {
+    border-color: var(--error);
+}
+
+.recovery-request__error {
+    color: var(--error);
+    font-size: 12px;
+}
+
+.recovery-request__error[hidden] {
+    display: none;
+}
+
+.recovery-request .btn {
+    width: 100%;
+}
+
+.recovery-request__note {
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+/* =====================================
+   TB4 - VERIFICACIÓN DEL PERFIL
+===================================== */
+
+.verification-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.verification-demo__status {
+    padding: 12px;
+    background: #fff3dd;
+    border-radius: 10px;
+    color: #865800;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.verification-demo__status--complete {
+    background: var(--mint);
+    color: var(--primary);
+}
+
+.verification-demo__description {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.verification-demo .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.verification-demo button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   DESKTOP - RECUPERACIÓN Y VERIFICACIÓN
+===================================== */
+
+@media (min-width: 768px) {
+
+    .recovery-request {
+        padding: 32px;
+    }
+
+    .recovery-request h2 {
+        font-size: 28px;
+    }
+}
+
+/* =====================================
+   TB4 - AJUSTES MÓVILES DE RECUPERACIÓN
+   Mantener apariencia cercana a Figma
+===================================== */
+
+@media (max-width: 767px) {
+
+    /* Ajustar tamaño de título y texto */
+    .recovery-page .recovery-intro h1 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .recovery-page .recovery-intro p {
+        line-height: 1.4;
+    }
+
+    /* Título de confirmación */
+    .recovery-page .recovery-card h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    /* Texto de confirmación */
+    .recovery-page .recovery-card__description {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    /* Reducir espacio de los pasos */
+    .recovery-page .recovery-steps {
+        padding: 14px;
+    }
+
+    .recovery-page .recovery-steps ol {
+        margin-top: 8px;
+        padding-left: 20px;
+    }
+
+    .recovery-page .recovery-steps li {
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+}
+
+
+/* =====================================
+   TB4 - SESIÓN DE USUARIO
+===================================== */
+
+/* Botón de cerrar sesión */
+.session-logout {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Evita saturar el encabezado móvil */
+@media (max-width: 767px) {
+    .member-header__actions .session-logout {
+        display: none;
+    }
+}
+
+/* =====================================
+   TB4 - NOTIFICACIONES INTERACTIVAS
+===================================== */
+
+/* Botones de filtrado */
+.notifications__filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 30px;
+    padding: 0 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--white);
+
+    color: var(--primary);
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.notifications__filters button.is-active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: var(--white);
+}
+
+.notifications__filters button:hover {
+    border-color: var(--primary);
+}
+
+/* Botón individual para marcar lectura */
+.notification-card__mark {
+    margin-top: 8px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+
+    color: var(--primary);
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.notification-card__mark:hover {
+    color: var(--hover);
+}
+
+/* Ocultar correctamente tarjetas y fechas filtradas */
+.notification-card[hidden],
+.notifications__date[hidden] {
+    display: none;
+}
+
+/* Distinguir notificaciones leídas */
+.notification-card:not(.notification-card--unread) {
+    opacity: 0.85;
+}
+
+/* Botón deshabilitado después de marcar todas */
+#marcar-todas:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* TB4 - Ocultar notificaciones filtradas */
+.notification-card[hidden] {
+    display: none;
+}
+
+/* =====================================
+   TB4 - CIERRE DE SESIÓN DESDE PERFIL
+===================================== */
+
+/* Contenedor del botón */
+.profile-session {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 16px 0;
+}
+
+/* Botón para cerrar sesión */
+.profile-session__logout {
+    min-height: 44px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Versión móvil */
+@media (max-width: 767px) {
+
+    .profile-session {
+        width: 100%;
+    }
+
+    .profile-session__logout {
+        width: 100%;
+        text-align: center;
+    }
+}
