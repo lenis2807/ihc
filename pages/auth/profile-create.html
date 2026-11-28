@@ -121,7 +121,7 @@
         </nav>
 
         <!-- FORMULARIO -->
-        <form class="profile-form">
+        <form class="profile-form" id="formulario-perfil">
 
             <div class="profile-form__grid">
 
@@ -436,30 +436,40 @@
 
                 </section>
             </div>
-
+            
             <!-- ACCIONES -->
             <div class="profile-actions">
 
-                
-                <a href="verify-profile.html"
-                    class="btn btn--primary">
-                     Continuar a verificación
-                </a>
-
+                <button type="submit"
+                        class="btn btn--primary">
+                    Continuar a verificación
+                </button>
 
                 <button type="button"
-                        class="btn btn--outline"
-                        disabled>
+                        id="guardar-borrador"
+                        class="btn btn--outline">
                     Guardar borrador
                 </button>
 
                 <a class="btn btn--outline"
-                   href="login.html">
-                    Volver
+                    href="login.html">
+                     Volver
                 </a>
+
             </div>
+
+            <!-- Mensaje de confirmación -->
+            <p id="mensaje-perfil"
+            class="profile-save-message"
+            role="status"
+            hidden>
+            </p>
+
 
         </form>
     </main>
+    
+    <script src="../../js/localstorage.js" defer></script>
+    <script src="../../js/profile.js" defer></script>
 </body>
 </html>

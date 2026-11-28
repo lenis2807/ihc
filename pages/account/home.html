@@ -103,6 +103,14 @@
                     aria-label="Perfil de Ana Valdez">
                     AV
                 </a>
+
+                <!-- Cerrar sesión TB4 -->
+                <button type="button"
+                        id="cerrar-sesion"
+                        class="btn btn--outline session-logout">
+                    Cerrar sesión
+                </button>
+
             </div>
 
             <!-- Notificaciones en móvil -->
@@ -158,7 +166,7 @@
           </div>
 
           <form class="search-panel__form"
-                action="../rooms/search.html"
+                action="home.html"
                 method="get"
                 role="search">
 
@@ -266,40 +274,40 @@
           <div class="home-discovery__cards home-discovery__cards--rooms">
 
             <article class="card room-card">
-              <a href="../rooms/detail.html?id=room-pucp">
+              <a href="#rooms-heading">
                 <div class="card__media card__media--room">
-                  <img src="../../img/rooms/room-01.png"
+                  <img src="../../img/rooms/habitacion-01.png"
                        alt="Habitación en San Miguel">
                 </div>
                 <div class="card__info">
                   <h3>S/ 980 al mes</h3>
-                  <p>San Miguel · 8 min de la PUCP</p>
+                  <p>San Miguel · 12 min PUCP</p>
                 </div>
               </a>
             </article>
 
             <article class="card room-card">
-              <a href="../rooms/detail.html?id=room-pueblo-libre">
+              <a href="#rooms-heading">
                 <div class="card__media card__media--room">
-                  <img src="../../img/rooms/habitacion-01.png"
-                       alt="Habitación luminosa en Pueblo Libre">
+                  <img src="../../img/rooms/habitacion-02.png"
+                       alt="Habitación amoblada en Miraflores">
                 </div>
                 <div class="card__info">
-                  <h3>S/ 890 al mes</h3>
-                  <p>Pueblo Libre · A 8 min de la PUCP</p>
+                  <h3>S/ 1,250 al mes</h3>
+                  <p>Miraflores · Amoblada</p>
                 </div>
               </a>
             </article>
 
             <article class="card room-card">
-              <a href="../rooms/detail.html?id=room-magdalena">
+              <a href="#rooms-heading">
                 <div class="card__media card__media--room">
-                  <img src="../../img/rooms/room-03.png"
-                       alt="Habitación tranquila en Magdalena">
+                  <img src="../../img/rooms/habitacion-03.png"
+                       alt="Habitación en Surco">
                 </div>
                 <div class="card__info">
-                  <h3>S/ 890 al mes</h3>
-                  <p>Magdalena · A 3.2 km de la PUCP</p>
+                  <h3>S/ 850 al mes</h3>
+                  <p>Surco · Servicios incluidos</p>
                 </div>
               </a>
             </article>
@@ -381,8 +389,20 @@
 
         <nav aria-label="Enlaces del pie de página">
           <h3>Explorar</h3>
-          <a href="#roomies-heading">Buscar perfil</a>
-          <a href="#rooms-heading">Alquiler</a>
+
+          <a href="#roomies-heading">
+            Buscar perfil
+          </a>
+
+          <a href="#rooms-heading">
+            Alquiler
+          </a>
+
+          <!-- Acceso a ShareRoom Premium -->
+          <a href="subscriptions.html"
+            class="site-footer__premium">
+              Conocer ShareRoom Premium
+          </a>
         </nav>
 
         <section>
@@ -418,7 +438,7 @@
              alt="">
     </a>
 
-    <a href="../rooms/search.html"
+    <a href="#rooms-heading"
        aria-label="Buscar">
         <img src="../../img/icons/buscar.svg"
              alt="">
@@ -435,14 +455,15 @@
         <img src="../../img/icons/mensajes.svg"
              alt="">
     </span>
-
-    <span aria-label="Perfil, próximamente"
-          aria-disabled="true">
+    
+    <a href="profile.html"
+      aria-label="Mi perfil">
         <img src="../../img/icons/perfil.svg"
-             alt="">
-    </span>
+            alt="">
+    </a>
+
 
 </nav>
-
+  <script src="../../js/session.js" defer></script>
 </body>
 </html>

@@ -9,10 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
-  <script src="../../js/localstorage.js" defer></script>
-  <script src="../../js/events.js" defer></script>
 </head>
-<body class="notifications-page" data-page="notifications">
+<body class="notifications-page">
   <header class="site-header member-header">
     <div class="site-header__inner">
       <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio">
@@ -23,7 +21,6 @@
         <a href="home.html">Inicio</a>
         <a href="home.html#roomies-heading">Buscar roomies</a>
         <a href="home.html#rooms-heading">Habitaciones</a>
-        <a href="../rooms/visits.html">Mis visitas</a>
         <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
       </nav>
       <div class="member-header__actions">
@@ -46,25 +43,48 @@
         <h1>Notificaciones</h1>
         <p>Novedades sobre mensajes, favoritos y tus publicaciones.</p>
       </div>
-      <a class="btn btn--outline" href="#actividad">Marcar todo como leído</a>
+      
+      <button type="button"
+              id="marcar-todas"
+              class="btn btn--outline">
+          Marcar todo como leído
+      </button>
+
     </div>
 
     <div class="notifications__layout">
       <section class="notifications__activity" id="actividad" aria-labelledby="activity-title">
         <h2 id="activity-title" class="visually-hidden">Actividad reciente</h2>
-        <nav class="notifications__filters" aria-label="Filtrar notificaciones">
-          <a class="is-active" href="#actividad">Todas <span>8</span></a>
-          <a href="#mensajes">Mensajes <span>3</span></a>
-          <a href="#publicaciones">Publicaciones <span>2</span></a>
-          <a href="#sistema">Sistema <span>3</span></a>
-        </nav>
+        
+        <nav class="notifications__filters"
+            aria-label="Filtrar notificaciones">
 
-        <section class="notifications__local-section" aria-labelledby="local-notifications-title">
-          <h3 class="notifications__local-title" id="local-notifications-title">Avisos locales de visitas</h3>
-          <div class="notifications__local-list" data-local-notifications>
-            <p class="notifications__local-empty">Cargando avisos...</p>
-          </div>
-        </section>
+            <button type="button"
+                    class="is-active"
+                    data-filter="todas"
+                    aria-pressed="true">
+                Todas <span>5</span>
+            </button>
+
+            <button type="button"
+                    data-filter="mensajes"
+                    aria-pressed="false">
+                Mensajes <span>1</span>
+            </button>
+
+            <button type="button"
+                    data-filter="publicaciones"
+                    aria-pressed="false">
+                Publicaciones <span>3</span>
+            </button>
+
+            <button type="button"
+                    data-filter="sistema"
+                    aria-pressed="false">
+                Sistema <span>1</span>
+            </button>
+
+        </nav>
 
         <p class="notifications__date">Hoy</p>
         <article class="notification-card notification-card--unread" id="mensajes">
@@ -130,10 +150,15 @@
 
   <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
     <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
-    <a href="../rooms/search.html" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
-    <a href="favorites.html" aria-label="Favoritos">♡</a>
-    <a href="../rooms/visits.html" aria-label="Mis visitas">◷</a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <span aria-label="Publicar, próximamente" aria-disabled="true"><img src="../../img/icons/publicar.svg" alt=""></span>
+    <span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span>
     <a href="profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
+  
+  <!-- JavaScript TB4: sesión y notificaciones -->
+  <script src="../../js/session.js" defer></script>
+  <script src="../../js/notifications.js" defer></script>
+
 </body>
 </html>

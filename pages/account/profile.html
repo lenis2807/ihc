@@ -20,8 +20,7 @@
       <nav class="site-nav" aria-label="Navegación principal">
         <a href="home.html">Inicio</a>
         <a href="home.html#roomies-heading">Buscar roomies</a>
-        <a href="../rooms/search.html">Habitaciones</a>
-        <a href="../rooms/visits.html">Mis visitas</a>
+        <a href="home.html#rooms-heading">Habitaciones</a>
         <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
       </nav>
       <div class="member-header__actions">
@@ -51,7 +50,6 @@
         <a class="is-active" href="#datos-personales"><span aria-hidden="true">◉</span>Información personal</a>
         <a href="#mi-busqueda"><span aria-hidden="true">☷</span>Preferencias de búsqueda</a>
         <a href="notifications.html"><span aria-hidden="true">♧</span>Notificaciones <b>3</b></a>
-        <a href="../rooms/visits.html"><span aria-hidden="true">◷</span>Mis visitas</a>
         <a href="#privacidad"><span aria-hidden="true">◇</span>Privacidad y seguridad</a>
         <a href="#pagos"><span aria-hidden="true">▣</span>Pagos</a>
         <a href="#ayuda"><span aria-hidden="true">?</span>Ayuda y soporte</a>
@@ -76,7 +74,8 @@
         <a href="#cuenta">Cuenta</a>
       </nav>
 
-      <form class="profile-settings__form" action="#" method="get">
+      <form class="profile-settings__form"
+          id="formulario-editar-perfil">
         <section class="profile-settings__card profile-settings__card--personal" id="datos-personales" aria-labelledby="personal-title">
           <h2 id="personal-title" class="visually-hidden">Datos personales</h2>
           <div class="profile-settings__photo">
@@ -132,7 +131,25 @@
           <small>Última actualización: hoy a las 09:22</small>
           <div><a class="btn btn--outline" href="home.html">Cancelar</a><button class="btn btn--primary" type="submit">Guardar cambios</button></div>
         </div>
+
+        <!-- Confirmación al guardar -->
+        <p id="mensaje-editar-perfil"
+          class="profile-save-message"
+          role="status"
+          hidden>
+        </p>
+
       </form>
+
+      <!-- TB4 - Cerrar sesión desde Mi perfil -->
+      <div class="profile-session">
+          <button type="button"
+                  id="cerrar-sesion"
+                  class="btn btn--outline profile-session__logout">
+              Cerrar sesión
+          </button>
+      </div>
+
       <span id="notificaciones" class="profile-settings__anchor"></span><span id="pagos" class="profile-settings__anchor"></span><span id="ayuda" class="profile-settings__anchor"></span>
     </section>
   </main>
@@ -144,5 +161,9 @@
     <span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span>
     <a href="profile.html" aria-current="page" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
+
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/profile.js" defer></script>
+  <script src="../../js/session.js" defer></script>
 </body>
 </html>
