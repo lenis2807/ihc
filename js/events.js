@@ -272,6 +272,54 @@
     });
   }
 
+  function initializeSavedRoomDetail() {
+    const roomId = new URLSearchParams(window.location.search).get("id") || "room-pueblo-libre";
+    const room = store.getRoomById(roomId);
+    const heroImage = document.querySelector(".room-detail__hero-image");
+    const title = document.querySelector(".room-detail__title-row h1");
+    const location = document.querySelector("[data-room-location]");
+    const price = document.querySelector(".room-detail__title-row > strong");
+    const amenities = document.querySelector(".room-detail__amenities");
+    const description = document.querySelector(".room-detail__copy");
+    const rules = document.querySelector(".room-detail__tags");
+    const favoriteButton = document.querySelector("[data-room-detail-favorite]");
+    const savedStatus = document.querySelector(".room-detail__saved-status");
+    const savedDescription = document.querySelector(".room-detail__saved-card > p");
+
+    document.title = `${room.title} | ShareRoom`;
+    title.textContent = room.title;
+    location.textContent = `Habitaciones / ${room.district}`;
+    document.querySelector(".room-detail__title-row > div > p").textContent = `${room.address} · ${room.nearby}`;
+    price.replaceChildren(document.createTextNode(`${formatPrice(room.price)} `), make("small", "", "/ mes"));
+    heroImage.src = `${IMAGE_BASE}${room.image}`;
+    heroImage.alt = room.title;
+    amenities.replaceChildren(...room.amenities.map((amenity) => make("li", "", amenity)));
+    description.textContent = room.description;
+    rules.replaceChildren(...room.rules.map((rule) => make("li", "", rule.replaceAll("-", " "))));
+
+    const updateSavedState = (isSaved) => {
+      favoriteButton.setAttribute("aria-pressed", String(isSaved));
+      favoriteButton.textContent = isSaved ? "♥ Quitar de favoritos" : "♡ Guardar en favoritos";
+      savedStatus.querySelector("span").textContent = isSaved ? "♥" : "♡";
+      savedStatus.querySelector("strong").textContent = isSaved ? "Guardada en favoritos" : "No está en favoritos";
+      savedStatus.querySelector("small").textContent = isSaved
+        ? "Guardado en este navegador"
+        : "Puedes volver a guardarla cuando quieras.";
+      savedDescription.textContent = isSaved
+        ? "La habitación se guarda en este navegador. Puedes compararla con tus otras opciones cuando quieras."
+        : "Esta habitación no está en tus favoritos. Puedes guardarla para encontrarla fácilmente después.";
+    };
+
+    updateSavedState(store.getFavoriteRoomIds().includes(roomId));
+    favoriteButton.addEventListener("click", () => {
+      try {
+        updateSavedState(store.toggleFavorite(roomId));
+      } catch (error) {
+        showPageError(error);
+      }
+    });
+  }
+
   function renderAvailableSlots(roomId, visitId) {
     const select = byId("visit-slot");
     const slots = store.getAvailableSlots(roomId, visitId);
@@ -533,6 +581,9 @@
           break;
         case "detail":
           renderDetail(new URLSearchParams(window.location.search).get("id") || "room-pueblo-libre");
+          break;
+        case "room-detail":
+          initializeSavedRoomDetail();
           break;
         case "favorites":
           renderFavorites();

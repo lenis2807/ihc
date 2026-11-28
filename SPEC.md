@@ -67,20 +67,19 @@ Sitio web responsivo para buscar habitaciones, encontrar roomies compatibles y p
     │       └── visits.html
     ├── js/
     │   ├── events.js
-    │   └── localstorage.js
-    └── test/
-        └── localstorage.test.cjs
+    │   ├── localstorage.js
+    │   └── room-store.js
 
 ## Alcance
 
-Las pantallas existentes siguen siendo principalmente estáticas. Como excepción solicitada, la búsqueda y las vistas de habitaciones, favoritos, reseñas y visitas implementan interacciones en JavaScript vanilla y persisten sus datos en `localStorage`.
+Las pantallas existentes siguen siendo principalmente estáticas. La búsqueda y las vistas de habitaciones, favoritos, reseñas y visitas implementan interacciones en JavaScript vanilla y persisten sus datos en `localStorage`.
 
 - **Sí:** HTML semántico, CSS responsive, validación nativa de formularios, navegación relativa y JavaScript vanilla para las funciones anteriores.
-- **Almacenamiento:** la aplicación usa la clave `shareroom.local.v1`; habitaciones de ejemplo, favoritos, reseñas, visitas y avisos simulados permanecen en el navegador actual.
+- **Scripts locales:** `localstorage.js` conserva los helpers genéricos de guardado, lectura y eliminación; `room-store.js` implementa el modelo local de habitaciones; `events.js` conecta ese modelo con las pantallas.
+- **Persistencia:** la aplicación usa la clave `shareroom.local.v1`; habitaciones de ejemplo, favoritos, reseñas, visitas y avisos simulados permanecen en el navegador actual.
 - **US09 y US11:** al confirmar una visita se verifica de nuevo la disponibilidad; las visitas programadas pueden reprogramarse o cancelarse. Las visitas realizadas no se pueden modificar. Los avisos al anfitrión son registros locales, no mensajes enviados.
 - **No:** servidor, API REST, llamadas a servicios externos, frameworks, autenticación real, sincronización entre dispositivos ni envío de notificaciones fuera del navegador.
 - **Otras pantallas:** las funciones no incluidas en este alcance mantienen su comportamiento visual estático.
-- **Pruebas:** ejecutar `node --test test/localstorage.test.cjs`.
 
 ## Reglas
 
@@ -106,7 +105,7 @@ Las pantallas existentes siguen siendo principalmente estáticas. Como excepció
 
 - **Tipografía:** utilizar Montserrat e incluir los enlaces de Google Fonts en el `<head>` de cada nuevo HTML.
 
-- **Tecnologías:** utilizar HTML5 y CSS3 en todas las pantallas. Para las funciones locales de habitaciones, enlazar solo los scripts vanilla `js/localstorage.js` y `js/events.js`; no agregar dependencias ni servicios externos.
+- **Tecnologías:** utilizar HTML5 y CSS3 en todas las pantallas. Para las funciones locales de habitaciones, enlazar en orden `js/localstorage.js`, `js/room-store.js` y `js/events.js`; no agregar dependencias ni servicios externos.
 - **Simulaciones:** las funciones locales no representan sesiones reales, una base de datos compartida ni el envío de correos o mensajes.
 
 - **Organización:** reutilizar los componentes existentes y evitar selectores duplicados, estilos innecesarios o modificaciones de pantallas que ya funcionan correctamente.
