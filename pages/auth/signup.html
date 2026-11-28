@@ -228,8 +228,7 @@
                 <!-- El registro real requiere backend.
                      Este botón no envía contraseñas. -->
                 <button class="btn btn--primary signup-form__submit"
-                        type="button"
-                        disabled>
+                        type="submit">
                     Crear cuenta
                 </button>
 
@@ -238,21 +237,12 @@
                 </p>
             </form>
 
-            <!-- Navegación estática del prototipo -->
-            <div class="signup-demo">
-                <p>
-                    Recorrido de demostración:
-                    continúa a la pantalla de perfil sin
-                    crear una cuenta real.
-                </p>
-
-                <a href="profile-create.html"
-                   class="btn btn--outline">
-                    Ver siguiente paso: Completar perfil
-                </a>
-            </div>
-
         </section>
     </main>
+
+    <!-- JavaScript de almacenamiento y autenticación -->
+    <script src="../../js/localstorage.js" defer></script>
+    <script src="../../js/auth.js" defer></script>
+
 </body>
 </html>

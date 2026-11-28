@@ -47,17 +47,47 @@
         <h1>Notificaciones</h1>
         <p>Novedades sobre mensajes, favoritos y tus publicaciones.</p>
       </div>
-      <a class="btn btn--outline" href="#actividad">Marcar todo como leído</a>
+      
+      <button type="button"
+              id="marcar-todas"
+              class="btn btn--outline">
+          Marcar todo como leído
+      </button>
+
     </div>
 
     <div class="notifications__layout">
       <section class="notifications__activity" id="actividad" aria-labelledby="activity-title">
         <h2 id="activity-title" class="visually-hidden">Actividad reciente</h2>
-        <nav class="notifications__filters" aria-label="Filtrar notificaciones">
-          <a class="is-active" href="#actividad">Todas <span>8</span></a>
-          <a href="#mensajes">Mensajes <span>3</span></a>
-          <a href="#publicaciones">Publicaciones <span>2</span></a>
-          <a href="#sistema">Sistema <span>3</span></a>
+        
+        <nav class="notifications__filters"
+            aria-label="Filtrar notificaciones">
+
+            <button type="button"
+                    class="is-active"
+                    data-filter="todas"
+                    aria-pressed="true">
+                Todas <span>5</span>
+            </button>
+
+            <button type="button"
+                    data-filter="mensajes"
+                    aria-pressed="false">
+                Mensajes <span>1</span>
+            </button>
+
+            <button type="button"
+                    data-filter="publicaciones"
+                    aria-pressed="false">
+                Publicaciones <span>3</span>
+            </button>
+
+            <button type="button"
+                    data-filter="sistema"
+                    aria-pressed="false">
+                Sistema <span>1</span>
+            </button>
+
         </nav>
 
         <section class="notifications__local-section" aria-labelledby="local-notifications-title">
@@ -136,5 +166,10 @@
     <a href="../rooms/visits.html" aria-label="Mis visitas">◷</a>
     <a href="profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
+  
+  <!-- JavaScript TB4: sesión y notificaciones -->
+  <script src="../../js/session.js" defer></script>
+  <script src="../../js/notifications.js" defer></script>
+
 </body>
 </html>

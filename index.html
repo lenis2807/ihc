@@ -11,10 +11,13 @@
   <title>ShareRoom | Inicio y búsqueda</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-logo" href="index.html" aria-label="ShareRoom, ir al inicio">
+
+      <a class="site-logo" href="index.html"
+         aria-label="ShareRoom, ir al inicio">
         <span class="site-logo__symbol" aria-hidden="true">SR</span>
         <span>ShareRoom</span>
       </a>
@@ -23,7 +26,8 @@
         <a href="index.html" aria-current="page">Inicio</a>
         <a href="#roomies-heading">Buscar roomies</a>
         <a href="#rooms-heading">Habitaciones</a>
-        <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
+        <span class="nav-unavailable"
+              aria-disabled="true">Mensajes</span>
       </nav>
 
       <div class="site-header__actions">
@@ -31,6 +35,7 @@
            href="pages/auth/login.html">
           Iniciar sesión
         </a>
+
         <a class="btn btn--primary"
            href="pages/auth/signup.html">
           Crear cuenta
@@ -40,19 +45,19 @@
       <span class="site-header__mobile-alert"
             aria-label="Notificaciones, próximamente"
             aria-disabled="true">
-
-          <img src="img/icons/notificaciones.svg"
-            alt="">
+        <img src="img/icons/notificaciones.svg" alt="">
       </span>
     </div>
   </header>
 
   <main>
+
     <!-- HERO E INICIO DE BÚSQUEDA -->
     <section class="home-hero" aria-labelledby="home-title">
       <div class="home-hero__inner">
 
         <div class="home-hero__content">
+
           <p class="home-hero__eyebrow">
             Vive cerca. Vive acompañado.
           </p>
@@ -72,29 +77,35 @@
             Conecta con personas compatibles y espacios
             verificados cerca de tu universidad.
           </p>
-          
+
           <!-- Acciones para visitantes en móvil -->
           <div class="hero-visitor-actions">
-              <a href="pages/auth/login.html"
-                 class="hero-visitor-actions__login">
-                  Iniciar sesión
-              </a>
-          
-              <a href="pages/auth/signup.html"
-                 class="hero-visitor-actions__signup">
-                  Crear cuenta
-              </a>
+            <a href="pages/auth/login.html"
+               class="hero-visitor-actions__login">
+              Iniciar sesión
+            </a>
+
+            <a href="pages/auth/signup.html"
+               class="hero-visitor-actions__signup">
+              Crear cuenta
+            </a>
           </div>
         </div>
 
+        <!-- BUSCADOR -->
         <div class="search-panel">
-          <div class="search-panel__tabs" aria-label="Buscar por tipo">
-            <a class="btn btn--primary" href="#rooms-heading">
+
+          <div class="search-panel__tabs"
+               aria-label="Buscar por tipo">
+
+            <a class="btn btn--primary"
+               href="#rooms-heading">
               <span class="label-desktop">Busco habitación</span>
               <span class="label-mobile">Habitación</span>
             </a>
 
-            <a class="btn btn--outline" href="#roomies-heading">
+            <a class="btn btn--outline"
+               href="#roomies-heading">
               <span class="label-desktop">Busco roomie</span>
               <span class="label-mobile">Roomie</span>
             </a>
@@ -125,8 +136,7 @@
                   name="ubicacion"
                   type="search"
                   placeholder="Universidad, distrito o zona"
-                  required
-                >
+                  required>
               </div>
             </div>
 
@@ -142,6 +152,7 @@
             Miraflores · San Miguel
           </p>
         </div>
+
       </div>
     </section>
 
@@ -151,6 +162,7 @@
 
       <div class="home-discovery__inner">
 
+        <!-- ROOMIES -->
         <section class="home-discovery__group"
                  aria-labelledby="roomies-heading">
 
@@ -197,9 +209,11 @@
                 </div>
               </a>
             </article>
+
           </div>
         </section>
 
+        <!-- HABITACIONES -->
         <section class="home-discovery__group"
                  aria-labelledby="rooms-heading">
 
@@ -246,8 +260,10 @@
                 </div>
               </a>
             </article>
+
           </div>
         </section>
+
       </div>
     </section>
 
@@ -256,6 +272,7 @@
              aria-labelledby="assistant-heading">
 
       <div class="home-assistant__inner">
+
         <div class="home-assistant__heading">
           <h2 id="assistant-heading">
             Solicita ayuda de un agente
@@ -274,6 +291,7 @@
           </p>
 
           <div class="assistant-panel__controls">
+
             <div class="form-field">
               <label for="consulta">Tu consulta</label>
               <input
@@ -281,8 +299,7 @@
                 name="consulta"
                 type="text"
                 placeholder="Busco una habitación cerca de mi universidad"
-                disabled
-              >
+                disabled>
             </div>
 
             <button class="btn btn--primary"
@@ -290,25 +307,31 @@
                     disabled>
               Enviar
             </button>
+
           </div>
         </div>
+
       </div>
     </section>
+
   </main>
 
   <!-- PIE DE PÁGINA -->
   <footer class="site-footer">
-    <div class="site-footer__inner">
 
+    <div class="site-footer__inner">
       <h2>Acerca de nosotros:</h2>
 
       <div class="site-footer__grid">
+
         <section>
           <h3>ShareRoom</h3>
+
           <p>
             Somos un sitio que te ayuda a encontrar
             tu próximo roomie.
           </p>
+
           <p>
             Escríbenos:
             <a href="mailto:Shareroom@gmail.com">
@@ -324,8 +347,15 @@
 
         <nav aria-label="Enlaces del pie de página">
           <h3>Explorar</h3>
+
           <a href="#roomies-heading">Buscar perfil</a>
           <a href="#rooms-heading">Alquiler</a>
+
+          <!-- NUEVO: ACCESO A SUSCRIPCIONES -->
+          <a href="pages/account/subscriptions.html"
+            class="site-footer__premium">
+              Conocer ShareRoom Premium
+          </a>
         </nav>
 
         <section>
@@ -334,56 +364,51 @@
           <img
             src="img/branding/redes-sociales.png"
             alt="Facebook, Instagram y WhatsApp de ShareRoom"
-            class="footer-social__image"
-          >
+            class="footer-social__image">
 
           <p>Últimas actualizaciones</p>
         </section>
+
       </div>
     </div>
 
     <div class="site-footer__bottom">
       © 2026 ShareRoom. Todos los derechos reservados.
     </div>
+
   </footer>
 
-  
-<!-- NAVEGACIÓN INFERIOR MÓVIL -->
-<nav class="mobile-bottom-nav"
-     aria-label="Navegación móvil">
+  <!-- NAVEGACIÓN INFERIOR MÓVIL -->
+  <nav class="mobile-bottom-nav"
+       aria-label="Navegación móvil">
 
     <a href="index.html"
        aria-current="page"
        aria-label="Inicio">
-        <img src="img/icons/Inicio.svg"
-             alt="">
+      <img src="img/icons/Inicio.svg" alt="">
     </a>
 
     <a href="#rooms-heading"
        aria-label="Buscar">
-        <img src="img/icons/buscar.svg"
-             alt="">
+      <img src="img/icons/buscar.svg" alt="">
     </a>
 
     <span aria-label="Publicar, próximamente"
           aria-disabled="true">
-        <img src="img/icons/publicar.svg"
-             alt="">
+      <img src="img/icons/publicar.svg" alt="">
     </span>
 
     <span aria-label="Mensajes, próximamente"
           aria-disabled="true">
-        <img src="img/icons/mensajes.svg"
-             alt="">
+      <img src="img/icons/mensajes.svg" alt="">
     </span>
 
     <span aria-label="Perfil, próximamente"
           aria-disabled="true">
-        <img src="img/icons/perfil.svg"
-             alt="">
+      <img src="img/icons/perfil.svg" alt="">
     </span>
 
-</nav>
+  </nav>
 
 </body>
 </html>

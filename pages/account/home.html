@@ -103,6 +103,14 @@
                     aria-label="Perfil de Ana Valdez">
                     AV
                 </a>
+
+                <!-- Cerrar sesión TB4 -->
+                <button type="button"
+                        id="cerrar-sesion"
+                        class="btn btn--outline session-logout">
+                    Cerrar sesión
+                </button>
+
             </div>
 
             <!-- Notificaciones en móvil -->
@@ -381,8 +389,20 @@
 
         <nav aria-label="Enlaces del pie de página">
           <h3>Explorar</h3>
-          <a href="#roomies-heading">Buscar perfil</a>
-          <a href="#rooms-heading">Alquiler</a>
+
+          <a href="#roomies-heading">
+            Buscar perfil
+          </a>
+
+          <a href="#rooms-heading">
+            Alquiler
+          </a>
+
+          <!-- Acceso a ShareRoom Premium -->
+          <a href="subscriptions.html"
+            class="site-footer__premium">
+              Conocer ShareRoom Premium
+          </a>
         </nav>
 
         <section>
@@ -435,14 +455,15 @@
         <img src="../../img/icons/mensajes.svg"
              alt="">
     </span>
-
-    <span aria-label="Perfil, próximamente"
-          aria-disabled="true">
+    
+    <a href="profile.html"
+      aria-label="Mi perfil">
         <img src="../../img/icons/perfil.svg"
-             alt="">
-    </span>
+            alt="">
+    </a>
+
 
 </nav>
-
+  <script src="../../js/session.js" defer></script>
 </body>
 </html>
