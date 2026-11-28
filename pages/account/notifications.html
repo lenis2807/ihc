@@ -9,8 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/room-store.js" defer></script>
+  <script src="../../js/events.js" defer></script>
 </head>
-<body class="notifications-page">
+<body class="notifications-page" data-page="notifications">
   <header class="site-header member-header">
     <div class="site-header__inner">
       <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio">
@@ -21,6 +24,7 @@
         <a href="home.html">Inicio</a>
         <a href="home.html#roomies-heading">Buscar roomies</a>
         <a href="home.html#rooms-heading">Habitaciones</a>
+        <a href="../rooms/visits.html">Mis visitas</a>
         <span class="nav-unavailable" aria-disabled="true">Mensajes</span>
       </nav>
       <div class="member-header__actions">
@@ -86,6 +90,13 @@
 
         </nav>
 
+        <section class="notifications__local-section" aria-labelledby="local-notifications-title">
+          <h3 class="notifications__local-title" id="local-notifications-title">Avisos locales de visitas</h3>
+          <div class="notifications__local-list" data-local-notifications>
+            <p class="notifications__local-empty">Cargando avisos...</p>
+          </div>
+        </section>
+
         <p class="notifications__date">Hoy</p>
         <article class="notification-card notification-card--unread" id="mensajes">
           <div class="notification-card__avatar" aria-hidden="true">LM</div>
@@ -150,9 +161,9 @@
 
   <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
     <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
-    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
-    <span aria-label="Publicar, próximamente" aria-disabled="true"><img src="../../img/icons/publicar.svg" alt=""></span>
-    <span aria-label="Mensajes, próximamente" aria-disabled="true"><img src="../../img/icons/mensajes.svg" alt=""></span>
+    <a href="../rooms/search.html" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="favorites.html" aria-label="Favoritos">♡</a>
+    <a href="../rooms/visits.html" aria-label="Mis visitas">◷</a>
     <a href="profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
   

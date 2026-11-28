@@ -10,11 +10,11 @@ Sitio web responsivo para buscar habitaciones, encontrar roomies compatibles y p
 - **Proyecto:** ShareRoom
 - **Curso:** Interacción Humano Computador y Programación Web
 - **Entrega:** TB3
-- **Tecnologías:** HTML5 y CSS3
+- **Tecnologías:** HTML5, CSS3 y JavaScript vanilla
 - **Diseño:** Mockups y User Flow de Figma
 - **Tipografía:** Montserrat
 - **Versiones:** Escritorio (1440 px) y móvil (390 px)
-- **Objetivo:** Reproducir las pantallas de Figma y conectar sus recorridos mediante navegación estática.
+- **Objetivo:** Reproducir las pantallas de Figma y conectar los recorridos; las funciones solicitadas para habitaciones usan almacenamiento local.
 
 ## Cómo trabajar
 
@@ -63,26 +63,23 @@ Sitio web responsivo para buscar habitaciones, encontrar roomies compatibles y p
     │       ├── contact.html
     │       ├── detail.html
     │       ├── review.html
-    │       └── search.html
-    └── js/
+    │       ├── search.html
+    │       └── visits.html
+    ├── js/
+    │   ├── events.js
+    │   ├── localstorage.js
+    │   └── room-store.js
 
 ## Alcance
 
-Solo representar visualmente cada pantalla y conectarla: formularios con sus campos, listas con datos de ejemplo y enlaces entre pantallas. No se implementa lógica de negocio.
+Las pantallas existentes siguen siendo principalmente estáticas. La búsqueda y las vistas de habitaciones, favoritos, reseñas y visitas implementan interacciones en JavaScript vanilla y persisten sus datos en `localStorage`.
 
-- **Sí:** HTML semántico, CSS3, `<form>` con atributos de validación (`required`, `type="email"`, `minlength`), listas con datos de ejemplo fijos y navegación con `<a href>`.
-- **No:** JavaScript, frameworks, librerías de programación, preprocesadores ni CDNs, excepto Google Fonts para Montserrat. No utilizar `<script>` ni eventos como `onclick`.
-- **Carpeta `js/`:** no utilizar ni enlazar sus archivos durante la entrega TB3.
-- **Contadores, chips y buscadores:** representarlos visualmente, sin implementar cálculos, filtros ni búsquedas reales.
-- **Formularios:** utilizar campos y validaciones nativas de HTML. Los enlaces que simulan el envío permiten navegar entre pantallas, pero no ejecutan las validaciones del formulario.
-- **Diseño:** utilizar los textos, colores, imágenes y valores de ejemplo del Figma.
-- **Pantallas:** implementar las vistas establecidas en los mockups, el User Flow o solicitadas para ShareRoom.
-- **Responsive:** desarrollar las versiones de escritorio y móvil en el mismo archivo HTML.
-- **Estados:** representar visualmente los errores y confirmaciones que correspondan.
-- **Navegación:** conectar las pantallas mediante rutas relativas.
-- **Usuarios:** representar los estados de visitante y usuario autenticado mediante páginas estáticas.
-- **Simulaciones:** no implementar autenticación, almacenamiento, búsqueda ni envío real de información.
-- Si existen dudas sobre un elemento, consultar antes de agregar funcionalidades no solicitadas.
+- **Sí:** HTML semántico, CSS responsive, validación nativa de formularios, navegación relativa y JavaScript vanilla para las funciones anteriores.
+- **Scripts locales:** `localstorage.js` conserva los helpers genéricos de guardado, lectura y eliminación; `room-store.js` implementa el modelo local de habitaciones; `events.js` conecta ese modelo con las pantallas.
+- **Persistencia:** la aplicación usa la clave `shareroom.local.v1`; habitaciones de ejemplo, favoritos, reseñas, visitas y avisos simulados permanecen en el navegador actual.
+- **US09 y US11:** al confirmar una visita se verifica de nuevo la disponibilidad; las visitas programadas pueden reprogramarse o cancelarse. Las visitas realizadas no se pueden modificar. Los avisos al anfitrión son registros locales, no mensajes enviados.
+- **No:** servidor, API REST, llamadas a servicios externos, frameworks, autenticación real, sincronización entre dispositivos ni envío de notificaciones fuera del navegador.
+- **Otras pantallas:** las funciones no incluidas en este alcance mantienen su comportamiento visual estático.
 
 ## Reglas
 
@@ -92,7 +89,7 @@ Solo representar visualmente cada pantalla y conectarla: formularios con sus cam
 
 - **CSS:** clases con nombres claros (estilo BEM), sin estilos inline ni `!important`. Colores, fuentes y espacios compartidos como variables al inicio de `css/styles.css`. Los estilos de cada pantalla van en su propia sección con un comentario.
 
-- **Formularios:** cada campo debe tener su `<label>`, `name` y validación HTML cuando corresponda. Los errores se presentan debajo de los campos, en el idioma del Figma. Las validaciones nativas se utilizan cuando existe un envío de formulario; los enlaces de simulación no ejecutan estas validaciones.
+- **Formularios:** cada campo debe tener su `<label>`, `name` y validación HTML cuando corresponda. Los errores se presentan en el idioma de la pantalla.
 
 - **Navegación:** utilizar `<a href>` para pasar de una pantalla a otra, incluso cuando se simula un proceso como iniciar sesión o crear una cuenta. Usar `<button>` para acciones propias de formularios o controles, cuando corresponda. No realizar autenticación ni envío real de datos.
 
@@ -108,9 +105,8 @@ Solo representar visualmente cada pantalla y conectarla: formularios con sus cam
 
 - **Tipografía:** utilizar Montserrat e incluir los enlaces de Google Fonts en el `<head>` de cada nuevo HTML.
 
-- **Tecnologías:** utilizar únicamente HTML5 y CSS3. No incluir JavaScript, frameworks, etiquetas `<script>` ni eventos como `onclick`.
-
-- **Simulaciones:** los enlaces entre pantallas representan el User Flow. No se implementan sesiones reales, bases de datos, envío de correos ni almacenamiento de información.
+- **Tecnologías:** utilizar HTML5 y CSS3 en todas las pantallas. Para las funciones locales de habitaciones, enlazar en orden `js/localstorage.js`, `js/room-store.js` y `js/events.js`; no agregar dependencias ni servicios externos.
+- **Simulaciones:** las funciones locales no representan sesiones reales, una base de datos compartida ni el envío de correos o mensajes.
 
 - **Organización:** reutilizar los componentes existentes y evitar selectores duplicados, estilos innecesarios o modificaciones de pantallas que ya funcionan correctamente.
 

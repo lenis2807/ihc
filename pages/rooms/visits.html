@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Administra las visitas coordinadas para habitaciones en ShareRoom.">
+  <title>Mis visitas | ShareRoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/room-store.js" defer></script>
+  <script src="../../js/events.js" defer></script>
+</head>
+<body class="visits-page" data-page="visits">
+  <header class="site-header member-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="../account/home.html" aria-label="ShareRoom, ir al inicio">
+        <span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="../account/home.html">Inicio</a>
+        <a href="search.html">Habitaciones</a>
+        <a href="../account/favorites.html">Favoritos</a>
+        <a href="../account/notifications.html">Notificaciones</a>
+      </nav>
+      <div class="member-header__actions">
+        <a class="member-header__icon" href="../account/favorites.html" aria-label="Favoritos">♡</a>
+        <a class="member-header__icon" href="../account/notifications.html" aria-label="Notificaciones">
+          <img src="../../img/icons/notificaciones.svg" alt="">
+        </a>
+        <a class="member-header__avatar" href="../account/profile.html" aria-label="Mi perfil">AV</a>
+      </div>
+      <a class="site-header__mobile-alert" href="../account/notifications.html" aria-label="Notificaciones">
+        <img src="../../img/icons/notificaciones.svg" alt="">
+      </a>
+    </div>
+  </header>
+
+  <main class="visits">
+    <div class="visits__heading">
+      <div>
+        <h1>Mis visitas</h1>
+        <p>Reprograma o cancela tus visitas mientras sigan programadas.</p>
+      </div>
+      <a class="btn btn--primary" href="search.html">Buscar habitaciones</a>
+    </div>
+    <p class="visits__local-note">Los cambios y avisos al anfitrión se registran solo en el almacenamiento local de este navegador.</p>
+    <p class="visits__status" data-visits-status role="status" aria-live="polite"></p>
+    <section class="visits__list" data-visits-list aria-label="Visitas registradas">
+      <p class="app-message">Cargando tus visitas...</p>
+    </section>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="../account/home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="search.html" aria-label="Buscar habitaciones"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="../account/favorites.html" aria-label="Favoritos">♡</a>
+    <a href="visits.html" aria-current="page" aria-label="Mis visitas">◷</a>
+    <a href="../account/profile.html" aria-label="Perfil"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+</body>
+</html>
