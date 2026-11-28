@@ -9,46 +9,281 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
+
+    <style>
+    /* ===== Mis publicaciones: celular, estilo completo (solo hasta 800px) ===== */
+    @media (max-width: 800px) {
+      html, body { overflow-x: hidden; }
+      .ml-shell { padding: 16px 16px 96px; max-width: 100%; box-sizing: border-box; }
+
+      /* Título */
+      .ml-head { display: flex; flex-direction: column; align-items: stretch; gap: 14px; }
+      .ml-head h1 { margin: 0; font-size: 2rem; color: #062046; }
+      .ml-head p { margin: 4px 0 0; color: #6b7280; font-size: .9rem; }
+      .ml-head .btn { width: 100%; justify-content: center; text-align: center; }
+
+      /* Resumen: 4 tarjetas en 2 columnas */
+      .ml-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+      .ml-stat { display: flex; flex-direction: column; gap: 4px; background: #fff; border: 1px solid #e3e7ee; border-radius: 16px; padding: 14px 16px; min-width: 0; }
+      .ml-stat span { font-size: .72rem; color: #6b7280; }
+      .ml-stat strong { font-size: 1.8rem; line-height: 1.1; color: #062046; }
+      .ml-stat small { font-size: .7rem; color: #6b7280; }
+
+      /* Filtros */
+      .ml-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+      .ml-chip { font: inherit; font-size: .8rem; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1px solid #d5dbe5; background: #fff; color: #062046; cursor: pointer; }
+      .ml-chip.is-active { background: #062046; border-color: #062046; color: #fff; }
+
+      /* Lista y tarjetas */
+      .ml-layout { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      #lista-publicaciones { display: grid; gap: 12px; }
+      .ml-card { position: relative; display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid #e3e7ee; border-radius: 16px; padding: 10px; cursor: pointer; }
+      .ml-card.is-selected { border-color: #14c8b0; box-shadow: 0 0 0 2px #cdf7f1; }
+      .ml-card > img { width: 88px; height: 100px; border-radius: 12px; object-fit: cover; flex: none; }
+      .ml-card__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+      .ml-card__body strong { font-size: .95rem; line-height: 1.25; overflow-wrap: anywhere; color: #062046; }
+      .ml-card__price { font-size: 1.1rem; font-weight: 700; color: #062046; }
+      .ml-card__meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+      .ml-card__meta small { font-size: .72rem; color: #6b7280; }
+      .ml-status { font-size: .7rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: #eef0f4; color: #062046; }
+      .ml-status--publicado { background: #cdf7f1; }
+      .ml-empty { text-align: center; color: #6b7280; padding: 20px; border: 1px dashed #d5dbe5; border-radius: 16px; margin: 0; }
+
+      /* Menú ⋮ */
+      .ml-kebab { position: relative; align-self: flex-start; }
+      .ml-kebab summary { list-style: none; cursor: pointer; font-size: 1.3rem; line-height: 1; padding: 4px 8px; color: #062046; }
+      .ml-kebab summary::-webkit-details-marker { display: none; }
+      .ml-kebab__menu { position: absolute; right: 0; top: 100%; z-index: 20; min-width: 170px; background: #fff; border: 1px solid #e3e7ee; border-radius: 12px; box-shadow: 0 8px 24px rgba(6, 32, 70, .15); padding: 6px; display: grid; }
+      .ml-kebab__menu a,
+      .ml-kebab__menu button { display: block; width: 100%; text-align: left; padding: 10px 12px; font: inherit; font-size: .85rem; color: #062046; background: none; border: 0; border-radius: 8px; cursor: pointer; text-decoration: none; }
+      .ml-kebab__menu a:hover,
+      .ml-kebab__menu button:hover { background: #cdf7f1; }
+
+      /* Consejo verde */
+      .ml-tip { background: #cdf7f1; border-radius: 16px; padding: 14px 16px; }
+      .ml-tip strong { font-size: .9rem; color: #062046; }
+      .ml-tip p { margin: 4px 0 0; font-size: .75rem; color: #4b5563; }
+
+      /* Panel de edición */
+      .ml-edit { width: 100%; box-sizing: border-box; background: #fff; border: 1px solid #e3e7ee; border-radius: 20px; padding: 20px 16px; }
+      .ml-edit h2 { margin: 0; font-size: 1.4rem; color: #062046; }
+      .ml-edit__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
+      .ml-edit__head p { margin: 4px 0 0; font-size: .75rem; color: #6b7280; }
+      .ml-edit label { display: block; margin: 14px 0 6px; font-size: .85rem; font-weight: 500; color: #062046; }
+      .ml-edit input:not([type="checkbox"]):not([type="file"]),
+      .ml-edit select,
+      .ml-edit textarea { display: block; width: 100%; box-sizing: border-box; font: inherit; font-size: .9rem; padding: 12px 14px; border: 1px solid #e3e7ee; border-radius: 12px; background: #fff; color: #062046; }
+      .ml-edit textarea { min-height: 96px; resize: vertical; }
+      .ml-edit [class*="grid"],
+      .ml-edit [class*="row"],
+      .ml-edit [class*="cols"] { grid-template-columns: 1fr !important; }
+
+      /* Servicios y reglas */
+      .ml-edit fieldset { border: 0; padding: 0; margin: 20px 0 0; min-width: 0; }
+      .ml-edit legend { padding: 0; margin-bottom: 8px; font-size: 1.1rem; font-weight: 700; color: #062046; }
+      .ml-edit fieldset label { display: flex; align-items: center; gap: 10px; margin: 10px 0; font-weight: 500; }
+      .ml-edit input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: #062046; flex: none; }
+
+      /* Foto */
+      .ml-edit img { display: block; width: 100%; max-height: 220px; object-fit: cover; border-radius: 16px; margin-top: 6px; }
+      .ml-photo__add label { display: block; text-align: center; margin: 10px 0 0; padding: 12px; border: 2px dashed #14c8b0; border-radius: 16px; background: #cdf7f1; font-weight: 600; cursor: pointer; }
+
+      /* Botones */
+      .ml-edit .btn { display: flex; width: 100%; justify-content: center; text-align: center; box-sizing: border-box; margin-top: 10px; }
+      #ed-mensaje { font-size: .75rem; color: #6b7280; margin: 12px 0 0; }
+    }
+  </style>
+
+    <style>
+    /* ===== Interruptor "Anuncio activo" (celular) ===== */
+    @media (max-width: 800px) {
+      .ml-edit label:has(#ed-activo) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 12px;
+        align-items: center;
+        margin: 18px 0 6px;
+        cursor: pointer;
+      }
+      .ml-edit label:has(#ed-activo) > *:not(input) { grid-column: 1; margin: 0; display: block; }
+      .ml-edit label:has(#ed-activo) strong { font-size: .95rem; font-weight: 500; color: #062046; }
+      .ml-edit label:has(#ed-activo) small { font-size: .75rem; color: #6b7280; }
+
+      .ml-edit #ed-activo {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
+        width: 50px;
+        height: 30px;
+        border-radius: 999px;
+        background: #d5dbe5;
+        cursor: pointer;
+        transition: background .2s;
+        flex: none;
+      }
+      .ml-edit #ed-activo::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+        transition: transform .2s;
+      }
+      .ml-edit #ed-activo:checked { background: #14c8b0; }
+      .ml-edit #ed-activo:checked::after { transform: translateX(20px); }
+      .ml-edit #ed-activo:focus-visible { outline: 2px solid #062046; outline-offset: 2px; }
+    }
+  </style>
+
 </head>
+
+
 <body>
   <header class="site-header member-header">
     <div class="site-header__inner">
       <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
-      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html" aria-current="page">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
-      <div class="member-header__actions"><a class="btn btn--primary member-header__publish" href="publish-room.html">Publicar habitación</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html" aria-current="page">Inicio</a><a href="../roomies/search.html">Buscar roomies</a><a href="../rooms/search.html">Habitaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions">
+        <a class="header-icon" href="favorites.html" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a class="header-icon" href="notifications.html" aria-label="Notificaciones">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </a>
+        <a class="btn btn--outline member-header__publish" href="publish-room.html">Publicar habitación</a>
+        <span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span>
+      </div>
       <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
     </div>
   </header>
-  <main class="publication-shell">
-    <nav class="publication-breadcrumb" aria-label="Ruta de navegación"><a href="home.html">Inicio</a><span aria-hidden="true">/</span><span>Mis publicaciones</span></nav>
-    <header class="publication-title listing-page-title">
-      <div><p class="section-eyebrow">TU ESPACIO EN SHARE ROOM</p><h1>Mis publicaciones</h1><p>Administra tus habitaciones y revisa las solicitudes recibidas.</p></div>
-      <a class="btn btn--primary" href="publish-room.html">+ Publicar habitación</a>
-    </header>
-    <section class="listing-management" aria-labelledby="active-listings-title">
-      <div class="listing-management__heading"><h2 id="active-listings-title">Publicaciones activas</h2><span class="listing-count">1 publicación</span></div>
-      <article class="manage-listing">
-        <img class="manage-listing__image" src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
-        <div class="manage-listing__content">
-          <div class="listing-preview__topline"><span class="listing-badge">Activa</span><span class="manage-listing__date">Publicada hoy</span></div>
-          <h3>Habitación amoblada cerca de la PUCP</h3>
-          <p class="listing-preview__location">San Miguel · Cerca de PUCP</p>
-          <p class="listing-preview__price">S/ 980 <span>/ mes</span></p>
-          <div class="manage-listing__stats"><span>3 interesados</span><span>12 visualizaciones</span></div>
-          <div class="manage-listing__actions">
-            <a class="btn btn--outline" href="publish-room.html">Editar publicación</a>
-            <a class="btn btn--primary" href="compare-applicants.html">Comparar interesados</a>
-            <a class="manage-listing__history" href="request-history.html">Historial de solicitudes</a>
-          </div>
-        </div>
-      </article>
+
+  <main class="ml-shell">
+    <div class="ml-head">
+      <div>
+        <h1>Mis publicaciones</h1>
+        <p>Administra tus anuncios y revisa su rendimiento.</p>
+      </div>
+      <a class="btn btn--primary" href="publish-room.html">Nueva publicación</a>
+    </div>
+
+    <section class="ml-stats" aria-label="Resumen de rendimiento">
+      <article class="ml-stat"><span>Publicaciones activas</span><strong id="stat-activas">0</strong><small id="stat-activas-sub"></small></article>
+      <article class="ml-stat"><span>Vistas esta semana</span><strong id="stat-vistas">0</strong><small>+18% vs. semana anterior</small></article>
+      <article class="ml-stat"><span>Personas interesadas</span><strong id="stat-interesados">0</strong><small id="stat-interesados-sub"></small></article>
+      <article class="ml-stat"><span>Solicitudes de visita</span><strong id="stat-visitas">0</strong><small>Pendientes de respuesta</small></article>
     </section>
+
+    <div class="ml-layout">
+      <section aria-label="Lista de publicaciones">
+        <div class="ml-chips">
+          <button type="button" class="ml-chip is-active" data-filtro="todas">Todas</button>
+          <button type="button" class="ml-chip" data-filtro="activas">Activas</button>
+          <button type="button" class="ml-chip" data-filtro="borradores">Borradores</button>
+        </div>
+        <div class="ml-list" id="lista-publicaciones"></div>
+        <div class="ml-tip">
+          <strong>Mejora el rendimiento</strong>
+          <p>Los anuncios con 5 o más fotos reciben hasta 2× más mensajes.</p>
+        </div>
+      </section>
+
+      <section class="ml-edit" id="panel-edicion" aria-labelledby="edit-title">
+        <form id="formulario-edicion">
+          <div class="ml-edit__head">
+            <div>
+              <h2 id="edit-title">Editar habitación</h2>
+              <p id="ed-subtitulo"></p>
+            </div>
+            <div class="ml-edit__tools">
+            <a class="btn btn--outline" id="enlace-vista-previa" href="publish-preview.html">Vista previa</a>
+              <button type="button" class="btn btn--outline" id="boton-pausar">Pausar anuncio</button>
+            </div>
+          </div>
+
+          <div class="ml-form">
+            <div>
+              <label class="ml-field">Título del anuncio *
+                <input type="text" id="ed-titulo" required>
+              </label>
+              <div class="ml-row">
+                <label class="ml-field">Precio mensual (S/) *
+                  <input type="number" id="ed-precio" min="1" required>
+                </label>
+                <label class="ml-field">Tipo *
+                  <select id="ed-tipo">
+                    <option>Privada</option>
+                    <option>Compartida</option>
+                  </select>
+                </label>
+              </div>
+              <label class="ml-field">Descripción *
+                <textarea id="ed-descripcion" rows="4" required></textarea>
+              </label>
+              <label class="ml-field">Dirección *
+                <input type="text" id="ed-direccion" required>
+              </label>
+               <fieldset class="ml-checks">
+                <legend>Servicios incluidos</legend>
+                <label><input type="checkbox" name="servicios" value="WiFi"> WiFi</label>
+                <label><input type="checkbox" name="servicios" value="Agua"> Agua</label>
+                <label><input type="checkbox" name="servicios" value="Luz"> Luz</label>
+                <label><input type="checkbox" name="servicios" value="Amoblado"> Amoblado</label>
+                <label><input type="checkbox" name="servicios" value="Cocina"> Cocina</label>
+                <label><input type="checkbox" name="servicios" value="Lavandería"> Lavandería</label>
+              </fieldset>
+              <fieldset class="ml-checks">
+                <legend>Reglas de convivencia</legend>
+                <label><input type="checkbox" name="reglas" value="No fumar"> No fumar</label>
+                <label><input type="checkbox" name="reglas" value="Sin fiestas"> Sin fiestas</label>
+                <label><input type="checkbox" name="reglas" value="Mascotas"> Mascotas</label>
+                <label><input type="checkbox" name="reglas" value="Visitas"> Visitas</label>
+                <label><input type="checkbox" name="reglas" value="Silencio nocturno"> Silencio nocturno</label>
+              </fieldset>
+            </div>
+
+            <div>
+             <div class="ml-photo">
+                <strong>Fotos</strong>
+                <img id="ed-foto" src="../../img/rooms/room-01.png" alt="Foto principal de la habitación">
+                <label class="ml-photo__add" for="ed-foto-archivo">+ Cambiar foto</label>
+                <input type="file" id="ed-foto-archivo" accept="image/png, image/jpeg" hidden>
+              </div>
+              <label class="ml-field">Disponible desde
+                <input type="date" id="ed-disponible">
+              </label>
+              <label class="ml-toggle">
+                <span><strong>Anuncio activo</strong><small>Visible en resultados</small></span>
+                <input type="checkbox" id="ed-activo" role="switch">
+              </label>
+            </div>
+          </div>
+
+          <div class="ml-foot">
+            <small id="ed-mensaje">Los cambios se guardan como borrador.</small>
+            <div>
+              <button type="button" class="btn btn--outline" id="boton-descartar">Descartar</button>
+              <button type="submit" class="btn btn--primary">Guardar cambios</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
   </main>
+
   <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
     <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
     <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
     <a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
     <a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
+
+  <script src="../../js/localstorage.js"></script>
+  <script src="../../js/publicaciones.js"></script>
 </body>
 </html>

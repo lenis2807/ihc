@@ -7,52 +7,68 @@
   <title>Comparar interesados | ShareRoom</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="codhttps://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
   <header class="site-header member-header">
     <div class="site-header__inner">
       <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
-      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html" aria-current="page">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
-      <div class="member-header__actions"><a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="../roomies/search.html">Buscar roomies</a><a href="../rooms/search.html" aria-current="page">Habitaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions">
+        <a class="header-icon" href="favorites.html" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a class="header-icon" href="notifications.html" aria-label="Notificaciones">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </a>
+        <a class="btn btn--outline member-header__publish" href="publish-room.html">Publicar habitación</a>
+        <span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span>
+      </div>
       <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
     </div>
   </header>
-  <main class="publication-shell">
-    <nav class="publication-breadcrumb" aria-label="Ruta de navegación"><a href="home.html">Inicio</a><span aria-hidden="true">/</span><a href="my-listings.html">Mis publicaciones</a><span aria-hidden="true">/</span><span>Comparar interesados</span></nav>
-    <header class="publication-title">
-      <p class="section-eyebrow">ENCUENTRA A TU PRÓXIMO ROOMIE</p>
-      <h1>Compara interesados</h1>
-      <p>Revisa sus perfiles y solicitudes para encontrar a la persona ideal para tu espacio.</p>
-    </header>
-    <section class="applicants-room" aria-label="Habitación publicada">
-      <img src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
-      <div><span class="listing-badge">Tu publicación</span><h2>Habitación amoblada cerca de la PUCP</h2><p>San Miguel · S/ 980 al mes</p></div>
-      <a href="request-history.html">Ver historial</a>
-    </section>
-    <section class="applicant-grid" aria-label="Personas interesadas">
-      <article class="applicant-card">
-        <div class="applicant-card__profile"><img src="../../img/profiles/lucia.png" alt="Fotografía de Lucía"><div><h2>Lucía Fernández</h2><p>24 años · Diseño</p></div><span class="compatibility-score">92%<small>compatibilidad</small></span></div>
-        <p class="applicant-card__message">“Hola, estudio cerca y me interesa mucho la habitación. Soy ordenada y busco un lugar tranquilo.”</p>
-        <dl class="applicant-details"><div><dt>Universidad</dt><dd>PUCP</dd></div><div><dt>Presupuesto</dt><dd>S/ 900 – 1,100</dd></div><div><dt>Se mudaría</dt><dd>Este mes</dd></div></dl>
-        <div class="applicant-card__actions"><a class="btn btn--primary" href="request-history.html">Ver solicitud</a><a class="btn btn--outline" href="request-history.html">Ver perfil</a></div>
-      </article>
-      <article class="applicant-card">
-        <div class="applicant-card__profile"><img src="../../img/profiles/diego.png" alt="Fotografía de Diego"><div><h2>Diego Ramos</h2><p>27 años · Ingeniería</p></div><span class="compatibility-score">86%<small>compatibilidad</small></span></div>
-        <p class="applicant-card__message">“Estoy buscando un espacio cerca de la universidad para mudarme pronto. Me gustaría conocer más.”</p>
-        <dl class="applicant-details"><div><dt>Universidad</dt><dd>PUCP</dd></div><div><dt>Presupuesto</dt><dd>S/ 850 – 1,000</dd></div><div><dt>Se mudaría</dt><dd>Próximo mes</dd></div></dl>
-        <div class="applicant-card__actions"><a class="btn btn--primary" href="request-history.html">Ver solicitud</a><a class="btn btn--outline" href="request-history.html">Ver perfil</a></div>
-      </article>
-      <article class="applicant-card">
-        <div class="applicant-card__profile"><img src="../../img/profiles/mariana.png" alt="Fotografía de Mariana"><div><h2>Mariana Torres</h2><p>23 años · Comunicaciones</p></div><span class="compatibility-score">79%<small>compatibilidad</small></span></div>
-        <p class="applicant-card__message">“Me interesa vivir en San Miguel y compartir un espacio cómodo, limpio y bien conectado.”</p>
-        <dl class="applicant-details"><div><dt>Universidad</dt><dd>UPC</dd></div><div><dt>Presupuesto</dt><dd>S/ 800 – 950</dd></div><div><dt>Se mudaría</dt><dd>Este mes</dd></div></dl>
-        <div class="applicant-card__actions"><a class="btn btn--primary" href="request-history.html">Ver solicitud</a><a class="btn btn--outline" href="request-history.html">Ver perfil</a></div>
-      </article>
-    </section>
-    <p class="demo-disclaimer">Perfiles de ejemplo para mostrar la interfaz. Las solicitudes no se envían desde esta demostración.</p>
+
+  <main class="ca-shell">
+    <div class="ca-head">
+      <div>
+        <h1>Comparar interesados</h1>
+        <p id="ca-subtitulo">Selecciona al menos 2 perfiles.</p>
+      </div>
+      <button type="button" class="btn btn--primary" id="boton-contactar">Contactar seleccionados</button>
+    </div>
+
+    <div class="ca-layout">
+      <section aria-labelledby="ca-lista-titulo">
+        <div class="ca-list-head">
+          <h2 id="ca-lista-titulo">Interesados (<span id="ca-total">0</span>)</h2>
+          <span class="ca-count" id="ca-seleccionados">0 seleccionados</span>
+        </div>
+        <div class="ca-list" id="lista-interesados"></div>
+        <div class="ca-tip">
+          <strong>Selecciona al menos 2 perfiles</strong>
+          <p>Con un solo perfil no se puede generar la comparación.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="ca-tabla-titulo">
+        <div class="ca-table-head">
+          <h2 id="ca-tabla-titulo">Comparación de <span id="ca-n">0</span> perfiles</h2>
+          <small>Retira un perfil sin perder los demás.</small>
+        </div>
+        <div id="tabla-comparacion"></div>
+      </section>
+    </div>
   </main>
-  <nav class="mobile-bottom-nav" aria-label="Navegación móvil"><a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a><a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a><a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a><a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a></nav>
+
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+    <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
+    <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
+    <a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
+    <a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
+  </nav>
+
+  <script src="../../js/localstorage.js"></script>
+  <script src="../../js/publicaciones.js"></script>
 </body>
 </html>

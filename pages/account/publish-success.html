@@ -10,36 +10,134 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
+
+  <style>
+    /* ===== Publicación exitosa (escritorio y móvil) ===== */
+    .publication-shell--success { max-width: 1100px; width: 100%; margin-inline: auto; }
+    .publication-shell--success .success-card { max-width: 480px; margin-inline: auto; }
+
+    .success-grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px; margin-top: 24px; align-items: start; }
+
+    .success-panel,
+    .next-steps { background: #fff; border: 1px solid #e3e7ee; border-radius: 20px; padding: 20px 24px; }
+    .success-panel h2,
+    .next-steps h2 { font-size: 1.15rem; margin: 0; }
+    .next-steps h2 { margin-bottom: 16px; }
+
+    .success-panel__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .success-badge { background: #062046; color: #fff; font-size: .75rem; font-weight: 600; padding: 6px 14px; border-radius: 999px; white-space: nowrap; }
+
+    .success-listing { display: flex; gap: 16px; border: 1px solid #e3e7ee; border-radius: 16px; overflow: hidden; }
+    .success-listing img { width: 120px; object-fit: cover; flex: none; }
+    .success-listing__info { padding: 14px 16px; display: grid; gap: 2px; align-content: center; min-width: 0; }
+    .success-listing__info strong { overflow-wrap: anywhere; }
+    .success-listing__info span { font-size: .85rem; color: #6b7280; }
+    .success-listing__price { margin: 6px 0 0; font-size: 1.4rem; font-weight: 700; }
+    .success-listing__price small { font-size: .8rem; font-weight: 400; color: #6b7280; }
+    .success-footnote { margin: 12px 0 0; font-size: .75rem; color: #6b7280; }
+
+    .next-steps__list { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 14px; }
+    .next-steps__list li { display: flex; gap: 12px; align-items: flex-start; }
+    .next-steps__list p { margin: 2px 0 0; font-size: .8rem; color: #6b7280; }
+    .next-steps__num { flex: none; width: 32px; height: 32px; border-radius: 50%; background: #14c8b0; color: #062046; font-weight: 700; display: grid; place-items: center; }
+    .next-steps__tip { margin: 0; padding: 12px 16px; border-radius: 12px; background: #cdf7f1; font-size: .8rem; }
+
+    /* ===== Móvil (como el Figma) ===== */
+    @media (max-width: 800px) {
+      .publication-shell--success { padding: 16px 16px 96px; }
+      .success-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+
+      .success-panel { padding: 18px 16px; }
+      .success-listing { gap: 12px; align-items: center; padding: 10px; }
+      .success-listing img { width: 84px; height: 84px; border-radius: 12px; }
+      .success-listing__info { padding: 0; }
+      .success-listing__price { font-size: 1.15rem; }
+
+      .next-steps { background: #cdf7f1; border-color: #9eeadf; padding: 18px 16px; }
+      .next-steps__num { background: #fff; }
+      .next-steps__list p { color: #4b5563; }
+      .next-steps__tip { background: #fff; border: 1px solid #9eeadf; display: flex; gap: 10px; align-items: flex-start; }
+      .next-steps__tip::before { content: "✓"; font-weight: 700; color: #062046; }
+    }
+  </style>
 <body>
   <header class="site-header member-header">
     <div class="site-header__inner">
       <a class="site-logo" href="home.html" aria-label="ShareRoom, ir al inicio"><span class="site-logo__symbol" aria-hidden="true">SR</span><span>ShareRoom</span></a>
-      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="my-listings.html">Mis publicaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
-      <div class="member-header__actions"><a class="btn btn--outline member-header__publish" href="my-listings.html">Mis publicaciones</a><span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span></div>
-      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
+      <nav class="site-nav" aria-label="Navegación principal"><a href="home.html">Inicio</a><a href="../roomies/search.html">Buscar roomies</a><a href="../rooms/search.html" aria-current="page">Habitaciones</a><span class="nav-unavailable" aria-disabled="true">Mensajes</span></nav>
+      <div class="member-header__actions">
+        <a class="header-icon" href="favorites.html" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a class="header-icon" href="notifications.html" aria-label="Notificaciones">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </a>
+        <a class="btn btn--outline member-header__publish" href="publish-room.html">Publicar habitación</a>
+        <span class="member-header__avatar" aria-label="Perfil de Andrea Valdez">AV</span>
+      </div>      <span class="site-header__mobile-alert" aria-label="Notificaciones, próximamente" aria-disabled="true"><img src="../../img/icons/notificaciones.svg" alt=""></span>
     </div>
   </header>
+
   <main class="publication-shell publication-shell--success">
     <section class="publication-card success-card" aria-labelledby="success-title">
-      <div class="success-icon" aria-hidden="true">✓</div>
-      <p class="section-eyebrow">¡LISTO!</p>
-      <h1 id="success-title">Tu habitación ya está publicada</h1>
-      <p>Tu publicación ya puede ser vista por personas que buscan una habitación en ShareRoom.</p>
-      <div class="success-summary">
-        <img src="../../img/rooms/habitacion-01.png" alt="Habitación amoblada en San Miguel">
-        <div><strong>Habitación amoblada cerca de la PUCP</strong><span>San Miguel · S/ 980 al mes</span></div>
-      </div>
+      <div class="success-icon" aria-hidden="true">🎉</div>
+      <h1 id="success-title">¡Tu habitación ya está publicada!</h1>
+      <p>La revisamos y está visible en los resultados de ShareRoom. Las personas interesadas podrán guardarla y enviarte mensajes desde ahora.</p>
       <div class="success-actions">
-        <a class="btn btn--primary" href="my-listings.html">Ir a mis publicaciones</a>
-        <a class="btn btn--outline" href="home.html">Volver al inicio</a>
+        <a class="btn btn--primary" href="room-detail.html">Ver publicación</a>
+        <a class="btn btn--outline" href="my-listings.html">Ir a Mis publicaciones</a>
       </div>
     </section>
+
+    <div class="success-grid">
+      <section class="success-panel" aria-labelledby="published-title">
+        <div class="success-panel__head">
+          <h2 id="published-title">Publicada correctamente</h2>
+          <span class="success-badge">Activa</span>
+        </div>
+        <div class="success-listing" id="resumen-exito">
+          <img src="../../img/rooms/habitacion-01.png" alt="Habitación publicada">
+          <div class="success-listing__info">
+            <strong>Habitación luminosa en Pueblo Libre</strong>
+            <span>A 8 min de la PUCP</span>
+            <span>WiFi · Amoblada · Cocina</span>
+            <p class="success-listing__price">S/ 890 <small>/ mes</small></p>
+          </div>
+        </div>
+        <p class="success-footnote" id="codigo-publicacion">Publicación SR-2841 · Visible desde hoy a las 10:48</p>
+      </section>
+
+      <aside class="next-steps" aria-labelledby="next-steps-title">
+        <h2 id="next-steps-title">Qué ocurre ahora</h2>
+        <ol class="next-steps__list">
+          <li>
+            <span class="next-steps__num" aria-hidden="true">1</span>
+            <div>
+              <strong>Recibirás personas interesadas</strong>
+              <p>Te avisaremos por la app y por correo.</p>
+            </div>
+          </li>
+          <li>
+            <span class="next-steps__num" aria-hidden="true">2</span>
+            <div>
+              <strong>Coordina visitas con seguridad</strong>
+              <p>Mantén la conversación dentro de ShareRoom.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="next-steps__tip">Puedes editar precio, disponibilidad o fotos en cualquier momento.</p>
+      </aside>
+    </div>
   </main>
+
   <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
     <a href="home.html" aria-label="Inicio"><img src="../../img/icons/Inicio.svg" alt=""></a>
     <a href="home.html#rooms-heading" aria-label="Buscar"><img src="../../img/icons/buscar.svg" alt=""></a>
     <a href="publish-room.html" aria-label="Publicar habitación"><img src="../../img/icons/publicar.svg" alt=""></a>
     <a href="my-listings.html" aria-current="page" aria-label="Mis publicaciones"><img src="../../img/icons/perfil.svg" alt=""></a>
   </nav>
+
+  <script src="../../js/localstorage.js"></script>
+  <script src="../../js/publicaciones.js"></script>
 </body>
 </html>
